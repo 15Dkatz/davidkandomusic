@@ -11,18 +11,11 @@ export const metadata = {
 }
 
 // TODO: Create a navbar that invites the user back home, and shows which page they're on
+// TODO: Navigation should only appear in nested pages. Perhaps I can achieve this with a simple Home button.
 export default function RootLayout({ children }) {
   return (
     <html>
       <body className={`${inter.className} min-h-screen`}>
-        <nav className="flex flex-col items-center h-12">
-          <div>
-            davidkandomusic
-          </div>
-          <div>
-            Shared navigation
-          </div>
-        </nav>
         {children}
       </body>
     </html>
