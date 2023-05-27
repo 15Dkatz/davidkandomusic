@@ -1,4 +1,5 @@
 @tailwind base;
+/* TODO: Which components do I have access to? Can I safely remove any of these imports*/
 @tailwind components;
 @tailwind utilities;
 

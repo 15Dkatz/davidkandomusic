@@ -14,8 +14,15 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html>
-      <body className={inter.className}>
-        <div>Test: shared nav. TODO: Find a standard nav component</div>
+      <body className={`${inter.className} min-h-screen`}>
+        <nav className="flex flex-col items-center h-12">
+          <div>
+            davidkandomusic
+          </div>
+          <div>
+            Shared navigation
+          </div>
+        </nav>
         {children}
       </body>
     </html>
