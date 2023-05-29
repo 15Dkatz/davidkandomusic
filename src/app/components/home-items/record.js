@@ -18,7 +18,6 @@ export default function Record({ title, mainImage, recordImage }) {
         className={
           "relative block bg-slate-500 " +
           "w-10 h-20 lg:w-20 lg:h-40 " +
-          // "border-r-4 border-t-4 border-b-4 border-black " +
           "rounded-tl-none rounded-tr-[5rem] rounded-br-[5rem] rounded-bl-none"
         }
       >
