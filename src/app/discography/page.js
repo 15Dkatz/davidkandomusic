@@ -1,5 +1,4 @@
 import Image from 'next/image';
-import { PlayIcon } from '@heroicons/react/24/outline';
 
 import PageLayout from '../components/pageLayout';
 
@@ -114,14 +113,14 @@ export default function Discography() {
                   {
                     i%2 === 0 ? (
                       // LEFT oriented
-                      <div className="flex flex-row justify-center w-[290px] md:w-[550px]">
+                      <div className="flex flex-row justify-center w-[310px] md:w-[550px]">
                         {albumPane}
                         <div className="w-[10px]"></div>
                         {descriptionPane}
                       </div>
                     ) : (
                       // RIGHT oriented
-                      <div className="flex flex-row justify-center w-[290px] md:w-[550px]">
+                      <div className="flex flex-row justify-center w-[310px] md:w-[550px]">
                         {descriptionPane}
                         <div className="w-[10px]"></div>
                         {albumPane}

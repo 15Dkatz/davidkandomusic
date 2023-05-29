@@ -1,7 +1,8 @@
-import Merch from './components/home-items/merch';
-import Record from './components/home-items/record';
 import Portrait from './components/home-items/portrait';
 import About from './components/home-items/about';
+import Discography from './components/home-items/discography';
+import Merch from './components/home-items/merch';
+import Record from './components/home-items/record';
 
 import { Ranga } from 'next/font/google';
 
@@ -11,32 +12,39 @@ const ranga = Ranga({
 });
 
 const ITEM_TYPES = {
+  'MERCH': 'MERCH',
+  'DISCOGRAPHY': 'DISCOGRAPHY',
   'RECORD': 'RECORD',
   'PORTRAIT': 'PORTRAIT',
-  'STORY': 'STORY',
-  'MERCH': 'MERCH'
+  'STORY': 'STORY'
 };
 
 const ITEM_TYPE_SETTINGS = {
-  [ITEM_TYPES.RECORD]: {
-    gridSize: "col-span-3",
-    Component: Record
+  [ITEM_TYPES.DISCOGRAPHY]: {
+    gridSize: "col-span-2",
+    Component: Discography
+  },
+  [ITEM_TYPES.MERCH]: {
+    gridSize: "col-span-2",
+    Component: Merch
   },
   [ITEM_TYPES.PORTRAIT]: {
     gridSize: "col-span-2",
     Component: Portrait
   },
+  [ITEM_TYPES.RECORD]: {
+    gridSize: "col-span-3",
+    Component: Record
+  },
   [ITEM_TYPES.STORY]: {
     gridSize: "col-span-2",
     Component: About
-  },
-  [ITEM_TYPES.MERCH]: {
-    gridSize: "col-span-2",
-    Component: Merch
   }
 };
 
 // TODO: Move to external file
+// TODO: May have no neeed for this once all the home-items are coded up.
+// Try merging this with item_type_settings. More elegant.
 const ITEMS = [
   {
     id: 1,
@@ -77,12 +85,7 @@ const ITEMS = [
   },
   {
     id: 6,
-    // TODO: Also make this inline. No need to open another page if the UI/functionality would be so small
-    type: ITEM_TYPES.PORTRAIT,
-    attributes: {
-      title: 'Discography',
-      href: '/discography'
-    }
+    type: ITEM_TYPES.DISCOGRAPHY
   },
   {
     id: 7,
@@ -117,7 +120,6 @@ export default function Page() {
           "bg-slate-100 rounded-xl p-1 pb-10 pt-10 m-2 lg:p-10 lg:m-20"
         }
       >
-        {/* TODO: Consider changing the font to something more fun. But see the consistency with the album art in the record before deciding. */}
         <div className="flex justify-center mb-5 lg:mb-10">
           <div className={`${ranga.className} text-2xl lg:text-4xl underline underline-offset-1 decoration-4 decoration-blue-400`}>
             DAVIDKANDOMUSIC
@@ -129,8 +131,6 @@ export default function Page() {
               const { id, type, attributes } = item;
               const { gridSize, Component } = ITEM_TYPE_SETTINGS[type];
 
-              // TODO: Change display by type. Place each item's relative jsx in its own component.
-              // TODO: Research the conventions for where to place components in Next.js
               return (
                 <div
                   key={id}
