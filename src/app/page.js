@@ -1,7 +1,7 @@
-import Merch from './components/home/merch';
-import Record from './components/home/record';
-import Portrait from './components/home/portrait';
-import Story from './components/home/story';
+import Merch from './components/home-items/merch';
+import Record from './components/home-items/record';
+import Portrait from './components/home-items/portrait';
+import Story from './components/home-items/story';
 
 import { Ranga } from 'next/font/google';
 
@@ -47,7 +47,8 @@ const ITEMS = [
     type: ITEM_TYPES.RECORD,
     attributes: {
       title: 'Poison Worms Album Art',
-      image: '/poison_worms_400.png'
+      mainImage: '/poison_worms_400.png',
+      recordImage: '/poison_worms_record_half.png'
     }
   },
   {
@@ -55,7 +56,8 @@ const ITEMS = [
     type: ITEM_TYPES.RECORD,
     attributes: {
       title: 'In Perpetuity Album Art',
-      image: '/in_perpetuity_400.png'
+      mainImage: '/in_perpetuity_400.png',
+      recordImage: '/in_perpetuity_record_half.png'
     }
   },
   {
@@ -78,7 +80,8 @@ const ITEMS = [
     // TODO: Also make this inline. No need to open another page if the UI/functionality would be so small
     type: ITEM_TYPES.PORTRAIT,
     attributes: {
-      title: 'Switch it up (theme settings)'
+      title: 'Discography',
+      href: '/discography'
     }
   },
   {
