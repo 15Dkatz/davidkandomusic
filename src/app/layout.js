@@ -1,9 +1,11 @@
 import './globals.css'
 
-// TODO: Choose a different font to be the bass font
-import { Inter } from 'next/font/google'
+import { Roboto_Condensed } from 'next/font/google';
 
-const inter = Inter({ subsets: ['latin'] })
+const robotoCondensed = Roboto_Condensed({
+  subsets: ['latin'],
+  weight: '400'
+});
 
 export const metadata = {
   title: 'davidkandomusic',
@@ -15,7 +17,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html>
-      <body className={`${inter.className} flex justify-center min-h-screen`}>
+      <body className={`${robotoCondensed.className} flex justify-center min-h-screen`}>
         {children}
       </body>
     </html>

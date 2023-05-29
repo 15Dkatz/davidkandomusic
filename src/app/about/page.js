@@ -1,13 +1,6 @@
 import Link from 'next/link';
-import { Roboto_Condensed } from 'next/font/google';
 
-// TODO: Should this be a layout.js file?
 import PageLayout from '../components/pageLayout';
-
-const robotoCondensed = Roboto_Condensed({
-  subsets: ['latin'],
-  weight: '400'
-});
 
 // TODO: Why do the interpolated strings work in ${robotoCondensed.className} and not other examples, like inserting the background image value? Probably because it's parsed at build time through the next Class, but ${} is not supported since the value is not known at build time. But + '' + is?
 
@@ -16,7 +9,7 @@ export default function Page() {
   // TODO: delete either op_90 or op_75 depending on which is more legible against white text
   return (
     <PageLayout background="bg-[url('/goofy_bg_500_op_80.png')]">
-      <div className={`${robotoCondensed.className} text-sm lg:text-xl p-1`}>
+      <div className={"text-md lg:text-xl p-1"}>
         <div>
           Can David do music? Yes, David Kando music.
         </div>

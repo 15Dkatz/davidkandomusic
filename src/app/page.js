@@ -1,7 +1,7 @@
 import Merch from './components/home-items/merch';
 import Record from './components/home-items/record';
 import Portrait from './components/home-items/portrait';
-import Story from './components/home-items/story';
+import About from './components/home-items/about';
 
 import { Ranga } from 'next/font/google';
 
@@ -28,7 +28,7 @@ const ITEM_TYPE_SETTINGS = {
   },
   [ITEM_TYPES.STORY]: {
     gridSize: "col-span-2",
-    Component: Story
+    Component: About
   },
   [ITEM_TYPES.MERCH]: {
     gridSize: "col-span-2",
@@ -123,7 +123,7 @@ export default function Page() {
             DAVIDKANDOMUSIC
           </div>
         </div>
-        <div className="grid grid-flow-dense grid-cols-7 lg:grid-cols-8 gap-8 ml-10 mr-10">
+        <div className="grid grid-flow-dense grid-cols-5 lg:grid-cols-8 gap-8 ml-10 mr-10">
           {
             ITEMS.map(item => {
               const { id, type, attributes } = item;
