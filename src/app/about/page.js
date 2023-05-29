@@ -16,7 +16,7 @@ export default function Page() {
   // TODO: delete either op_90 or op_75 depending on which is more legible against white text
   return (
     <PageLayout background="bg-[url('/goofy_bg_500_op_80.png')]">
-      <div className={`${robotoCondensed.className} text-sm md:text-xl p-1`}>
+      <div className={`${robotoCondensed.className} text-sm lg:text-xl p-1`}>
         <div>
           Can David do music? Yes, David Kando music.
         </div>

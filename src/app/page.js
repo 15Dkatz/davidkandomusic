@@ -114,18 +114,16 @@ export default function Page() {
       <div
         className={
           "flex flex-col justify-center items-center " +
-          "bg-slate-100 rounded-xl p-1 pb-10 pt-10 m-2 md:p-10 md:m-20"
+          "bg-slate-100 rounded-xl p-1 pb-10 pt-10 m-2 lg:p-10 lg:m-20"
         }
       >
         {/* TODO: Consider changing the font to something more fun. But see the consistency with the album art in the record before deciding. */}
-        <div className="flex justify-center mb-5 md:mb-10">
-          <div className={`${ranga.className} text-2xl md:text-4xl underline underline-offset-1 decoration-4 decoration-blue-400`}>
+        <div className="flex justify-center mb-5 lg:mb-10">
+          <div className={`${ranga.className} text-2xl lg:text-4xl underline underline-offset-1 decoration-4 decoration-blue-400`}>
             DAVIDKANDOMUSIC
           </div>
         </div>
-        {/* TODO: Why is my hr blank? */}
-        <hr />
-        <div className="grid grid-flow-dense grid-cols-7 md:grid-cols-8 gap-8 ml-10 mr-10">
+        <div className="grid grid-flow-dense grid-cols-7 lg:grid-cols-8 gap-8 ml-10 mr-10">
           {
             ITEMS.map(item => {
               const { id, type, attributes } = item;

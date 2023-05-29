@@ -8,7 +8,7 @@ export default function Story() {
       <div
         className={
           "relative block " +
-          "w-20 h-20 md:w-40 md:h-40 " +
+          "w-20 h-20 lg:w-40 lg:h-40 " +
           "border-[2px] border-black"
         }
       >

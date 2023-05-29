@@ -9,7 +9,7 @@ export default function Portrait({ title, href }) {
 
   return (
     <div>
-      <Wrapper className="w-20 h-20 md:w-40 md:h-40 block border-2 border-black">
+      <Wrapper className="w-20 h-20 lg:w-40 lg:h-40 block border-2 border-black">
         {title}
       </Wrapper>
     </div>
