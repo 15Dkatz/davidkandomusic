@@ -13,7 +13,7 @@ export default function Discography() {
       <div
         className={
           "relative flex items-end " +
-          "w-24 h-24 lg:w-40 lg:h-40 " +
+          "w-28 h-28 lg:w-40 lg:h-40 " +
           "bg-[url('/discography_400.png')] bg-contain " +
           "border-[2px] border-black"
         }

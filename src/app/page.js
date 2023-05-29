@@ -24,8 +24,9 @@ const ITEM_TYPE_SETTINGS = {
     gridSize: "col-span-2",
     Component: Discography
   },
+  // TODO: Test in col-span-1 to make this one unique
   [ITEM_TYPES.MERCH]: {
-    gridSize: "col-span-2",
+    gridSize: "col-span-1 lg:col-span-2",
     Component: Merch
   },
   [ITEM_TYPES.PORTRAIT]: {
