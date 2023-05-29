@@ -1,13 +1,13 @@
-import Merch from './components/merch';
-import Record from './components/record';
-import Portrait from './components/portrait';
-import Story from './components/story';
+import Merch from './components/home/merch';
+import Record from './components/home/record';
+import Portrait from './components/home/portrait';
+import Story from './components/home/story';
 
-import { Viaoda_Libre } from 'next/font/google';
+import { Ranga } from 'next/font/google';
 
-const viaodaLibre = Viaoda_Libre({
+const ranga = Ranga({
   subsets: ['latin'],
-  weight: ['400']
+  weight: ['700']
 });
 
 const ITEM_TYPES = {
@@ -116,7 +116,7 @@ export default function Page() {
       >
         {/* TODO: Consider changing the font to something more fun. But see the consistency with the album art in the record before deciding. */}
         <div className="flex justify-center mb-5 md:mb-10">
-          <div className={`${viaodaLibre.className} text-3xl underline underline-offset-1 decoration-4 decoration-blue-400`}>
+          <div className={`${ranga.className} text-2xl md:text-4xl underline underline-offset-1 decoration-4 decoration-blue-400`}>
             DAVIDKANDOMUSIC
           </div>
         </div>

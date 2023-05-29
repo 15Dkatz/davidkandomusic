@@ -7,7 +7,7 @@ import Image from 'next/image';
 export default function Record({ title, image }) {
   return (
     <div className="flex flex-row">
-      <div className="relative w-20 h-20 md:w-40 md:h-40 border-4 border-black">
+      <div className="relative w-20 h-20 md:w-40 md:h-40 border-[2px] border-black">
         <Image
           src={image}
           alt={title}
@@ -16,7 +16,7 @@ export default function Record({ title, image }) {
       </div>
       <div
         className={
-          "relative bg-slate-600 " +
+          "relative bg-slate-500 " +
           "w-10 h-20 md:w-20 md:h-40 " +
           "border-r-4 border-t-4 border-b-4 border-black " +
           "rounded-tl-none rounded-tr-[5rem] rounded-br-[5rem] rounded-bl-none"
