@@ -28,6 +28,18 @@ const ALBUMS = [
   }
 ];
 
+// {/* Play Poison Worms */}
+// {/* TODO: Consider launching this on click of the record. Or have it display beneath the large davidkandomusic text */}
+// {/* TODO: Figure out if there's autoply. If so, have it display and play automatically on the click of a record. */}
+// {/* <iframe
+//   // style="border-radius:12px"
+//   src="https://open.spotify.com/embed/track/7o1sArWvk2m61k6CuZKt93?utm_source=generator"
+//   width="100%"
+//   height="152"
+//   allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+//   loading="lazy"
+// /> */}
+
 function PlayRow({ title, link, iconImage }) {
   return (
     <a
@@ -53,7 +65,10 @@ function PlayRow({ title, link, iconImage }) {
 
 export default function Discography() {
   return (
-    <PageLayout background="bg-gradient-to-b from-slate-100 to-blue-100">
+    <PageLayout
+      background="bg-gradient-to-b from-slate-100 to-blue-100"
+      title="DISCOGRAPHY"
+    >
       <div className="p-2">
         {
           ALBUMS.map(({

@@ -8,7 +8,10 @@ import PageLayout from '../components/pageLayout';
 export default function Page() {
   // TODO: delete either op_90 or op_75 depending on which is more legible against white text
   return (
-    <PageLayout background="bg-[url('/goofy_bg_500_op_80.png')]">
+    <PageLayout
+      background="bg-[url('/goofy_bg_500_op_80.png')]"
+      title="About David Kando"
+    >
       <div className={"text-md lg:text-xl p-1"}>
         <div>
           Can David do music? Yes, David Kando music.
