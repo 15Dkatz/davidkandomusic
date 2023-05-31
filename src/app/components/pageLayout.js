@@ -14,9 +14,9 @@ export default function PageLayout({ children, background, title }) {
   return (
     <div
       className={
+        "w-full p-1 pb-10 pt-10 m-2 lg:p-10 lg:m-20 " +
         "flex flex-col justify-center items-center " +
-        bg + "bg-no-repeat bg-cover " +
-        "rounded-xl p-1 pb-10 pt-10 m-2 lg:p-10 lg:m-20"
+        bg + "bg-no-repeat bg-cover "
       }
     >
       {/* TODO: make a title that matches the davidkandomusic header */}

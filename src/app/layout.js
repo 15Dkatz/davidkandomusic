@@ -13,11 +13,13 @@ const robotoCondensed = Roboto_Condensed({
 //   description: "Music for when you're just hanging around...",
 // };
 
-import Portrait from './components/home-items/portrait';
-import About from './components/home-items/about';
-import Discography from './components/home-items/discography';
-import Merch from './components/home-items/merch';
-import Record from './components/home-items/record';
+import About from './components/homepage/about';
+import Discography from './components/homepage/discography';
+import Record from './components/homepage/record';
+import Connect from './components/homepage/connect';
+import Studio from './components/homepage/studio';
+import Quiz from './components/homepage/quiz';
+import Swag from './components/homepage/swag';
 
 import { Ranga } from 'next/font/google';
 
@@ -26,89 +28,49 @@ const ranga = Ranga({
   weight: ['700']
 });
 
-const ITEM_TYPES = {
-  'MERCH': 'MERCH',
-  'DISCOGRAPHY': 'DISCOGRAPHY',
-  'RECORD': 'RECORD',
-  'PORTRAIT': 'PORTRAIT',
-  'ABOUT': 'ABOUT'
-};
-
-const ITEM_TYPE_SETTINGS = {
-  [ITEM_TYPES.DISCOGRAPHY]: {
-    gridSize: "col-span-2",
-    Component: Discography
-  },
-  // TODO: Test in col-span-1 to make this one unique
-  [ITEM_TYPES.MERCH]: {
-    gridSize: "col-span-1 lg:col-span-2",
-    Component: Merch
-  },
-  [ITEM_TYPES.PORTRAIT]: {
-    gridSize: "col-span-2",
-    Component: Portrait
-  },
-  [ITEM_TYPES.RECORD]: {
-    gridSize: "col-span-3",
-    Component: Record
-  },
-  [ITEM_TYPES.ABOUT]: {
-    gridSize: "col-span-2",
-    Component: About
-  }
-};
-
 // TODO: Move to external file
 // TODO: May have no neeed for this once all the home-items are coded up.
 // Try merging this with item_type_settings. More elegant.
 const ITEMS = [
   {
     id: 1,
-    type: ITEM_TYPES.ABOUT
+    Component: About
   },
   {
     id: 2,
-    type: ITEM_TYPES.RECORD,
-    attributes: {
-      title: 'Poison Worms Album Art',
-      mainImage: '/poison_worms_400.png',
-      recordImage: '/poison_worms_record_half.png'
-    }
+    Component: Discography
   },
   {
     id: 3,
-    type: ITEM_TYPES.RECORD,
+    Component: Record,
     attributes: {
-      title: 'In Perpetuity Album Art',
-      mainImage: '/in_perpetuity_400.png',
-      recordImage: '/in_perpetuity_record_half.png'
+      title: 'Poison Worms',
+      albumImage: '/poison_worms_400.png'
     }
   },
   {
-    // TODO: This should not open another page. Rather, clicking on the icons for each social will lead directly to a social page.
     id: 4,
-    type: ITEM_TYPES.PORTRAIT,
+    Component: Record,
     attributes: {
-      title: 'Connect'
+      title: 'In Perpetuity',
+      albumImage: '/in_perpetuity_400.png'
     }
   },
   {
     id: 5,
-    type: ITEM_TYPES.PORTRAIT,
-    attributes: {
-      title: 'Playlist Personality Quiz'
-    }
+    Component: Connect
   },
   {
     id: 6,
-    type: ITEM_TYPES.DISCOGRAPHY
+    Component: Studio
   },
   {
     id: 7,
-    type: ITEM_TYPES.MERCH,
-    attributes: {
-      title: 'Swag and knick-knacks'
-    }
+    Component: Quiz
+  },
+  {
+    id: 8,
+    Component: Swag
   }
 ];
 
@@ -118,11 +80,12 @@ export default function RootLayout({ children }) {
   return (
     <html>
       <body className={`${robotoCondensed.className} flex justify-center min-h-screen`}>
-        <div className="md:w-[1000px] flex flex-col items-center justify-center">
+        <div className="w-[350px] md:w-[1000px] m-5 md:[m-10] flex flex-col items-center justify-center">
           <div
             className={
+              "w-full p-1 pb-10 pt-10 m-2 lg:p-10 lg:m-20 " +
               "flex flex-col justify-center items-center " +
-              "bg-slate-100 rounded-xl p-1 pb-10 pt-10 m-2 lg:p-10 lg:m-20"
+              "bg-slate-100"
             }
           >
             <div className="flex justify-center mb-5 lg:mb-10">
@@ -130,16 +93,18 @@ export default function RootLayout({ children }) {
                 DAVIDKANDOMUSIC
               </div>
             </div>
-            <div className="grid grid-flow-dense grid-cols-5 lg:grid-cols-8 gap-8 ml-10 mr-10">
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-1 ml-10 mr-10">
               {
                 ITEMS.map(item => {
-                  const { id, type, attributes } = item;
-                  const { gridSize, Component } = ITEM_TYPE_SETTINGS[type];
+                  const { id, Component, attributes } = item;
+                  console.log(`id with Component`, id);
 
+                  // TODO: Use homepage/item directly here. No need to have separate files for each entry
+                  // This should also fix the poison worms and in perpetuity backgrounds
                   return (
                     <div
                       key={id}
-                      className={`${gridSize} flex justify-center`}
+                      className="col-span-1 flex justify-center"
                     >
                       <Component {...attributes} />
                     </div>

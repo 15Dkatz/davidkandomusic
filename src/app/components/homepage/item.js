@@ -1,5 +1,4 @@
 import Link from 'next/link';
-
 import { Ranga } from 'next/font/google';
 
 const ranga = Ranga({
@@ -7,14 +6,14 @@ const ranga = Ranga({
   weight: ['700']
 });
 
-export default function About() {
+export default function Item({ text, href, background }) {
   return (
-    <Link href="/about">
+    <Link href={href}>
       <div
         className={
           "relative flex items-end " +
           "w-28 h-28 lg:w-40 lg:h-40 " +
-          "bg-[url('/about_b&w_500.png')] bg-contain " +
+          background + " " +
           "border-[2px] border-black"
         }
       >
@@ -25,7 +24,7 @@ export default function About() {
             "h-[22px] md:h-[40px]"
           }
         >
-          About David Kando
+          {text}
         </div>
       </div>
     </Link>

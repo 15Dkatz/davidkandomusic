@@ -1,5 +1,4 @@
 import Link from 'next/link';
-
 import PageLayout from '../components/pageLayout';
 
 // TODO: Why do the interpolated strings work in ${robotoCondensed.className} and not other examples, like inserting the background image value? Probably because it's parsed at build time through the next Class, but ${} is not supported since the value is not known at build time. But + '' + is?
