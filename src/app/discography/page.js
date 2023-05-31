@@ -35,78 +35,46 @@ export default function Discography() {
       <div className="p-2">
         {
           ALBUMS.map(({
-            title, date, blurb, albumImage, recordImage, spotifyLink, appleMusicLink, youtubeMusicLink
+            title, date, blurb, albumImage, recordHalfImage, spotifyLink, appleMusicLink, youtubeMusicLink
           }, i) => {
             const addMb = i < ALBUMS.length;
-            const additionalClassnames = addMb ? " mb-5 md:mb-10" : "";
-
-            const albumPane = (
-              <div className="w-[141px] h-[171px] md:w-[240px] md:h-[240px]">
-                <div
-                  className={
-                    "relative w-[140px] h-[140px] md:w-[240px] md:h-[240px] " +
-                    "border-black border-2"
-                  }
-                >
-                  <Image
-                    src={albumImage}
-                    alt="album image"
-                    fill
-                  />
-                </div>
-              </div>
-            );
-
-            const descriptionPane = (
-              <div className={
-                  "w-[141px] h-[171px] m-[4px] md:w-[240px] md:h-[240px] md:m-[10px] " +
-                  "flex flex-col items-center justify-center"
-                }
-              >
-                {/* show the full record UI here. Display none in mobile. */}
-                <div
-                  className={
-                    "relative block w-[60px] h-[60px] md:w-[120px] md:h-[120px] " +
-                    "mb-[10px]"
-                  }
-                >
-                  <Image
-                    src={recordImage}
-                    alt="record image"
-                    fill
-                  />
-                </div>
-                <div className="font-bold text-base md:text-lg text-left w-full">
-                  {title} <span className="text-[10px] md:text-[14px] text-slate-600">{date}</span>
-                </div>
-                <div className="text-justify text-xs md:text-base">
-                  {blurb}
-                </div>
-              </div>
-            );
-
-            const divider = (<div className="w-2 md:w-3" />);
+            const addedMb = addMb ? " mb-5 md:mb-10" : "";
 
             return (
-              <div key={title} className={"w-full bg-white p-1" + additionalClassnames}>
-                <div className="flex flex-row items-center justify-center w-[310px] md:w-[550px]">
-                  {
-                    i%2 === 0 ? (
-                      // LEFT oriented
-                      <>
-                        {albumPane}
-                        {divider}
-                        {descriptionPane}
-                      </>
-                    ) : (
-                      // RIGHT oriented
-                      <>
-                        {descriptionPane}
-                        {divider}
-                        {albumPane}
-                      </>
-                    )
-                  }
+              <div key={title} className={"w-full bg-white p-5 md:p-10" + addedMb}>
+                <div className="flex flex-row justify-center">
+                  <div
+                    className={
+                      "relative w-[180px] h-[180px] md:w-[280px] md:h-[280px] " +
+                      "border-black border-[2px]"
+                    }
+                  >
+                    <Image
+                      src={albumImage}
+                      alt="album image"
+                      fill
+                    />
+                  </div>
+                  <div
+                    className={
+                      "relative w-[90px] h-[180px] md:w-[140px] md:h-[280px]"
+                    }
+                  >
+                    <Image
+                      src={recordHalfImage}
+                      alt="album image"
+                      fill
+                    />
+                  </div>
+                </div>
+                <div className="mb-5 mt-5">
+                  <div className="font-bold text-base lg:text-xl text-left">
+                    {title}
+                  </div>
+                  <div className="text-justify lg:text-lg mb-1">{blurb}</div>
+                  <div className="text-sm text-slate-600">
+                    Release date: {date}
+                  </div>
                 </div>
                 <div className="md:m-2"></div>
                 <PlayRow title={'Spotify'} link={spotifyLink} iconImage='/spotify_icon_w500.png' />

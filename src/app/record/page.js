@@ -31,6 +31,7 @@ export default function Record() {
         </div>
       </div>
       <div className={"text-md lg:text-xl p-1"}>
+        {/* TODO: See if I can get Suspense and loading to work properly since the embeddedplayer sometimes takes a second to load. */}
         <EmbeddedPlayer />
       </div>
     </PageLayout>

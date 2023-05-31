@@ -77,9 +77,7 @@ const ITEMS = [
     id: 6,
     attributes: {
       href: "/studio",
-      // TODO: Change background to an image
-      // background: "bg-[url('/discography_400.png')] bg-contain",
-      background: "bg-slate-100",
+      background: "bg-[url('/studio_500.png')] bg-contain",
       text: "Recording Studio"
     }
   },

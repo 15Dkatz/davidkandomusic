@@ -12,7 +12,7 @@ const PoisonWormsEmbeddedPlayer = () => (
     height="352"
     allowFullScreen=""
     allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-    loading="lazy"
+    // loading="lazy"
   />
 );
 
@@ -23,7 +23,7 @@ const InPerpetuityEmbeddedPlayer = () => (
     height="352"
     allowFullScreen=""
     allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-    loading="lazy"
+    // loading="lazy"
   />
 );
 
@@ -35,6 +35,7 @@ export const ALBUMS_MAP = {
     blurb: 'A relaxed rock vibe. Listen closely for a wicked theme.',
     albumImage: '/poison_worms_1000.png',
     recordImage: '/poison_worms_record_full.png',
+    recordHalfImage: '/poison_worms_record_half.png',
     spotifyLink: 'https://open.spotify.com/track/7o1sArWvk2m61k6CuZKt93?si=f728d1ee64214102',
     appleMusicLink: 'https://music.apple.com/us/album/poison-worms/1689163166?i=1689163167',
     youtubeMusicLink: 'https://www.youtube.com/watch?v=Lqdxm7R23c4',
@@ -47,6 +48,7 @@ export const ALBUMS_MAP = {
     blurb: 'A smooth song for cruising and romance. "The road awaits".',
     albumImage: '/in_perpetuity_1000.png',
     recordImage: '/in_perpetuity_record_full.png',
+    recordHalfImage: '/in_perpetuity_record_half.png',
     spotifyLink: 'https://open.spotify.com/track/0Qer5Z5ut75UJevgRC8GIK?si=2444d5d5cdcc47f1',
     appleMusicLink: 'https://music.apple.com/us/album/in-perpetuity/1677926229?i=1677926230',
     youtubeMusicLink: 'https://www.youtube.com/watch?v=XhSBF2_iqL4',
