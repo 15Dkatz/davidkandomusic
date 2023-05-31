@@ -69,9 +69,7 @@ const ITEMS = [
     id: 5,
     attributes: {
       href: "/connect",
-      // TODO: Change background to an image
-      // background: "bg-[url('/discography_400.png')] bg-contain",
-      background: "bg-slate-100",
+      background: "bg-[url('/connect_500.png')] bg-contain",
       text: "Connect with me"
     }
   },
@@ -106,9 +104,8 @@ const ITEMS = [
     }
   }
 ];
+// TODO: In the future, with more songs, have a "load more" button that allows the user to see more than 8 items
 
-// TODO: Create a navbar that invites the user back home, and shows which page they're on
-// TODO: Navigation should only appear in nested pages. Perhaps I can achieve this with a simple Home button.
 export default function RootLayout({ children }) {
   return (
     <html>

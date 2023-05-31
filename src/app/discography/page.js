@@ -44,8 +44,8 @@ export default function Discography() {
               <div className="w-[141px] h-[171px] md:w-[240px] md:h-[240px]">
                 <div
                   className={
-                    "relative w-[130px] h-[130px] m-[4px] md:w-[240px] md:h-[240px] md:m-[10px] " +
-                    "border-black border-2 m-2"
+                    "relative w-[140px] h-[140px] md:w-[240px] md:h-[240px] " +
+                    "border-black border-2"
                   }
                 >
                   <Image
@@ -85,28 +85,30 @@ export default function Discography() {
               </div>
             );
 
+            const divider = (<div className="w-2 md:w-3" />);
+
             return (
-              <div key={title} className={"w-full rounded-sm bg-white p-1" + additionalClassnames}>
-                <div className="">
+              <div key={title} className={"w-full bg-white p-1" + additionalClassnames}>
+                <div className="flex flex-row items-center justify-center w-[310px] md:w-[550px]">
                   {
                     i%2 === 0 ? (
                       // LEFT oriented
-                      <div className="flex flex-row justify-center w-[310px] md:w-[550px]">
+                      <>
                         {albumPane}
-                        <div className="w-[10px]"></div>
+                        {divider}
                         {descriptionPane}
-                      </div>
+                      </>
                     ) : (
                       // RIGHT oriented
-                      <div className="flex flex-row justify-center w-[310px] md:w-[550px]">
+                      <>
                         {descriptionPane}
-                        <div className="w-[10px]"></div>
+                        {divider}
                         {albumPane}
-                      </div>
+                      </>
                     )
                   }
                 </div>
-                <div className="m-2"></div>
+                <div className="md:m-2"></div>
                 <PlayRow title={'Spotify'} link={spotifyLink} iconImage='/spotify_icon_w500.png' />
                 <PlayRow title={'Apple Music'} link={appleMusicLink} iconImage='/apple_music_icon_w500.png' />
                 <PlayRow title={'YouTube Music'} link={youtubeMusicLink} iconImage='/youtube_music_icon_w500.png' />
