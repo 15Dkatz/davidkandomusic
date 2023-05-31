@@ -2,6 +2,11 @@ import './globals.css'
 
 import { Roboto_Condensed } from 'next/font/google';
 
+import {
+  POISON_WORMS_PARAMS,
+  IN_PERPETUITY_PARAMS
+} from './album-data';
+
 const robotoCondensed = Roboto_Condensed({
   subsets: ['latin'],
   weight: '400'
@@ -13,13 +18,7 @@ const robotoCondensed = Roboto_Condensed({
 //   description: "Music for when you're just hanging around...",
 // };
 
-import About from './components/homepage/about';
-import Discography from './components/homepage/discography';
-import Record from './components/homepage/record';
-import Connect from './components/homepage/connect';
-import Studio from './components/homepage/studio';
-import Quiz from './components/homepage/quiz';
-import Swag from './components/homepage/swag';
+import Item from './components/homepage/item';
 
 import { Ranga } from 'next/font/google';
 
@@ -28,49 +27,83 @@ const ranga = Ranga({
   weight: ['700']
 });
 
+
+
 // TODO: Move to external file
 // TODO: May have no neeed for this once all the home-items are coded up.
 // Try merging this with item_type_settings. More elegant.
 const ITEMS = [
   {
     id: 1,
-    Component: About
+    attributes: {
+      href: '/about',
+      background: "bg-[url('/about_b&w_500.png')] bg-contain",
+      text: "About David Kando"
+    }
   },
   {
     id: 2,
-    Component: Discography
+    attributes: {
+      href: "/discography",
+      background: "bg-[url('/discography_400.png')] bg-contain",
+      text: "DISCOGRAPHY"
+    }
   },
   {
     id: 3,
-    Component: Record,
     attributes: {
-      title: 'Poison Worms',
-      albumImage: '/poison_worms_400.png'
+      href: `/record?${POISON_WORMS_PARAMS}`,
+      text: 'Poison Worms',
+      background: "bg-[url('/poison_worms_400.png')] bg-contain"
     }
   },
   {
     id: 4,
-    Component: Record,
     attributes: {
-      title: 'In Perpetuity',
-      albumImage: '/in_perpetuity_400.png'
+      href: `/record?${IN_PERPETUITY_PARAMS}`,
+      text: 'In Perpetuity',
+      background: "bg-[url('/in_perpetuity_400.png')] bg-contain"
     }
   },
   {
     id: 5,
-    Component: Connect
+    attributes: {
+      href: "/connect",
+      // TODO: Change background to an image
+      // background: "bg-[url('/discography_400.png')] bg-contain",
+      background: "bg-slate-100",
+      text: "Connect with me"
+    }
   },
   {
     id: 6,
-    Component: Studio
+    attributes: {
+      href: "/studio",
+      // TODO: Change background to an image
+      // background: "bg-[url('/discography_400.png')] bg-contain",
+      background: "bg-slate-100",
+      text: "Recording Studio"
+    }
   },
   {
     id: 7,
-    Component: Quiz
+    attributes: {
+      href: "/quiz",
+      // TODO: Change background to an image
+      // background: "bg-[url('/discography_400.png')] bg-contain",
+      background: "bg-slate-100",
+      text: "Playlist Personality Quiz"
+    }
   },
   {
     id: 8,
-    Component: Swag
+    attributes: {
+      href: "/swag",
+      // TODO: Change background to an image
+      // background: "bg-[url('/discography_400.png')] bg-contain",
+      background: "bg-slate-100",
+      text: "SWAG"
+    }
   }
 ];
 
@@ -83,7 +116,7 @@ export default function RootLayout({ children }) {
         <div className="w-[350px] md:w-[1000px] m-5 md:[m-10] flex flex-col items-center justify-center">
           <div
             className={
-              "w-full p-1 pb-10 pt-10 m-2 lg:p-10 lg:m-20 " +
+              "w-full p-1 pb-10 pt-10 m-2 lg:p-10 lg:m-20 lg:mb-2 " +
               "flex flex-col justify-center items-center " +
               "bg-slate-100"
             }
@@ -93,27 +126,19 @@ export default function RootLayout({ children }) {
                 DAVIDKANDOMUSIC
               </div>
             </div>
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-1 ml-10 mr-10">
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-1 ml-1 mr-1 lg:ml-10 lg:mr-10">
               {
                 ITEMS.map(item => {
-                  const { id, Component, attributes } = item;
-                  console.log(`id with Component`, id);
-
-                  // TODO: Use homepage/item directly here. No need to have separate files for each entry
-                  // This should also fix the poison worms and in perpetuity backgrounds
+                  const { id, attributes } = item;
                   return (
-                    <div
-                      key={id}
-                      className="col-span-1 flex justify-center"
-                    >
-                      <Component {...attributes} />
+                    <div key={id} className="flex justify-center">
+                      <Item {...attributes}/>
                     </div>
                   )
                 })
               }
             </div>
           </div>
-          {/* Render the pages below as children */}
           {children}
         </div>
       </body>

@@ -12,7 +12,7 @@ export default function Item({ text, href, background }) {
       <div
         className={
           "relative flex items-end " +
-          "w-28 h-28 lg:w-40 lg:h-40 " +
+          "w-36 h-36 lg:w-52 lg:h-52 " +
           background + " " +
           "border-[2px] border-black"
         }

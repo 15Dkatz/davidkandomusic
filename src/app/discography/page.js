@@ -1,44 +1,7 @@
 import Image from 'next/image';
 
 import PageLayout from '../components/pageLayout';
-
-// `by` will differentiate between David Kando, Curcio, and others I collaborate with
-const ALBUMS = [
-  {
-    title: 'Poison Worms',
-    date: '5/24/23',
-    by: 'David Kando',
-    blurb: 'A relaxed rock vibe. Listen more closely for a wicked theme.',
-    albumImage: '/poison_worms_1000.png',
-    recordImage: '/poison_worms_record_full.png',
-    spotifyLink: 'https://open.spotify.com/track/7o1sArWvk2m61k6CuZKt93?si=f728d1ee64214102',
-    appleMusicLink: 'https://music.apple.com/us/album/poison-worms/1689163166?i=1689163167',
-    youtubeMusicLink: 'https://www.youtube.com/watch?v=Lqdxm7R23c4'
-  },
-  {
-    title: 'In Perpetuity',
-    date: '3/18/23',
-    by: 'David Kando',
-    blurb: 'A smooth song for cruising and romance. "The road awaits".',
-    albumImage: '/in_perpetuity_1000.png',
-    recordImage: '/in_perpetuity_record_full.png',
-    spotifyLink: 'https://open.spotify.com/track/0Qer5Z5ut75UJevgRC8GIK?si=2444d5d5cdcc47f1',
-    appleMusicLink: 'https://music.apple.com/us/album/in-perpetuity/1677926229?i=1677926230',
-    youtubeMusicLink: 'https://www.youtube.com/watch?v=XhSBF2_iqL4'
-  }
-];
-
-// {/* Play Poison Worms */}
-// {/* TODO: Consider launching this on click of the record. Or have it display beneath the large davidkandomusic text */}
-// {/* TODO: Figure out if there's autoply. If so, have it display and play automatically on the click of a record. */}
-// {/* <iframe
-//   // style="border-radius:12px"
-//   src="https://open.spotify.com/embed/track/7o1sArWvk2m61k6CuZKt93?utm_source=generator"
-//   width="100%"
-//   height="152"
-//   allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-//   loading="lazy"
-// /> */}
+import { ALBUMS } from '../album-data';
 
 function PlayRow({ title, link, iconImage }) {
   return (

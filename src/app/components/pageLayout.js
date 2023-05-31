@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import { Ranga } from 'next/font/google'
 
 const ranga = Ranga({
@@ -6,7 +5,8 @@ const ranga = Ranga({
   weight: '700'
 });
 
-// TODO: Consider subtle linear gradient
+// TODO: Make the <loading> the bg-slate-100 since it's slow to load sometimes. Can even put a skeleton row.
+// TODO: Research Suspense and React 18 features. Good opportunity to use React 18.
 export default function PageLayout({ children, background, title }) {
   const bg = background ? background + " " : "bg-slate-100 ";
   const titleToDisplay = title ? title : 'Example';
