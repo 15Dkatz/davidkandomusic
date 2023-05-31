@@ -8,7 +8,7 @@ function PlayRow({ title, link, iconImage }) {
     <a
       className={
         "flex flex-row justify-center " +
-        "p-3 text-lg md:text-xl " +
+        "p-3 text-md md:text-xl " +
         "hover:bg-sky-100 " +
         "border-t-2 border-slate-100"
       }
