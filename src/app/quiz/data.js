@@ -3,7 +3,9 @@ export const ROCKER = 'ROCKER';
 export const ROMANTIC = 'ROMANTIC';
 export const THINKER = 'THINKER';
 
-export const PREMISE = `Suddenly the sky cracks with a flash. A winged figure descends upon you. The figure introduces himself, "How's it hanging? I'm the Angel of Music. I have five questions for you. Complete them, and I'll give you a reward."`;
+export const VALID_SELECTIONS = [CRUISER, ROCKER, ROMANTIC, THINKER];
+
+export const PREMISE = `Suddenly the sky cracks with a flash. A winged figure descends upon you. The figure introduces himself, "Greetings mortal, I'm the Angel of Music. I have five questions for you. Complete them, and I'll give you a reward."`;
 
 export const QUESTIONS = [
   {
@@ -158,28 +160,64 @@ export const QUESTIONS = [
   }
 ];
 
-export const CONCLUSION_PART_1 = `The Angel of Music cracks a smile, satisfied with your answers. "I dig your vibe." he says. "I made this playlist that I think represents you well. This is my gift to you."`
+export const CONCLUSION_PART_1 = `The Angel of Music smiles and says:`
 
 export const RESULT_MAP = {
   [CRUISER]: {
-    blurb: 'Your musical personality is like a smooth cruise down the coastal highway. Your songs are those that capture the sweet feeling of an uninhibited spirit.',
-    playlistLink: 'https://open.spotify.com/playlist/29ngmUyX5axVriFSTyQy7R?si=825d1a826a5049c2'
+    blurb: 'Your musical personality is like a smooth cruise down the coastal highway. Your songs capture the sweet feeling of an uninhibited spirit.',
+    embeddedPlaylist: (
+      <iframe
+        src="https://open.spotify.com/embed/playlist/29ngmUyX5axVriFSTyQy7R?utm_source=generator"
+        width="100%"
+        height="352"
+        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+      />
+    )
   },
   [ROCKER]: {
     blurb: 'Your musical personality is relentless and invigorating, like the energy from hair-rising guitar amps. The sound of your songs crash and screech with a beautiful brand of chaotic musicality.',
-    playlistLink: 'https://open.spotify.com/playlist/1njREE782p2UmiVsuKQBu3?si=b57a0e3e7ce84849'
+    embeddedPlaylist: (
+      <iframe
+        src="https://open.spotify.com/embed/playlist/1njREE782p2UmiVsuKQBu3?utm_source=generator"
+        width="100%"
+        height="352"
+        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+      />
+    )
   },
   [ROMANTIC]: {
-    blurb: `Your musical personality is warm and buttery. Listening to your music is like drinking the foam heart on a latte. Or it's like a passionate embrace amidst an evening's candlelight.`,
-    playlistLink: 'https://open.spotify.com/playlist/3TMHZHFF7hlQbFYCWqbHrt?si=ceaff9f649ba4983'
+    blurb: `Your musical personality is warm and buttery. When you listen to your music, it's like drinking the foam on a warm latte. Or it can be like a passionate embrace amidst an evening's candlelight.`,
+    embeddedPlaylist: (
+      <iframe
+        src="https://open.spotify.com/embed/playlist/3TMHZHFF7hlQbFYCWqbHrt?utm_source=generator"
+        width="100%"
+        height="352"
+        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+      />
+    )
   },
   [THINKER]: {
-    blurb: 'Your musical aura is that of wit and discovery. Your songs traverse the world of ideas, as thought-provoking compositions and meaningful lyrics engage your curious mind.',
-    playlistLink: 'https://open.spotify.com/playlist/01vuz1uxoDgn1FpJ5bvYtS?si=7f0cde01cc154252'
+    blurb: 'Your musical personality consists of wit and discovery. Your songs traverse the world of ideas. Your curious mind craves the sound of thought-provoking compositions and challenge of meaningful lyrics.',
+    embeddedPlaylist: (
+      <iframe
+        src="https://open.spotify.com/embed/playlist/01vuz1uxoDgn1FpJ5bvYtS?utm_source=generator"
+        width="100%"
+        height="352"
+        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+      />
+    )
   }
 };
 
-export const CONCLUSION_PART_2 = `Once again, the sky cracks with a flash. The Angel of Music begins to ascend, "Until we meet again. Hope you enjoy the playlist. Oh, and don't forget to follow my favorite artist on Spotify: David Kando. For real, that guy can do music."`;
+export const CONCLUSION_PART_2 = "Here is a playlist that matches your personality.";
+
+export const CONCLUSION_PART_3 = (
+  <div>
+    Once again, the sky cracks with a flash. The Angel of Music begins to ascend, "Until we meet again. Hope you enjoy the playlist. Oh, and one more thing: don't forget to{' '}
+    <a href="https://open.spotify.com/artist/6ep6Hvwexmaa5IqcPxMxqC?si=qY9-ObwmQzikC-T7mB-WGw" target="_blank" className="text-blue-800 underline">support and follow my favorite mortal artist on Spotify: David Kando.</a>"
+  </div>
+);
+
 
 // If there is a tie (2-2-1), then choose a random one from the selections with 2 tallies.
 // selections should be a map like so:
@@ -190,14 +228,14 @@ export const CONCLUSION_PART_2 = `Once again, the sky cracks with a flash. The A
 //   [THINKER]: numVotes
 // }
 // returns the type, such as CRUISER or ROCKER
-export const getQuizResult = ({ resultMap }) => {
+export const getQuizResult = ({ selectionMap }) => {
   // 1: find the max
-  const max = Math.max(...Object.values(resultMap));
+  const max = Math.max(...Object.values(selectionMap));
 
   // 2: filter the list down to selections that match the max (go directly to the keys, since those are the types)
   const filteredKeys = Object.keys(
     Object.fromEntries(
-      Object.entries(resultMap).filter(([_, numVotes]) => numVotes === max)
+      Object.entries(selectionMap).filter(([_, numVotes]) => numVotes === max)
     )
   );
 
@@ -207,7 +245,7 @@ export const getQuizResult = ({ resultMap }) => {
 
 // Uncomment for tests
 // const test1 = getQuizResult({
-//   resultMap: {
+//   selectionMap: {
 //     [CRUISER]: 1,
 //     [ROCKER]: 1,
 //     [ROMANTIC]: 1,
@@ -217,7 +255,7 @@ export const getQuizResult = ({ resultMap }) => {
 // console.log(`test1`, test1);
 
 // const test2 = getQuizResult({
-//   resultMap: {
+//   selectionMap: {
 //     [CRUISER]: 1,
 //     [ROCKER]: 2,
 //     [ROMANTIC]: 0,
@@ -227,7 +265,7 @@ export const getQuizResult = ({ resultMap }) => {
 // console.log(`test2`, test2);
 
 // const test3 = getQuizResult({
-//   resultMap: {
+//   selectionMap: {
 //     [CRUISER]: 1,
 //     [ROCKER]: 3,
 //     [ROMANTIC]: 0,
@@ -237,7 +275,7 @@ export const getQuizResult = ({ resultMap }) => {
 // console.log(`test3`, test3);
 
 // const test4 = getQuizResult({
-//   resultMap: {
+//   selectionMap: {
 //     [CRUISER]: 5,
 //     [ROCKER]: 0,
 //     [ROMANTIC]: 0,

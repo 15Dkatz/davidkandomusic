@@ -27,8 +27,6 @@ const ranga = Ranga({
   weight: ['700']
 });
 
-
-
 // TODO: Move to external file
 // TODO: May have no neeed for this once all the home-items are coded up.
 // Try merging this with item_type_settings. More elegant.
@@ -85,9 +83,7 @@ const ITEMS = [
     id: 7,
     attributes: {
       href: "/quiz",
-      // TODO: Change background to an image
-      // background: "bg-[url('/discography_400.png')] bg-contain",
-      background: "bg-slate-100",
+      background: "bg-[url('/quiz_500.png')] bg-contain",
       text: "Playlist Personality Quiz"
     }
   },

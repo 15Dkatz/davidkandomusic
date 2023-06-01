@@ -10,9 +10,7 @@ const PoisonWormsEmbeddedPlayer = () => (
     src="https://open.spotify.com/embed/track/7o1sArWvk2m61k6CuZKt93?utm_source=generator"
     width="100%"
     height="352"
-    allowFullScreen=""
     allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-    // loading="lazy"
   />
 );
 
@@ -21,9 +19,7 @@ const InPerpetuityEmbeddedPlayer = () => (
     src="https://open.spotify.com/embed/track/0Qer5Z5ut75UJevgRC8GIK?utm_source=generator"
     width="100%"
     height="352"
-    allowFullScreen=""
     allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-    // loading="lazy"
   />
 );
 
