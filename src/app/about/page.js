@@ -8,7 +8,7 @@ export default function Page() {
   // TODO: delete either op_90 or op_75 depending on which is more legible against white text
   return (
     <PageLayout
-      background="bg-[url('/goofy_bg_500_op_80.png')]"
+      background="bg-[url('/goofy_bg_500_op_80.png')] bg-contain"
       title="About David Kando"
     >
       <div className={"text-md lg:text-xl p-1"}>

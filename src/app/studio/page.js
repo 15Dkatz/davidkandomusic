@@ -16,7 +16,7 @@ export default function Studio() {
         </div>
         <br />
         <div>
-          The studio's collection consists of a handful of studio-grade microphones, preamps, hardware compressors, and more. A more detailed list of gear will be provided over email.
+          The studio's collection consists of a handful of studio-grade microphones, preamps, hardware compressors, and more. A more detailed list of gear can be provided over email.
         </div>
         <br />
         <div>
