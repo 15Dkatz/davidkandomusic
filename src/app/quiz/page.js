@@ -48,7 +48,7 @@ function QuizForm() {
               }
               <div className="text-center">
                 <button
-                  className="rounded-none bg-blue-700 text-white p-2 mt-5"
+                  className="rounded-none bg-blue-700 text-white p-2 mt-8"
                   // then useSearchParams to get the result.
                 >
                   Submit and get my gift
@@ -138,7 +138,7 @@ export default function Quiz() {
       title="Playlist Personality Quiz"
     >
       <div className={"text-md lg:text-xl p-1 m-1"}>
-        <div className="mt-2 md:mt-10">
+        <div className="mt-2">
           {
             displayQuiz ? (
               <QuizForm />
@@ -147,6 +147,8 @@ export default function Quiz() {
             )
           }
           {
+            // TODO: Move the results to their own component
+            // TODO: Create a "Save this playlist" link
             displayResult ? (
               <div ref={resultsRef}>
                 <div>
