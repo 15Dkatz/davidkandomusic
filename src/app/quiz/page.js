@@ -32,7 +32,7 @@ function QuizForm() {
                   ({ id: questionId, question, answers }) => (
                     <div className="mt-5" key={questionId}>
                       <fieldset>
-                        <legend>{questionId}: {question}</legend>
+                        <legend>{questionId}{')'} {question}</legend>
                         {
                           answers.map(({ id: answerId, answer, type }) => (
                             <div key={answerId}>
@@ -67,6 +67,51 @@ function QuizForm() {
           </div>
         )
       }
+    </div>
+  )
+}
+
+function Results({ resultsRef, resultData }) {
+  return (
+    <div ref={resultsRef}>
+      <div>
+        {CONCLUSION_PART_1}
+      </div>
+      <div className="font-bold">
+        <div>
+          """
+        </div>
+        <div>
+          {resultData ? resultData.blurb : ''} {CONCLUSION_PART_2}
+        </div>
+        <div>
+          """
+        </div>
+      </div>
+      <br />
+      {
+        resultData ? (
+          <>
+            {resultData.embeddedPlaylist}
+            <br />
+            <div className="text-center">
+              <a
+                href={resultData.playlistLink}
+                target="_blank"
+                className="underline text-blue-800"
+              >
+                Save this playlist
+              </a>
+            </div>
+            <br />
+          </>
+        ) : (
+          <></>
+        )
+      }
+      <div>
+        {CONCLUSION_PART_3}
+      </div>
     </div>
   )
 }
@@ -132,8 +177,6 @@ export default function Quiz() {
 
   return (
     <PageLayout
-      // TODO: Consider a linear gradient or image background
-      // background="bg-[url('/goofy_bg_500_op_80.png')] bg-contain"
       background="bg-gradient-to-b from-slate-100 to-purple-50"
       title="Playlist Personality Quiz"
     >
@@ -147,31 +190,8 @@ export default function Quiz() {
             )
           }
           {
-            // TODO: Move the results to their own component
-            // TODO: Create a "Save this playlist" link
             displayResult ? (
-              <div ref={resultsRef}>
-                <div>
-                  {CONCLUSION_PART_1}
-                </div>
-                <div className="font-bold">
-                  <div>
-                    """
-                  </div>
-                  <div>
-                    {resultData ? resultData.blurb : ''} {CONCLUSION_PART_2}
-                  </div>
-                  <div>
-                    """
-                  </div>
-                </div>
-                <br />
-                {resultData ? resultData.embeddedPlaylist : <></>}
-                <br />
-                <div>
-                  {CONCLUSION_PART_3}
-                </div>
-              </div>
+              <Results resultsRef={resultsRef} resultData={resultData} />
             ) : (
               displayTryAgain ? (
                 <div>
