@@ -18,6 +18,8 @@ const robotoCondensed = Roboto_Condensed({
 //   description: "Music for when you're just hanging around...",
 // };
 
+// Refactor all links to use a shared className that I define in globals css
+
 import Item from './components/homepage/item';
 
 import { Ranga } from 'next/font/google';
@@ -90,11 +92,11 @@ const ITEMS = [
   {
     id: 8,
     attributes: {
-      href: "/swag",
+      href: "/band",
       // TODO: Change background to an image
       // background: "bg-[url('/discography_400.png')] bg-contain",
       background: "bg-slate-100",
-      text: "SWAG"
+      text: "CURCIO BAND"
     }
   }
 ];
