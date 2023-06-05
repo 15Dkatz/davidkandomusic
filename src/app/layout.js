@@ -46,7 +46,7 @@ const ITEMS = [
     attributes: {
       href: "/discography",
       background: "bg-[url('/discography_400.png')] bg-contain",
-      text: "DISCOGRAPHY"
+      text: "Discography"
     }
   },
   {
