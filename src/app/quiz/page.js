@@ -15,6 +15,7 @@ import {
   getQuizResult
 } from './data';
 
+// TODO: Move to their own component files within this relative directory
 function QuizForm() {
   const [displayForm, setDisplayForm] = useState(false);
 
@@ -116,7 +117,6 @@ function Results({ resultsRef, resultData }) {
   )
 }
 
-
 export default function Quiz() {
   const [resultData, setResultData] = useState(null);
   const [displayResult, setDisplayResult] = useState(false);
@@ -132,11 +132,8 @@ export default function Quiz() {
       setDisplayQuiz(true);
       setDisplayTryAgain(false);
     } else {
-      // TODO: If malformed params, set displayResults to false manually to start over
       // split params by &, and grab the values after the = sign
       const gatheredSelections = params.split('&').map(param => param.match(/=(.*)/)[1]);
-
-      // console.log(`gatheredSelections`, gatheredSelections);
 
       if (!gatheredSelections.every(selection => VALID_SELECTIONS.includes(selection))) {
         setDisplayTryAgain(true);
@@ -169,7 +166,7 @@ export default function Quiz() {
     return (() => {
       setDisplayResult(false);
     });
-  }, [setResultData, setDisplayQuiz, displayResult, params, resultsRef.current, setDisplayTryAgain, setDisplayResult]);
+  }, [params, setResultData, setDisplayQuiz, displayResult, resultsRef.current, setDisplayTryAgain, setDisplayResult]);
 
   const tryAgain = () => {
     router.push('/quiz');
