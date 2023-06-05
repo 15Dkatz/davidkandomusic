@@ -6,9 +6,11 @@ const ranga = Ranga({
   weight: ['700']
 });
 
-export default function Item({ text, href, background }) {
+export default function Item({ text, href, background, navigate }) {
+  const push = () => navigate(href);
+
   return (
-    <Link href={href}>
+    <div onClick={push} className="cursor-pointer">
       <div
         className={
           "relative flex items-end " +
@@ -27,6 +29,6 @@ export default function Item({ text, href, background }) {
           {text}
         </div>
       </div>
-    </Link>
+    </div>
   );
 };

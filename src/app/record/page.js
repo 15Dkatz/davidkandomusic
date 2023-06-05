@@ -16,12 +16,12 @@ export default function Record() {
     ? PARAMS_ALBUM_MAP[params]
     : PARAMS_ALBUM_MAP[POISON_WORMS_PARAMS]; // backup, show poison worms by default. An error would also work
 
-  const { date, title, blurb, EmbeddedPlayer } = content;
+  const { date, title, blurb, EmbeddedPlayer, pageBackground } = content;
 
   return (
     <PageLayout
       // TODO: Consider a linear gradient or image background
-      // background="bg-[url('/goofy_bg_500_op_80.png')]"
+      background={pageBackground}
       title={`Hot off the press: ${title}`}
     >
       <div className="m-5 mt-0">
