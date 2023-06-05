@@ -1,12 +1,19 @@
 'use client';
 
+import { Ranga } from 'next/font/google';
+
 import PageLayout from '../components/pageLayout';
 import { HIGHLIGHTS } from './data';
+
+const ranga = Ranga({
+  subsets: ['latin'],
+  weight: ['700']
+});
 
 export default function Band() {
   return (
     <PageLayout
-      background="bg-gradient-to-b from-slate-100 to-pink-50"
+      background="bg-[url('/curcio_banner.png')] bg-contain"
       title="Enter the Curcio-verse"
     >
       <div className={"text-md lg:text-xl p-1"}>
@@ -25,17 +32,36 @@ export default function Band() {
         <div>Performance highlights:</div>
         <div className="grid grid-cols-1 md:grid-cols-2">
           {
-            HIGHLIGHTS.map(({ id, title, date, embeddedPost }) => (
-              <div key={id} className="flex flex-col items-center bg-white m-2 p-2">
-                <div className="font-bold text-base lg:text-lg mt-5">
-                  {title}
+            HIGHLIGHTS.map(({ id, title, date, background, tiktokLink }) => (
+              <div key={id} className="flex flex-col items-center bg-white/80 m-2 p-2 pb-10">
+                <div className="m-5">
+                  <div className="font-bold text-base lg:text-lg">
+                    {title}
+                  </div>
+                  <div className="text-sm text-slate-600">
+                    Performance date: {date}
+                  </div>
                 </div>
-                <div className="text-sm text-slate-600">
-                  Performance date: {date}
-                </div>
-                <div className="scale-[.9]">
-                  {embeddedPost}
-                </div>
+                <a href={tiktokLink} target="_blank">
+                  <div
+                    className={
+                      "relative flex items-end " +
+                      "w-[250px] h-[136.5px] md:w-[350px] md:h-[192.5px] " +
+                      background + " " +
+                      "border-[2px] border-black"
+                    }
+                  >
+                    <div
+                      className={
+                        `${ranga.className} text-blue-950 hover:text-white text-sm md:text-2xl ` +
+                        "pt-1 pb-1 mb-2 bg-slate-200/75 hover:bg-slate-700/75 w-full text-center " +
+                        "h-[22px] md:h-[40px]"
+                      }
+                    >
+                      See the Highlights
+                    </div>
+                  </div>
+                </a>
               </div>
             ))
           }

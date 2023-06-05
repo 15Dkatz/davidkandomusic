@@ -94,8 +94,7 @@ const ITEMS = [
     attributes: {
       href: "/band",
       // TODO: Change background to an image
-      // background: "bg-[url('/discography_400.png')] bg-contain",
-      background: "bg-slate-100",
+      background: "bg-[url('/curcio_500.png')] bg-contain",
       text: "CURCIO BAND"
     }
   }
