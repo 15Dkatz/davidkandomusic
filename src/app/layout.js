@@ -115,7 +115,7 @@ export default function RootLayout({ children }) {
           >
             <div className="flex justify-center mb-5 lg:mb-10">
               <div className={`${ranga.className} text-2xl lg:text-4xl underline underline-offset-1 decoration-4 decoration-blue-400`}>
-                DAVIDKANDOMUSIC
+                DAVID KANDO MUSIC
               </div>
             </div>
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-1 ml-1 mr-1 lg:ml-10 lg:mr-10">
