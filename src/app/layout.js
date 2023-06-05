@@ -1,11 +1,12 @@
+'use client';
+
 import './globals.css'
 
+import { useTransition } from 'react';
+import { useRouter } from 'next/navigation';
 import { Roboto_Condensed } from 'next/font/google';
-
-import {
-  POISON_WORMS_PARAMS,
-  IN_PERPETUITY_PARAMS
-} from './album-data';
+import { POISON_WORMS_PARAMS, IN_PERPETUITY_PARAMS } from './album-data';
+import PageContext from './page-context';
 
 const robotoCondensed = Roboto_Condensed({
   subsets: ['latin'],
@@ -30,7 +31,6 @@ const ranga = Ranga({
 });
 
 // TODO: Move to external file
-// TODO: May have no neeed for this once all the home-items are coded up.
 // Try merging this with item_type_settings. More elegant.
 const ITEMS = [
   {
@@ -102,6 +102,15 @@ const ITEMS = [
 // TODO: In the future, with more songs, have a "load more" button that allows the user to see more than 8 items
 
 export default function RootLayout({ children }) {
+  const router = useRouter();
+  const [isPending, startTransition] = useTransition();
+
+  function navigate(path) {
+    startTransition(() => {
+      router.push(path);
+    });
+  }
+
   return (
     <html>
       <body className={`${robotoCondensed.className} flex justify-center min-h-screen`}>
@@ -122,16 +131,20 @@ export default function RootLayout({ children }) {
               {
                 ITEMS.map(item => {
                   const { id, attributes } = item;
+                  const props = { navigate, ...attributes };
+
                   return (
                     <div key={id} className="flex justify-center">
-                      <Item {...attributes}/>
+                      <Item {...attributes} />
                     </div>
                   )
                 })
               }
             </div>
           </div>
-          {children}
+          <PageContext.Provider value={{ isPending, navigate }}>
+            {children}
+          </PageContext.Provider>
         </div>
       </body>
     </html>
