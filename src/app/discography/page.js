@@ -1,7 +1,7 @@
 import Image from 'next/image';
 
 import PageLayout from '../components/pageLayout';
-import { ALBUMS } from '../record/data';
+import { RECORDS } from '../record/data';
 
 function PlayRow({ title, link, iconImage }) {
   return (
@@ -34,10 +34,10 @@ export default function Discography() {
     >
       <div className="p-2">
         {
-          ALBUMS.map(({
+          RECORDS.map(({
             title, date, blurb, albumImage, recordHalfImage, spotifyLink, appleMusicLink, youtubeMusicLink
           }, i) => {
-            const addMb = i < ALBUMS.length;
+            const addMb = i < RECORDS.length;
             const addedMb = addMb ? " mb-5 md:mb-10" : "";
 
             return (

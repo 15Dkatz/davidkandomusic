@@ -12,7 +12,7 @@ const rangaBold = localFont({
 });
 
 // TODO: In the future, with more songs, have a "load more" button that allows the user to see more than 8 items
-export default function Root({ children }) {
+export default function RootLayout({ children }) {
   const router = useRouter();
   // const searchParams = useSearchParams();
   const [isPending, startTransition] = useTransition();
