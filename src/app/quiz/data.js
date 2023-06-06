@@ -1,8 +1,14 @@
+import { lazy } from 'react';
+
+const CruiserLazyEmbed = lazy(() => import('./result/cruiser-embed'));
+const RockerLazyEmbed = lazy(() => import('./result/rocker-embed'));
+const RomanticLazyEmbed = lazy(() => import('./result/romantic-embed'));
+const ThinkerLazyEmbed = lazy(() => import('./result/thinker-embed'));
+
 export const CRUISER = 'CRUISER';
 export const ROCKER = 'ROCKER';
 export const ROMANTIC = 'ROMANTIC';
 export const THINKER = 'THINKER';
-
 export const VALID_SELECTIONS = [CRUISER, ROCKER, ROMANTIC, THINKER];
 
 export const PREMISE = `Suddenly the sky cracks with a flash. A winged figure descends upon you. The figure introduces himself, "Greetings mortal, I'm the Angel of Music. I have five questions for you. Complete them, and I'll give you a reward."`;
@@ -165,50 +171,22 @@ export const CONCLUSION_PART_1 = `The Angel of Music smiles and says:`
 export const RESULT_MAP = {
   [CRUISER]: {
     blurb: 'Your musical personality is like a smooth cruise down the coastal highway. Your songs capture the sweet feeling of an uninhibited spirit.',
-    embeddedPlaylist: (
-      <iframe
-        src="https://open.spotify.com/embed/playlist/29ngmUyX5axVriFSTyQy7R?utm_source=generator"
-        width="100%"
-        height="352"
-        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-      />
-    ),
+    LazyEmbed: CruiserLazyEmbed,
     playlistLink: 'https://open.spotify.com/playlist/29ngmUyX5axVriFSTyQy7R?si=bd389a57586b4a92'
   },
   [ROCKER]: {
     blurb: 'Your musical personality is relentless and invigorating, like the energy from hair-rising guitar amps. The sound of your songs crash and screech with a beautiful brand of chaotic musicality.',
-    embeddedPlaylist: (
-      <iframe
-        src="https://open.spotify.com/embed/playlist/1njREE782p2UmiVsuKQBu3?utm_source=generator"
-        width="100%"
-        height="352"
-        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-      />
-    ),
+    LazyEmbed: RockerLazyEmbed,
     playlistLink: 'https://open.spotify.com/playlist/1njREE782p2UmiVsuKQBu3?si=f87ff77aec36484c'
   },
   [ROMANTIC]: {
     blurb: `Your musical personality is warm and buttery. When you listen to your music, it's like drinking the foam on a warm latte. Or it can be like a passionate embrace amidst an evening's candlelight.`,
-    embeddedPlaylist: (
-      <iframe
-        src="https://open.spotify.com/embed/playlist/3TMHZHFF7hlQbFYCWqbHrt?utm_source=generator"
-        width="100%"
-        height="352"
-        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-      />
-    ),
+    LazyEmbed: RomanticLazyEmbed,
     playlistLink: 'https://open.spotify.com/playlist/3TMHZHFF7hlQbFYCWqbHrt?si=04de917f8c6d4c2a'
   },
   [THINKER]: {
     blurb: 'Your musical personality consists of wit and discovery. Your songs traverse the world of ideas. Your curious mind craves the sound of thought-provoking compositions and challenge of meaningful lyrics.',
-    embeddedPlaylist: (
-      <iframe
-        src="https://open.spotify.com/embed/playlist/01vuz1uxoDgn1FpJ5bvYtS?utm_source=generator"
-        width="100%"
-        height="352"
-        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-      />
-    ),
+    LazyEmbed: ThinkerLazyEmbed,
     playlistLink: 'https://open.spotify.com/playlist/01vuz1uxoDgn1FpJ5bvYtS?si=eb184710c18d4b7a'
   }
 };

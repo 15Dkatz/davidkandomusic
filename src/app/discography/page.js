@@ -1,7 +1,7 @@
 import Image from 'next/image';
 
 import PageLayout from '../components/pageLayout';
-import { ALBUMS } from '../album-data';
+import { ALBUMS } from '../record/data';
 
 function PlayRow({ title, link, iconImage }) {
   return (

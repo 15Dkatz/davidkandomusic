@@ -1,4 +1,4 @@
-import { POISON_WORMS_PARAMS, IN_PERPETUITY_PARAMS } from './album-data';
+import { POISON_WORMS_PARAMS, IN_PERPETUITY_PARAMS } from './record/data';
 
 // Try merging this with item_type_settings. More elegant.
 const ITEMS = [

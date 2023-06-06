@@ -11,7 +11,6 @@ const rangaBold = localFont({
   src: '../fonts/Ranga-Bold.ttf'
 });
 
-// Refactor all links to use a shared className that I define in globals css
 // TODO: In the future, with more songs, have a "load more" button that allows the user to see more than 8 items
 export default function Root({ children }) {
   const router = useRouter();
