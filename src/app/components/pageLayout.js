@@ -60,9 +60,9 @@ export default function PageLayout({ children, background, title }) {
         <div className="animate-pulse w-full flex flex-col items-center">
           <div className="rounded bg-slate-300 w-5/12 h-9 mb-5" />
           <div className="flex flex-col w-9/12 items-start">
-            <div className="rounded bg-slate-300 w-8/12 h-5 mt-4" />
-            <div className="rounded bg-slate-300 w-5/12 h-5 mt-4" />
-            <div className="rounded bg-slate-300 w-5/12 h-5 mt-4" />
+            <div className="rounded bg-slate-300 w-8/12 h-4 md:h-5 mt-4" />
+            <div className="rounded bg-slate-300 w-5/12 h-4 md:h-5 mt-4" />
+            <div className="rounded bg-slate-300 w-5/12 h-4 md:h-5 mt-4" />
           </div>
         </div>
       </div>
