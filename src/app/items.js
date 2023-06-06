@@ -53,7 +53,7 @@ const ITEMS = [
   {
     id: 7,
     attributes: {
-      href: "/quiz",
+      href: "/quiz/form",
       background: "bg-[url('/quiz_500.png')] bg-contain",
       text: "Playlist Personality Quiz"
     }

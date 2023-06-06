@@ -6,43 +6,22 @@ import Script from 'next/script';
 
 import PageLayout from '../components/pageLayout';
 import { POISON_WORMS_PARAMS, PARAMS_ALBUM_MAP } from '../album-data';
+import { useDisplayIframeLoader } from '../hooks';
 
 // In course, show the window.onSpotifyAPI solution. Encourage students to try
 // Her
 export default function Record() {
-  const [isLoading, setIsLoading] = useState(false);
   const iframeWrapperRef = useRef();
   const searchParams = useSearchParams();
+  const isLoading = useDisplayIframeLoader(iframeWrapperRef);
   const params = searchParams.toString();
 
+  // TODO: Redirect to 404 in default state instead of the backup.
   const content = PARAMS_ALBUM_MAP[params] && Object.entries(PARAMS_ALBUM_MAP[params]).length > 0
     ? PARAMS_ALBUM_MAP[params]
     : PARAMS_ALBUM_MAP[POISON_WORMS_PARAMS]; // backup, show poison worms by default. An error would also work
 
   const { date, title, blurb, pageBackground, EmbeddedPlayer } = content;
-
-  // ping for iframe
-  useEffect(() => {
-    let locateIframeInterval;
-
-    locateIframeInterval = setInterval(() => {
-      console.log(`iframeWrapperRef.current`, iframeWrapperRef.current);
-      console.log(`iframeWrapperRef.current.children`, iframeWrapperRef.current.children);
-
-      if (
-        iframeWrapperRef.current
-        && iframeWrapperRef.current.children
-        && iframeWrapperRef.current.children[0].nodeName === 'IFRAME'
-      ) {
-        clearInterval(locateIframeInterval);
-        setIsLoading(false);
-      }
-    }, 200);
-
-    return (() => {
-      clearInterval(locateIframeInterval);
-    });
-  }, [iframeWrapperRef.current, setIsLoading]);
 
   return (
     <PageLayout

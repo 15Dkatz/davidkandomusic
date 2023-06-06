@@ -2,86 +2,26 @@
 
 import { useState, useRef, useEffect } from 'react';
 import { useSearchParams, useRouter } from 'next/navigation';
-import { useDisplayIframeLoader } from '../hooks';
+import { useDisplayIframeLoader } from '../../hooks';
 
-import PageLayout from '../components/pageLayout';
 import {
-  PREMISE,
-  QUESTIONS,
   RESULT_MAP,
   VALID_SELECTIONS,
   CONCLUSION_PART_1,
   CONCLUSION_PART_2,
   CONCLUSION_PART_3,
   getQuizResult
-} from './data';
+} from '../data';
 
-// TODO: Move to their own component files within this relative directory
-function QuizForm() {
-  const [displayForm, setDisplayForm] = useState(false);
-
-  const toggleDisplayForm = () => setDisplayForm(!displayForm);
-
-  return (
-    <div>
-      {PREMISE}
-      {
-        displayForm ? (
-          <div>
-            <form>
-              {
-                QUESTIONS.map(
-                  ({ id: questionId, question, answers }) => (
-                    <div className="mt-5" key={questionId}>
-                      <fieldset>
-                        <legend>{questionId}{')'} {question}</legend>
-                        {
-                          answers.map(({ id: answerId, answer, type }) => (
-                            <div key={answerId}>
-                              <input id={answerId} type="radio" name={questionId} value={type} required />
-                              <label htmlFor={answerId}>{' '}{answer}</label>
-                            </div>
-                          ))
-                        }
-                      </fieldset>
-                    </div>
-                  )
-                )
-              }
-              <div className="text-center">
-                <button
-                  className="rounded-none bg-blue-700 text-white p-2 mt-8"
-                  // then useSearchParams to get the result.
-                >
-                  Submit and get my gift
-                </button>
-              </div>
-            </form>
-          </div>
-        ) : (
-          <div className="text-center mt-5">
-            <button
-              className="rounded-none bg-blue-700 text-white p-2"
-              onClick={toggleDisplayForm}
-            >
-              Ok, let's do this.
-            </button>
-          </div>
-        )
-      }
-    </div>
-  )
-}
-
-function Results({ resultsRef, resultData }) {
+// TODO: Why is there an error that I'm trying to render a function when clicking back on quiz/form? Can't find the root cause yet.
+function Result({ resultRef, resultData }) {
   const iframeWrapperRef = useRef();
-  // TODO: Refactor into custom hook and share with Record, since this is the latest version
   const isLoading = useDisplayIframeLoader(iframeWrapperRef);
 
   console.log(`isLoading`, isLoading);
 
   return (
-    <div ref={resultsRef}>
+    <div ref={resultRef}>
       <div>
         {CONCLUSION_PART_1}
       </div>
@@ -140,20 +80,18 @@ function Results({ resultsRef, resultData }) {
   )
 }
 
-export default function Quiz() {
+export default function QuizResult() {
   const [resultData, setResultData] = useState(null);
   const [displayResult, setDisplayResult] = useState(false);
-  const [displayQuiz, setDisplayQuiz] = useState(false);
   const [displayTryAgain, setDisplayTryAgain] = useState(false);
-  const resultsRef = useRef(null);
+  const resultRef = useRef(null);
   const searchParams = useSearchParams();
   const router = useRouter();
   const params = searchParams.toString();
 
   useEffect(() => {
     if (params.length === 0) {
-      setDisplayQuiz(true);
-      setDisplayTryAgain(false);
+      setDisplayTryAgain(true);
     } else {
       // split params by &, and grab the values after the = sign
       const gatheredSelections = params.split('&').map(param => param.match(/=(.*)/)[1]);
@@ -184,56 +122,32 @@ export default function Quiz() {
         }
       }
 
-      if (resultsRef.current) {
-        resultsRef.current.scrollIntoView({ behavior: 'smooth' });
+      if (resultRef.current) {
+        resultRef.current.scrollIntoView({ behavior: 'smooth' });
       }
     }
-
-    // Clean up on re-render if you click back on the quiz link
-    return (() => {
-      setDisplayResult(false);
-    });
-  }, [params, setResultData, setDisplayQuiz, displayResult, resultsRef.current, setDisplayTryAgain, setDisplayResult]);
+  }, [params, setResultData, displayResult, resultRef.current, setDisplayTryAgain, setDisplayResult]);
 
   const tryAgain = () => {
-    router.push('/quiz');
+    router.push('/quiz/form');
   };
 
   return (
-    <PageLayout
-      background="bg-gradient-to-b from-slate-100 to-purple-50"
-      title="Playlist Personality Quiz"
-    >
-      <div className={"text-md lg:text-xl p-1 m-1"}>
-        <div className="mt-2">
-          {
-            displayQuiz ? (
-              <QuizForm />
-            ) : (
-              <></>
-            )
-          }
-          {
-            displayResult ? (
-              <Results resultsRef={resultsRef} resultData={resultData} />
-            ) : (
-              displayTryAgain ? (
-                <div>
-                  <button
-                    className="rounded-none bg-blue-700 text-white p-2"
-                    onClick={tryAgain}
-                  >
-                    Something went wrong. Try again.
-                  </button>
-                </div>
-              ) : (
-                <></>
-              )
-            )
-          }
+    displayResult ? (
+      <Result resultRef={resultRef} resultData={resultData} />
+    ) : (
+      displayTryAgain ? (
+        <div>
+          <button
+            className="rounded-none bg-blue-700 text-white p-2"
+            onClick={tryAgain}
+          >
+            Something went wrong. Try again.
+          </button>
         </div>
-        <br />
-      </div>
-    </PageLayout>
+      ) : (
+        <></>
+      )
+    )
   )
 }
