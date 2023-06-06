@@ -21,10 +21,10 @@ export default function Band() {
           Be sure to tune into our upcoming releases and live events:
         </div>
         <div>
-          1. <a className="underline text-blue-800" target="_blank" href="https://www.instagram.com/curcioband/">Follow our instagram</a>
+          1. <a className="link" target="_blank" href="https://www.instagram.com/curcioband/">Follow our instagram</a>
         </div>
         <div>
-          2. <a className="underline text-blue-800" target="_blank" href="https://www.tiktok.com/@curcioband">Follow our tiktok</a>
+          2. <a className="link" target="_blank" href="https://www.tiktok.com/@curcioband">Follow our tiktok</a>
         </div>
         <br />
         <div>Performance highlights:</div>

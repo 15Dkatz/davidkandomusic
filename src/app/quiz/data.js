@@ -218,7 +218,7 @@ export const CONCLUSION_PART_2 = "Here is a playlist that matches your personali
 export const CONCLUSION_PART_3 = (
   <div>
     Once again, the sky cracks with a flash. The Angel of Music begins to ascend, "Until we meet again. Hope you enjoy the playlist. Oh, and one more thing: don't forget to{' '}
-    <a href="https://open.spotify.com/artist/6ep6Hvwexmaa5IqcPxMxqC?si=qY9-ObwmQzikC-T7mB-WGw" target="_blank" className="text-blue-800 underline">support and follow my favorite mortal artist on Spotify: David Kando.</a>"
+    <a href="https://open.spotify.com/artist/6ep6Hvwexmaa5IqcPxMxqC?si=qY9-ObwmQzikC-T7mB-WGw" target="_blank" className="link">support and follow my favorite mortal artist on Spotify: David Kando.</a>"
   </div>
 );
 

@@ -62,7 +62,7 @@ function Result({ resultRef, resultData }) {
               <a
                 href={resultData.playlistLink}
                 target="_blank"
-                className="underline text-blue-800"
+                className="link"
               >
                 Save this playlist
               </a>

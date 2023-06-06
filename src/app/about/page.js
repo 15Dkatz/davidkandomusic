@@ -32,7 +32,7 @@ export default function Page() {
           Find my latest releases{' '}
           <Link
             href="/discography"
-            className="text-purple-800 underline"
+            className="link"
           >
             here
           </Link>.

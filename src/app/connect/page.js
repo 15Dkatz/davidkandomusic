@@ -14,15 +14,15 @@ export default function Connect() {
         <br />
         <div>
           1. Support me with a follow on{' '}
-          <a className="font-bold text-blue-800 underline" href="https://open.spotify.com/artist/6ep6Hvwexmaa5IqcPxMxqC?si=t24Vsf6LRsKSIy5lV0wvNw" target="_blank">Spotify</a>.
+          <a className="font-bold link" href="https://open.spotify.com/artist/6ep6Hvwexmaa5IqcPxMxqC?si=t24Vsf6LRsKSIy5lV0wvNw" target="_blank">Spotify</a>.
         </div>
         <div>
           2. Follow me on{' '}
-          <a className="font-bold text-blue-800 underline" href="https://www.instagram.com/davidkandomusic/" target="_blank">instagram</a>.
+          <a className="font-bold link" href="https://www.instagram.com/davidkandomusic/" target="_blank">instagram</a>.
         </div>
         <div>
           3. Check out my{' '}
-          <a className="font-bold text-blue-800 underline" href="https://www.tiktok.com/@davidkandomusic" target="_blank">tiktok</a>.
+          <a className="font-bold link" href="https://www.tiktok.com/@davidkandomusic" target="_blank">tiktok</a>.
         </div>
         <br />
         <div>
