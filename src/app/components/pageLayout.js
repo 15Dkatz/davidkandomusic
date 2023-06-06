@@ -7,7 +7,7 @@ import localFont from 'next/font/local';
 import PageContext from '../page-context';
 
 const rangaBold = localFont({
-  src: '../fonts/Ranga-Bold.ttf'
+  src: '../../fonts/Ranga-Bold.ttf'
 });
 
 function Fallback() {

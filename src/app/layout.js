@@ -1,6 +1,6 @@
 'use client';
 
-import './globals.css'
+import '../globals.css'
 
 import { useTransition } from 'react';
 import { useRouter } from 'next/navigation';
@@ -10,11 +10,11 @@ import ITEMS from './items';
 import Item from './components/homepage/item';
 
 const robotoCondensed = localFont({
-  src: './fonts/RobotoCondensed-Regular.ttf'
+  src: '../fonts/RobotoCondensed-Regular.ttf'
 });
 
 const rangaBold = localFont({
-  src: './fonts/Ranga-Bold.ttf'
+  src: '../fonts/Ranga-Bold.ttf'
 });
 
 

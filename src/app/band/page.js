@@ -5,7 +5,7 @@ import PageLayout from '../components/pageLayout';
 import { HIGHLIGHTS } from './data';
 
 const rangaBold = localFont({
-  src: '../fonts/Ranga-Bold.ttf'
+  src: '../../fonts/Ranga-Bold.ttf'
 });
 
 export default function Band() {

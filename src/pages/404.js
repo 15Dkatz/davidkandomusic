@@ -1,8 +1,10 @@
+import '../globals.css';
+
 import localFont from 'next/font/local';
 import Link from 'next/link';
 
 const rangaBold = localFont({
-  src: '../app/fonts/Ranga-Bold.ttf'
+  src: '../fonts/Ranga-Bold.ttf'
 });
 
 // TODO: Why aren't the tailwind css classNames working?
