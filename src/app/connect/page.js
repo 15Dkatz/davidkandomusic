@@ -1,6 +1,40 @@
+'use client';
+
+import { useRef } from 'react';
+
 import PageLayout from '../components/pageLayout';
 
 export default function Connect() {
+  const formRef = useRef();
+
+  const handleSubmit = async event => {
+    event.preventDefault();
+
+    const body = {
+      name: event.target.name.value,
+      email: event.target.email.value
+    };
+
+    const response = await fetch('/api/contact', {
+      method: 'POST',
+      // Without this, the underlying body-parser will not function and turn the stringified body into a usable object
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(body)
+    });
+    console.log(`response`, response);
+
+    const responseJson = await response.json();
+    console.log(`responseJson`, responseJson);
+
+    alert(responseJson.message);
+
+    if (response.status === 200) {
+      formRef.current.reset();
+    }
+  }
+
+  // TODO: Implement follower progress. Implement code where the goalpost is always moving to the next digit place. 100/1000/etc.
+
   return (
     <PageLayout
       // TODO: Consider a linear gradient or image background
@@ -17,13 +51,32 @@ export default function Connect() {
           <a className="font-bold link" href="https://open.spotify.com/artist/6ep6Hvwexmaa5IqcPxMxqC?si=t24Vsf6LRsKSIy5lV0wvNw" target="_blank">Spotify</a>.
         </div>
         <div>
+          Follower progress: TODO/1000
+        </div>
+        <br />
+        <div>
           2. Follow me on{' '}
           <a className="font-bold link" href="https://www.instagram.com/davidkandomusic/" target="_blank">instagram</a>.
         </div>
+        <br />
         <div>
-          3. Check out my{' '}
-          <a className="font-bold link" href="https://www.tiktok.com/@davidkandomusic" target="_blank">tiktok</a>.
+          3. Join my email list.
         </div>
+        <form ref={formRef} onSubmit={handleSubmit} className="p-1">
+          <div className="m-1">
+            <label htmlFor="name" className="w-[40px] md:w-[50px] inline-block">Name{' '}</label>
+            <input className="rounded-none" type="text" id="name" name="name" required />
+          </div>
+          <div className="m-1">
+            <label htmlFor="email" className="w-[40px] md:w-[50px] inline-block">Email{' '}</label>
+            <input className="rounded-none" type="email" id="email" name="email" required />
+          </div>
+          <div className="m-1">
+            <button className="rounded-none bg-blue-700 text-white p-1" type="submit">
+              Submit
+            </button>
+          </div>
+        </form>
         <br />
         <div>
           Reach out for inquiries at <span className="underline">davidkandomusic@gmail.com</span>

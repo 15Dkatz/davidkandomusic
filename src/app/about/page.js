@@ -30,16 +30,11 @@ export default function Page() {
         <br />
         <div>
           Find my latest releases{' '}
-          <Link
-            href="/discography"
-            className="link"
-          >
-            here
-          </Link>.
+          <Link href="/discography" className="link">here</Link>.
         </div>
-        <br />
         <div>
-          Reach out for inquiries at <span className="underline">davidkandomusic@gmail.com</span>
+          Reach out to me and/or join my email list{' '}
+          <Link href="/connect" className="link">here</Link>.
         </div>
       </div>
     </PageLayout>

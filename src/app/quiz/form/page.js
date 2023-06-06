@@ -36,10 +36,7 @@ export default function QuizForm() {
                 )
               }
               <div className="text-center">
-                <button
-                  className="rounded-none bg-blue-700 text-white p-2 mt-8"
-                  // then useSearchParams to get the result.
-                >
+                <button className="rounded-none bg-blue-700 text-white p-2 mt-8">
                   Submit and get my gift
                 </button>
               </div>
