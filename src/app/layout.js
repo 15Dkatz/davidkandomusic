@@ -3,7 +3,7 @@
 import './globals.css'
 
 import { useTransition } from 'react';
-import { useRouter } from 'next/navigation';
+import { useRouter, useSearchParams } from 'next/navigation';
 import { Roboto_Condensed } from 'next/font/google';
 import PageContext from './page-context';
 import ITEMS from './items';
@@ -33,10 +33,25 @@ const ranga = Ranga({
 // TODO: In the future, with more songs, have a "load more" button that allows the user to see more than 8 items
 export default function RootLayout({ children }) {
   const router = useRouter();
+  const searchParams = useSearchParams();
   const [isPending, startTransition] = useTransition();
 
   function navigate(path) {
-    startTransition(() => router.push(path));
+    startTransition(() => {
+      console.log(`path`, path);
+
+      const params = searchParams.toString();
+      console.group(`params`, params);
+
+      // if the current path is identical, do not push
+      if (params && path.includes(params)) {
+        console.log(`do not push`);
+        return;
+      } else {
+        console.log(`router.push`);
+        router.push(path);
+      }
+    });
   }
 
   return (

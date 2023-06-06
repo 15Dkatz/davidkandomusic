@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import { Ranga } from 'next/font/google';
 
 const ranga = Ranga({

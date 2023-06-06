@@ -134,6 +134,10 @@ export default function Quiz() {
     } else {
       // split params by &, and grab the values after the = sign
       const gatheredSelections = params.split('&').map(param => param.match(/=(.*)/)[1]);
+      // TODO: Use https://nextjs.org/docs/app/api-reference/functions/use-search-params
+      // try searchParams.get('1') and (2, 3, 4, 5) to get the results, rather than regex. More idiomatics
+      // TODO: Try to use `useParams` instead since I'm not supporting a search function here. `useParams` is therefore more idiomatic.
+      // https://nextjs.org/docs/app/api-reference/functions/use-params
 
       if (!gatheredSelections.every(selection => VALID_SELECTIONS.includes(selection))) {
         setDisplayTryAgain(true);

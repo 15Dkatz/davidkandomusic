@@ -1,7 +1,7 @@
 'use client';
 
 import { useContext, useState, useEffect } from 'react';
-// import { Suspense } from 'react';
+import { Suspense } from 'react';
 import { Ranga } from 'next/font/google'
 
 import PageContext from '../page-context';
@@ -11,13 +11,13 @@ const ranga = Ranga({
   weight: '700'
 });
 
-// function Fallback() {
-//   return (
-//     <div className="m-5">
-//       loading...
-//     </div>
-//   )
-// }
+function Fallback() {
+  return (
+    <div className="m-5">
+      loading...
+    </div>
+  )
+}
 
 // TODO: Make the <loading> the bg-slate-100 since it's slow to load sometimes. Can even put a skeleton row.
 // TODO: Research Suspense and React 18 features. Good opportunity to use React 18.
@@ -26,17 +26,18 @@ export default function PageLayout({ children, background, title }) {
   const bg = background ? background + " " : "bg-slate-100 ";
   const titleToDisplay = title ? title : 'Example';
 
-  const { isPending, navigate } = useContext(PageContext);
+  const { isPending } = useContext(PageContext);
 
   // add a 200ms wait before showing the loading state
   // 200ms is the max threshold for humans perceiving "responsiveness" of a webstie
   // However, 200ms is enough time for the page load to appear before isPending renders, preventing a jumpy experience (loading state for ~100ms for example, and then quickly switching to the new window)
+
+  // Notice that next is caching the server-side route pages, made apparent by network throttling. The loading state is completely skipped.
   useEffect(() => {
     console.log(`0ms passed.`);
     console.log(`isPending`, isPending);
 
     setTimeout(() => {
-      // TODO: Make sure this is the most up-to-date value of isPending though
       if (isPending) {
         console.log(`200ms passed. setIsPendingLong`);
         console.log(`current value of isPending`, isPending);
@@ -82,7 +83,9 @@ export default function PageLayout({ children, background, title }) {
           {titleToDisplay}
         </div>
       </div>
-      {children}
+      <Suspense fallback={Fallback}>
+        {children}
+      </Suspense>
     </div>
   )
 }

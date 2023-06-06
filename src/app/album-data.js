@@ -34,9 +34,9 @@ export const ALBUMS_MAP = {
     recordImage: '/poison_worms_record_full.png',
     recordHalfImage: '/poison_worms_record_half.png',
     spotifyLink: 'https://open.spotify.com/track/7o1sArWvk2m61k6CuZKt93?si=f728d1ee64214102',
+    EmbeddedPlayer: PoisonWormsEmbeddedPlayer,
     appleMusicLink: 'https://music.apple.com/us/album/poison-worms/1689163166?i=1689163167',
-    youtubeMusicLink: 'https://www.youtube.com/watch?v=Lqdxm7R23c4',
-    EmbeddedPlayer: PoisonWormsEmbeddedPlayer
+    youtubeMusicLink: 'https://www.youtube.com/watch?v=Lqdxm7R23c4'
   },
   IN_PERPETUITY: {
     title: 'In Perpetuity',
@@ -48,9 +48,9 @@ export const ALBUMS_MAP = {
     recordImage: '/in_perpetuity_record_full.png',
     recordHalfImage: '/in_perpetuity_record_half.png',
     spotifyLink: 'https://open.spotify.com/track/0Qer5Z5ut75UJevgRC8GIK?si=2444d5d5cdcc47f1',
+    EmbeddedPlayer: InPerpetuityEmbeddedPlayer,
     appleMusicLink: 'https://music.apple.com/us/album/in-perpetuity/1677926229?i=1677926230',
-    youtubeMusicLink: 'https://www.youtube.com/watch?v=XhSBF2_iqL4',
-    EmbeddedPlayer: InPerpetuityEmbeddedPlayer
+    youtubeMusicLink: 'https://www.youtube.com/watch?v=XhSBF2_iqL4'
   }
 };
 

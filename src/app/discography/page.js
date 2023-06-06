@@ -30,7 +30,7 @@ export default function Discography() {
   return (
     <PageLayout
       background="bg-gradient-to-b from-slate-100 to-blue-100"
-      title="DISCOGRAPHY"
+      title="Discography"
     >
       <div className="p-2">
         {
