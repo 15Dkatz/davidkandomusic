@@ -6,6 +6,8 @@ export const IN_PERPETUITY = 'IN_PERPETUITY';
 export const POISON_WORMS_PARAMS = 'item=poison-worms';
 export const IN_PERPETUITY_PARAMS = 'item=in-perpetuity';
 
+export const POISON_WORMS_ID = 'poison-worms';
+export const IN_PERPETUITY_ID = 'in-perpetuity';
 
 // TODO: Preserve the following as a demo/teaching version:
 // const PoisonWormsLazyPlayer = lazy(
@@ -19,8 +21,9 @@ export const IN_PERPETUITY_PARAMS = 'item=in-perpetuity';
 const PoisonWormsLazyPlayer = lazy(() => import('./poison-worms-embed'));
 const InPerpetuityLazyPlayer = lazy(() => import('./in-perpetuity-embed'));
 
-export const ALBUMS_MAP = {
-  POISON_WORMS: {
+export const RECORDS_MAP = {
+  [POISON_WORMS_ID]: {
+    id: POISON_WORMS_ID,
     title: 'Poison Worms',
     date: '5/24/23',
     by: 'David Kando',
@@ -34,7 +37,8 @@ export const ALBUMS_MAP = {
     appleMusicLink: 'https://music.apple.com/us/album/poison-worms/1689163166?i=1689163167',
     youtubeMusicLink: 'https://www.youtube.com/watch?v=Lqdxm7R23c4'
   },
-  IN_PERPETUITY: {
+  [IN_PERPETUITY_ID]: {
+    id: IN_PERPETUITY_ID,
     title: 'In Perpetuity',
     date: '3/18/23',
     by: 'David Kando',
@@ -50,9 +54,10 @@ export const ALBUMS_MAP = {
   }
 };
 
-export const PARAMS_ALBUM_MAP = {
-  [POISON_WORMS_PARAMS]: ALBUMS_MAP[POISON_WORMS],
-  [IN_PERPETUITY_PARAMS]: ALBUMS_MAP[IN_PERPETUITY],
+// TODO: May be unneeded
+export const PARAMS_RECORD_MAP = {
+  [POISON_WORMS_PARAMS]: RECORDS_MAP[POISON_WORMS],
+  [IN_PERPETUITY_PARAMS]: RECORDS_MAP[IN_PERPETUITY],
 }
 
-export const ALBUMS = Object.values(ALBUMS_MAP);
+export const RECORDS = Object.values(RECORDS_MAP);

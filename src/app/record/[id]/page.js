@@ -1,10 +1,7 @@
-'use client';
-
 import { Suspense } from 'react';
-import { useSearchParams } from 'next/navigation';
 
-import PageLayout from '../components/pageLayout';
-import { POISON_WORMS_PARAMS, PARAMS_ALBUM_MAP } from './data';
+import PageLayout from '../../components/pageLayout';
+import { RECORDS, RECORDS_MAP } from '../data';
 
 const Loading = () => (
   <div className="absolute w-[300px] h-[352px] rounded bg-slate-100 pt-[56px] pl-[60px]">
@@ -15,18 +12,10 @@ const Loading = () => (
   </div>
 );
 
-export default function Record() {
-  // TODO: There must be a next.js way to generate the pages without having to use useSearchParams
-  // keep these as server components
-  const searchParams = useSearchParams();
-  const params = searchParams.toString();
-
-  // TODO: Redirect to 404 in default state instead of the backup.
-  const content = PARAMS_ALBUM_MAP[params] && Object.entries(PARAMS_ALBUM_MAP[params]).length > 0
-    ? PARAMS_ALBUM_MAP[params]
-    : PARAMS_ALBUM_MAP[POISON_WORMS_PARAMS]; // backup, show poison worms by default. An error would also work
-
-  const { date, title, blurb, pageBackground, LazyPlayer } = content;
+// TODO: Why isn't suspense working with the server-side generaration?
+export default function Record({ params }) {
+  const { id } = params;
+  const { date, title, blurb, pageBackground, LazyPlayer } = RECORDS_MAP[id];
 
   return (
     <PageLayout
@@ -50,4 +39,10 @@ export default function Record() {
       </div>
     </PageLayout>
   )
+}
+
+// replacement for getStaticParams and getStaticProps
+// emulates a database-fetching scenario. However, here the data is hardcoded
+export async function generateStaticParams() {
+  return RECORDS.map(({ id }) => ({ id }));
 }

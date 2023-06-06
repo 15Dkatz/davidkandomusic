@@ -1,4 +1,4 @@
-import { POISON_WORMS_PARAMS, IN_PERPETUITY_PARAMS } from './record/data';
+import { POISON_WORMS_ID, IN_PERPETUITY_ID } from './record/data';
 
 // Try merging this with item_type_settings. More elegant.
 const ITEMS = [
@@ -21,7 +21,7 @@ const ITEMS = [
   {
     id: 3,
     attributes: {
-      href: `/record?${POISON_WORMS_PARAMS}`,
+      href: `/record/${POISON_WORMS_ID}`,
       text: 'Poison Worms',
       background: "bg-[url('/poison_worms_400.png')] bg-contain"
     }
@@ -29,7 +29,7 @@ const ITEMS = [
   {
     id: 4,
     attributes: {
-      href: `/record?${IN_PERPETUITY_PARAMS}`,
+      href: `/record/${IN_PERPETUITY_ID}`,
       text: 'In Perpetuity',
       background: "bg-[url('/in_perpetuity_400.png')] bg-contain"
     }
