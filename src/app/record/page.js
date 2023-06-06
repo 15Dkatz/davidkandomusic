@@ -10,7 +10,7 @@ import { POISON_WORMS_PARAMS, PARAMS_ALBUM_MAP } from '../album-data';
 // In course, show the window.onSpotifyAPI solution. Encourage students to try
 // Her
 export default function Record() {
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
   const iframeWrapperRef = useRef();
   const searchParams = useSearchParams();
   const params = searchParams.toString();
@@ -21,8 +21,7 @@ export default function Record() {
 
   const { date, title, blurb, pageBackground, EmbeddedPlayer } = content;
 
-  // ping for #id-wrapper having iframe
-  // TODO: Apply the same loading changes to the Playlist embed
+  // ping for iframe
   useEffect(() => {
     let locateIframeInterval;
 
@@ -42,7 +41,6 @@ export default function Record() {
 
     return (() => {
       clearInterval(locateIframeInterval);
-      setIsLoading(true);
     });
   }, [iframeWrapperRef.current, setIsLoading]);
 
@@ -62,7 +60,7 @@ export default function Record() {
           {
             isLoading ? (
               <div className="absolute w-[300px] h-[352px] rounded bg-slate-100 pt-[56px] pl-[60px]">
-                <div className="w-[176px] h-[176px] rounded bg-slate-200 animate-pulse text-slate-600" />
+                <div className="w-[176px] h-[176px] rounded bg-slate-200 animate-pulse" />
                 <div className="w-[100px] h-[20px] mt-[10px] rounded bg-slate-200 animate-pulse" />
                 <div className="w-[80px] h-[10px] mt-[10px] rounded bg-slate-200 animate-pulse" />
                 <div className="w-[140px] h-[8px] mt-[20px] rounded bg-slate-200 animate-pulse" />

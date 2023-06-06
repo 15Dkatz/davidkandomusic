@@ -2,13 +2,12 @@
 
 import { useContext, useState, useEffect } from 'react';
 import { Suspense } from 'react';
-import { Ranga } from 'next/font/google'
+import localFont from 'next/font/local';
 
 import PageContext from '../page-context';
 
-const ranga = Ranga({
-  subsets: ['latin'],
-  weight: '700'
+const rangaBold = localFont({
+  src: '../fonts/Ranga-Bold.ttf'
 });
 
 function Fallback() {
@@ -79,7 +78,7 @@ export default function PageLayout({ children, background, title }) {
     >
       {/* TODO: make a title that matches the davidkandomusic header */}
       <div className="flex justify-center mb-5 lg:mb-10">
-        <div className={`${ranga.className} text-2xl lg:text-4xl underline underline-offset-1 decoration-4 decoration-blue-400`}>
+        <div className={`${rangaBold.className} text-2xl lg:text-4xl underline underline-offset-1 decoration-4 decoration-blue-400`}>
           {titleToDisplay}
         </div>
       </div>

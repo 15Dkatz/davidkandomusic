@@ -4,14 +4,19 @@ import './globals.css'
 
 import { useTransition } from 'react';
 import { useRouter } from 'next/navigation';
-import { Roboto_Condensed } from 'next/font/google';
+import localFont from 'next/font/local';
 import PageContext from './page-context';
 import ITEMS from './items';
+import Item from './components/homepage/item';
 
-const robotoCondensed = Roboto_Condensed({
-  subsets: ['latin'],
-  weight: '400'
+const robotoCondensed = localFont({
+  src: './fonts/RobotoCondensed-Regular.ttf'
 });
+
+const rangaBold = localFont({
+  src: './fonts/Ranga-Bold.ttf'
+});
+
 
 // TODO: Dig into metadata more, and set correctly
 // export const metadata = {
@@ -20,15 +25,6 @@ const robotoCondensed = Roboto_Condensed({
 // };
 
 // Refactor all links to use a shared className that I define in globals css
-
-import Item from './components/homepage/item';
-
-import { Ranga } from 'next/font/google';
-
-const ranga = Ranga({
-  subsets: ['latin'],
-  weight: ['700']
-});
 
 // TODO: In the future, with more songs, have a "load more" button that allows the user to see more than 8 items
 export default function RootLayout({ children }) {
@@ -52,7 +48,7 @@ export default function RootLayout({ children }) {
             }
           >
             <div className="flex justify-center mb-5 lg:mb-10">
-              <div className={`${ranga.className} text-2xl lg:text-4xl underline underline-offset-1 decoration-4 decoration-blue-400`}>
+              <div className={`${rangaBold.className} text-2xl lg:text-4xl underline underline-offset-1 decoration-4 decoration-blue-400`}>
                 DAVID KANDO MUSIC
               </div>
             </div>

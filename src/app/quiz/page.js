@@ -2,6 +2,7 @@
 
 import { useState, useRef, useEffect } from 'react';
 import { useSearchParams, useRouter } from 'next/navigation';
+import { useDisplayIframeLoader } from '../hooks';
 
 import PageLayout from '../components/pageLayout';
 import {
@@ -73,6 +74,12 @@ function QuizForm() {
 }
 
 function Results({ resultsRef, resultData }) {
+  const iframeWrapperRef = useRef();
+  // TODO: Refactor into custom hook and share with Record, since this is the latest version
+  const isLoading = useDisplayIframeLoader(iframeWrapperRef);
+
+  console.log(`isLoading`, isLoading);
+
   return (
     <div ref={resultsRef}>
       <div>
@@ -93,7 +100,23 @@ function Results({ resultsRef, resultData }) {
       {
         resultData ? (
           <>
-            {resultData.embeddedPlaylist}
+            <div className="relative w-[326px] md:w-[904px] h-[352px]">
+              {
+                isLoading ? (
+                  <div className="absolute w-[326px] md:w-[904px] h-[352px] rounded bg-slate-300 pt-[24px] pl-[24px]">
+                    <div className="w-[112px] h-[112px] md:w-[152px] md:h-[152px] rounded bg-slate-200 animate-pulse mb-[40px]" />
+                    <div className="w-[850px] h-[20px] mt-[15px] rounded bg-slate-200 animate-pulse" />
+                    <div className="w-[850px] h-[20px] mt-[15px] rounded bg-slate-200 animate-pulse" />
+                    <div className="w-[850px] h-[20px] mt-[15px] rounded bg-slate-200 animate-pulse" />
+                  </div>
+                ) : (
+                  <></>
+                )
+              }
+              <div ref={iframeWrapperRef} className="absolute w-[326px] md:w-[904px] h-[352px]">
+                {resultData.embeddedPlaylist}
+              </div>
+            </div>
             <br />
             <div className="text-center">
               <a
@@ -156,9 +179,9 @@ export default function Quiz() {
 
         if (resultData) {
           setResultData(RESULT_MAP[getQuizResult({ selectionMap })]);
-        }
 
-        setDisplayResult(true);
+          setDisplayResult(true);
+        }
       }
 
       if (resultsRef.current) {
