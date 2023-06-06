@@ -41,6 +41,9 @@ export default function Record({ params }) {
   )
 }
 
+// send non-generated pages to the 404 page.
+export const dynamicParams = false;
+
 // replacement for getStaticParams and getStaticProps
 // emulates a database-fetching scenario. However, here the data is hardcoded
 export async function generateStaticParams() {
