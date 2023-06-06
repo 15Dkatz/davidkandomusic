@@ -1,19 +1,24 @@
 'use client';
 
-import { useState, useRef, useEffect } from 'react';
+import { Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
-import Script from 'next/script';
 
 import PageLayout from '../components/pageLayout';
-import { POISON_WORMS_PARAMS, PARAMS_ALBUM_MAP } from '../album-data';
-import { useDisplayIframeLoader } from '../hooks';
+import { POISON_WORMS_PARAMS, PARAMS_ALBUM_MAP } from './data';
 
-// In course, show the window.onSpotifyAPI solution. Encourage students to try
-// Her
+const Loading = () => (
+  <div className="absolute w-[300px] h-[352px] rounded bg-slate-100 pt-[56px] pl-[60px]">
+    <div className="w-[176px] h-[176px] rounded bg-slate-200 animate-pulse" />
+    <div className="w-[100px] h-[20px] mt-[10px] rounded bg-slate-200 animate-pulse" />
+    <div className="w-[80px] h-[10px] mt-[10px] rounded bg-slate-200 animate-pulse" />
+    <div className="w-[140px] h-[8px] mt-[20px] rounded bg-slate-200 animate-pulse" />
+  </div>
+);
+
 export default function Record() {
-  const iframeWrapperRef = useRef();
+  // TODO: There must be a next.js way to generate the pages without having to use useSearchParams
+  // keep these as server components
   const searchParams = useSearchParams();
-  const isLoading = useDisplayIframeLoader(iframeWrapperRef);
   const params = searchParams.toString();
 
   // TODO: Redirect to 404 in default state instead of the backup.
@@ -21,7 +26,7 @@ export default function Record() {
     ? PARAMS_ALBUM_MAP[params]
     : PARAMS_ALBUM_MAP[POISON_WORMS_PARAMS]; // backup, show poison worms by default. An error would also work
 
-  const { date, title, blurb, pageBackground, EmbeddedPlayer } = content;
+  const { date, title, blurb, pageBackground, LazyPlayer } = content;
 
   return (
     <PageLayout
@@ -36,24 +41,13 @@ export default function Record() {
       </div>
       <div className={"text-md lg:text-xl p-1"}>
         <div className="relative w-[300px] h-[352px]">
-          {
-            isLoading ? (
-              <div className="absolute w-[300px] h-[352px] rounded bg-slate-100 pt-[56px] pl-[60px]">
-                <div className="w-[176px] h-[176px] rounded bg-slate-200 animate-pulse" />
-                <div className="w-[100px] h-[20px] mt-[10px] rounded bg-slate-200 animate-pulse" />
-                <div className="w-[80px] h-[10px] mt-[10px] rounded bg-slate-200 animate-pulse" />
-                <div className="w-[140px] h-[8px] mt-[20px] rounded bg-slate-200 animate-pulse" />
-              </div>
-            ) : (
-              <></>
-            )
-          }
-          <div ref={iframeWrapperRef} className="absolute w-[300px] h-[352px]">
-            <EmbeddedPlayer />
+          <div className="absolute w-[300px] h-[352px]">
+            <Suspense fallback={<Loading />}>
+              <LazyPlayer />
+            </Suspense>
           </div>
         </div>
       </div>
-      <Script src="https://open.spotify.com/embed-podcast/iframe-api/v1" />
     </PageLayout>
   )
 }

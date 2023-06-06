@@ -1,27 +1,23 @@
-// `by` will differentiate between David Kando, Curcio, and others I collaborate with
+import { lazy } from 'react';
+
 export const POISON_WORMS = 'POISON_WORMS';
 export const IN_PERPETUITY = 'IN_PERPETUITY';
 
 export const POISON_WORMS_PARAMS = 'item=poison-worms';
 export const IN_PERPETUITY_PARAMS = 'item=in-perpetuity';
 
-const PoisonWormsEmbeddedPlayer = () => (
-  <iframe
-    src="https://open.spotify.com/embed/track/7o1sArWvk2m61k6CuZKt93?utm_source=generator"
-    width="100%"
-    height="352"
-    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-  />
-);
 
-const InPerpetuityEmbeddedPlayer = () => (
-  <iframe
-    src="https://open.spotify.com/embed/track/0Qer5Z5ut75UJevgRC8GIK?utm_source=generator"
-    width="100%"
-    height="352"
-    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-  />
-);
+// TODO: Preserve the following as a demo/teaching version:
+// const PoisonWormsLazyPlayer = lazy(
+//   () => new Promise((resolve) => {
+//     setTimeout(() => {
+//       resolve(import('./poison-worms-embed'));
+//     }, 5000);
+//   })
+// );
+
+const PoisonWormsLazyPlayer = lazy(() => import('./poison-worms-embed'));
+const InPerpetuityLazyPlayer = lazy(() => import('./in-perpetuity-embed'));
 
 export const ALBUMS_MAP = {
   POISON_WORMS: {
@@ -34,7 +30,7 @@ export const ALBUMS_MAP = {
     recordImage: '/poison_worms_record_full.png',
     recordHalfImage: '/poison_worms_record_half.png',
     spotifyLink: 'https://open.spotify.com/track/7o1sArWvk2m61k6CuZKt93?si=f728d1ee64214102',
-    EmbeddedPlayer: PoisonWormsEmbeddedPlayer,
+    LazyPlayer: PoisonWormsLazyPlayer,
     appleMusicLink: 'https://music.apple.com/us/album/poison-worms/1689163166?i=1689163167',
     youtubeMusicLink: 'https://www.youtube.com/watch?v=Lqdxm7R23c4'
   },
@@ -48,7 +44,7 @@ export const ALBUMS_MAP = {
     recordImage: '/in_perpetuity_record_full.png',
     recordHalfImage: '/in_perpetuity_record_half.png',
     spotifyLink: 'https://open.spotify.com/track/0Qer5Z5ut75UJevgRC8GIK?si=2444d5d5cdcc47f1',
-    EmbeddedPlayer: InPerpetuityEmbeddedPlayer,
+    LazyPlayer: InPerpetuityLazyPlayer,
     appleMusicLink: 'https://music.apple.com/us/album/in-perpetuity/1677926229?i=1677926230',
     youtubeMusicLink: 'https://www.youtube.com/watch?v=XhSBF2_iqL4'
   }
