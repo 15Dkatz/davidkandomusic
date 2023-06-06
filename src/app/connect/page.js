@@ -3,6 +3,7 @@
 import { useRef } from 'react';
 
 import PageLayout from '../components/pageLayout';
+import Followers from './followers';
 
 export default function Connect() {
   const formRef = useRef();
@@ -23,10 +24,10 @@ export default function Connect() {
     });
     console.log(`response`, response);
 
-    const responseJson = await response.json();
-    console.log(`responseJson`, responseJson);
+    const json = await response.json();
+    console.log(`json`, json);
 
-    alert(responseJson.message);
+    alert(json.message);
 
     if (response.status === 200) {
       formRef.current.reset();
@@ -50,8 +51,8 @@ export default function Connect() {
           1. Support me with a follow on{' '}
           <a className="font-bold link" href="https://open.spotify.com/artist/6ep6Hvwexmaa5IqcPxMxqC?si=t24Vsf6LRsKSIy5lV0wvNw" target="_blank">Spotify</a>.
         </div>
-        <div>
-          Follower progress: TODO/1000
+        <div className="ml-5">
+          <Followers />
         </div>
         <br />
         <div>
@@ -62,7 +63,7 @@ export default function Connect() {
         <div>
           3. Join my email list.
         </div>
-        <form ref={formRef} onSubmit={handleSubmit} className="p-1">
+        <form ref={formRef} onSubmit={handleSubmit} className="p-1 pl-4">
           <div className="m-1">
             <label htmlFor="name" className="w-[40px] md:w-[50px] inline-block">Name{' '}</label>
             <input className="rounded-none" type="text" id="name" name="name" required />

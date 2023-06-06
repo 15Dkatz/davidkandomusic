@@ -31,23 +31,23 @@ export default async function handler(req, res) {
     };
 
     const response = await fetch(url, { method: 'POST', headers, body });
-    const responseJson = await response.json();
+    const json = await response.json();
 
-    console.log(`responseJson`, responseJson);
+    console.log(`json`, json);
 
     let message;
 
-    if (responseJson.Count > 0) {
+    if (json.Count > 0) {
       message = "Success! Keep an eye on your inbox for updates."
-    } else if (responseJson.ErrorMessage && responseJson.ErrorMessage.includes('Email already exists')) {
+    } else if (json.ErrorMessage && json.ErrorMessage.includes('Email already exists')) {
       throw new Error("Email is already subscribed.");
-    } else if (responseJson.ErrorMessage && responseJson.ErrorMessage.includes('properties invalid')) {
+    } else if (json.ErrorMessage && json.ErrorMessage.includes('properties invalid')) {
       throw new Error("Email is not formatted correctly.");
     } else {
       throw new Error("Submission failed. Try again.");
     }
 
-    res.status(200).send({ message, result: responseJson });
+    res.status(200).send({ message, result: json });
   } catch (err) {
     res.status(500).send({ message: err.message || 'Submission failed. Try again.' });
   }
