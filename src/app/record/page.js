@@ -1,17 +1,17 @@
 'use client';
 
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { useSearchParams } from 'next/navigation';
 import Script from 'next/script';
 
 import PageLayout from '../components/pageLayout';
 import { POISON_WORMS_PARAMS, PARAMS_ALBUM_MAP } from '../album-data';
 
-// In course, show the window.onSpotifyAPI solution and attempts. Encourage students to try
-// Here is the clever css fallback option though. The EmbeddedPlayer is a lot more consistent
+// In course, show the window.onSpotifyAPI solution. Encourage students to try
+// Her
 export default function Record() {
-  const [isLoading, setIsLoading] = useState(false);
-  const embedIframeRef = useRef();
+  const [isLoading, setIsLoading] = useState(true);
+  const iframeWrapperRef = useRef();
   const searchParams = useSearchParams();
   const params = searchParams.toString();
 
@@ -20,6 +20,31 @@ export default function Record() {
     : PARAMS_ALBUM_MAP[POISON_WORMS_PARAMS]; // backup, show poison worms by default. An error would also work
 
   const { date, title, blurb, pageBackground, EmbeddedPlayer } = content;
+
+  // ping for #id-wrapper having iframe
+  // TODO: Apply the same loading changes to the Playlist embed
+  useEffect(() => {
+    let locateIframeInterval;
+
+    locateIframeInterval = setInterval(() => {
+      console.log(`iframeWrapperRef.current`, iframeWrapperRef.current);
+      console.log(`iframeWrapperRef.current.children`, iframeWrapperRef.current.children);
+
+      if (
+        iframeWrapperRef.current
+        && iframeWrapperRef.current.children
+        && iframeWrapperRef.current.children[0].nodeName === 'IFRAME'
+      ) {
+        clearInterval(locateIframeInterval);
+        setIsLoading(false);
+      }
+    }, 200);
+
+    return (() => {
+      clearInterval(locateIframeInterval);
+      setIsLoading(true);
+    });
+  }, [iframeWrapperRef.current, setIsLoading]);
 
   return (
     <PageLayout
@@ -33,17 +58,22 @@ export default function Record() {
         </div>
       </div>
       <div className={"text-md lg:text-xl p-1"}>
-        <div ref={embedIframeRef}>
+        <div className="relative w-[300px] h-[352px]">
           {
             isLoading ? (
-              <div className="relative w-[300px] h-[352px] rounded bg-slate-100 pt-[56px] pl-[60px]">
+              <div className="absolute w-[300px] h-[352px] rounded bg-slate-100 pt-[56px] pl-[60px]">
                 <div className="w-[176px] h-[176px] rounded bg-slate-200 animate-pulse text-slate-600" />
                 <div className="w-[100px] h-[20px] mt-[10px] rounded bg-slate-200 animate-pulse" />
                 <div className="w-[80px] h-[10px] mt-[10px] rounded bg-slate-200 animate-pulse" />
                 <div className="w-[140px] h-[8px] mt-[20px] rounded bg-slate-200 animate-pulse" />
               </div>
-            ) : <EmbeddedPlayer />
+            ) : (
+              <></>
+            )
           }
+          <div ref={iframeWrapperRef} className="absolute w-[300px] h-[352px]">
+            <EmbeddedPlayer />
+          </div>
         </div>
       </div>
       <Script src="https://open.spotify.com/embed-podcast/iframe-api/v1" />
