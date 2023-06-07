@@ -23,12 +23,12 @@ export default function Record({ params }) {
       title={`Hot off the press: ${title}`}
     >
       <div className="m-5 mt-0">
-        <div className="text-justify lg:text-xl mb-1">{blurb}</div>
+        <div className="text-justify md:text-xl mb-1">{blurb}</div>
         <div className="text-sm text-slate-600">
           Release date: {date}
         </div>
       </div>
-      <div className={"text-md lg:text-xl p-1"}>
+      <div className={"text-md md:text-xl p-1"}>
         <div className="relative w-[300px] h-[352px]">
           <div className="absolute w-[300px] h-[352px]">
             <Suspense fallback={<Loading />}>

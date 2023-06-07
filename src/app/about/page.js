@@ -11,7 +11,7 @@ export default function Page() {
       background="bg-[url('/goofy_bg_500_op_80.png')] bg-contain"
       title="About David Kando"
     >
-      <div className={"text-md lg:text-xl p-1"}>
+      <div className={"text-md md:text-xl p-1"}>
         <div>
           Can David do music? Yes, David Kando music.
         </div>

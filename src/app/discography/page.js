@@ -68,10 +68,10 @@ export default function Discography() {
                   </div>
                 </div>
                 <div className="mb-5 mt-5">
-                  <div className="font-bold text-base lg:text-xl text-left">
+                  <div className="font-bold text-base md:text-xl text-left">
                     {title}
                   </div>
-                  <div className="text-justify lg:text-lg mb-1">{blurb}</div>
+                  <div className="text-justify md:text-lg mb-1">{blurb}</div>
                   <div className="text-sm text-slate-600">
                     Release date: {date}
                   </div>

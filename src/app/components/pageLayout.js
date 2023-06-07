@@ -10,14 +10,6 @@ const rangaBold = localFont({
   src: '../../fonts/Ranga-Bold.ttf'
 });
 
-function Fallback() {
-  return (
-    <div className="m-5">
-      loading...
-    </div>
-  )
-}
-
 // TODO: Make the <loading> the bg-slate-100 since it's slow to load sometimes. Can even put a skeleton row.
 // TODO: Research Suspense and React 18 features. Good opportunity to use React 18.
 export default function PageLayout({ children, background, title }) {
@@ -50,7 +42,7 @@ export default function PageLayout({ children, background, title }) {
     return (
       <div
         className={
-          "w-full h-[400px] p-1 pb-10 pt-10 m-2 lg:p-10 lg:m-20 " +
+          "w-full h-[400px] p-1 pb-10 pt-10 m-2 md:p-10 md:m-20 " +
           "flex flex-col justify-start items-center " +
           "animare-pulse bg-slate-100 to-blue-400"
         }
@@ -71,20 +63,18 @@ export default function PageLayout({ children, background, title }) {
   return (
     <div
       className={
-        "w-full p-1 pb-10 pt-10 m-2 lg:p-10 lg:m-20 " +
+        "w-full p-1 pb-10 pt-10 m-2 md:p-10 md:m-20 " +
         "flex flex-col justify-center items-center " +
         bg + "bg-no-repeat bg-cover "
       }
     >
       {/* TODO: make a title that matches the davidkandomusic header */}
-      <div className="flex justify-center mb-5 lg:mb-10">
-        <div className={`${rangaBold.className} text-2xl lg:text-4xl underline underline-offset-1 decoration-4 decoration-blue-400`}>
+      <div className="flex justify-center mb-5 md:mb-10">
+        <div className={`${rangaBold.className} text-2xl md:text-4xl underline underline-offset-1 decoration-4 decoration-blue-400`}>
           {titleToDisplay}
         </div>
       </div>
-      <Suspense fallback={Fallback}>
-        {children}
-      </Suspense>
+      {children}
     </div>
   )
 }

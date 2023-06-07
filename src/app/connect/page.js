@@ -42,7 +42,7 @@ export default function Connect() {
       background="bg-gradient-to-b from-slate-100 to-pink-100"
       title="Let's hang around"
     >
-      <div className={"text-md lg:text-xl p-1"}>
+      <div className={"text-md md:text-xl p-1"}>
         <div>
           Find my latest projects, upcoming live events, and releases!
         </div>

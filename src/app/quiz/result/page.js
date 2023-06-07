@@ -15,9 +15,9 @@ import {
 const Loading = () => (
   <div className="absolute w-[326px] md:w-[904px] h-[352px] rounded bg-slate-300 pt-[24px] pl-[24px]">
     <div className="w-[112px] h-[112px] md:w-[152px] md:h-[152px] rounded bg-slate-200 animate-pulse mb-[40px]" />
-    <div className="w-[850px] h-[20px] mt-[15px] rounded bg-slate-200 animate-pulse" />
-    <div className="w-[850px] h-[20px] mt-[15px] rounded bg-slate-200 animate-pulse" />
-    <div className="w-[850px] h-[20px] mt-[15px] rounded bg-slate-200 animate-pulse" />
+    <div className="md:w-[850px] md:h-[20px] md:mt-[15px] rounded bg-slate-200 animate-pulse" />
+    <div className="md:w-[850px] md:h-[20px] md:mt-[15px] rounded bg-slate-200 animate-pulse" />
+    <div className="md:w-[850px] md:h-[20px] md:mt-[15px] rounded bg-slate-200 animate-pulse" />
   </div>
 );
 

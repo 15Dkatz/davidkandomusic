@@ -6,7 +6,7 @@ export default function Studio() {
       background="bg-gradient-to-b from-slate-100 to-purple-50"
       title="David Kando Studios"
     >
-      <div className={"text-md lg:text-xl p-1"}>
+      <div className={"text-md md:text-xl p-1"}>
         <div>
           Let's make music together.
         </div>

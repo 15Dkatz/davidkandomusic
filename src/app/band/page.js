@@ -14,7 +14,7 @@ export default function Band() {
       background="bg-[url('/curcio_banner.png')] bg-contain"
       title="Enter the Curcio-verse"
     >
-      <div className={"text-md lg:text-xl p-1"}>
+      <div className={"text-md md:text-xl p-1"}>
         <div>Hailing from the lands of San Francisco, Curcio is a band of mere mortals blessed with a divine gift: the power to rock your socks off.</div>
         <br />
         <div>
@@ -33,7 +33,7 @@ export default function Band() {
             HIGHLIGHTS.map(({ id, title, date, background, tiktokLink }) => (
               <div key={id} className="flex flex-col items-center bg-white/80 m-2 p-2 pb-10">
                 <div className="m-5">
-                  <div className="font-bold text-base lg:text-lg">
+                  <div className="font-bold text-base md:text-lg">
                     {title}
                   </div>
                   <div className="text-sm text-slate-600">
