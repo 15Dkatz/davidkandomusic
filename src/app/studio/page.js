@@ -1,5 +1,9 @@
 import PageLayout from '../components/page-layout';
 
+export const metadata = {
+  title: 'David Kando Studios'
+};
+
 export default function Studio() {
   return (
     <PageLayout

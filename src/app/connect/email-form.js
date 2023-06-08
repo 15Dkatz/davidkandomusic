@@ -2,6 +2,7 @@
 
 import { useRef } from 'react';
 
+// TODO: Figure out a way to incorporate Suspense here onSubmit
 export default function EmailForm() {
   const formRef = useRef();
 

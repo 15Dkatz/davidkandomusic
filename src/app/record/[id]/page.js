@@ -12,6 +12,17 @@ const Loading = () => (
   </div>
 );
 
+// TODO: Test anonymous function
+export function generateMetadata({ params }) {
+  const { id } = params;
+  const { title } = RECORDS_MAP[id];
+
+  console.log(`params`, params);
+  console.log(`params`, params);
+
+  return { title: `${title} - David Kando` };
+}
+
 // TODO: Why isn't suspense working with the server-side generaration?
 export default function Record({ params }) {
   const { id } = params;

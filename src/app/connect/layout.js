@@ -1,4 +1,8 @@
-'use client';
+// 'use client';
+
+export const metadata = {
+  title: 'Connect with David Kando'
+};
 
 import ConnectPage from './page';
 import PageLayout from '../components/page-layout';

@@ -1,5 +1,3 @@
-'use client';
-
 import localFont from 'next/font/local';
 import PageLayout from '../components/page-layout';
 import { HIGHLIGHTS } from './data';
@@ -7,6 +5,10 @@ import { HIGHLIGHTS } from './data';
 const rangaBold = localFont({
   src: '../../fonts/Ranga-Bold.ttf'
 });
+
+export const metadata = {
+  title: 'Curcio - David Kando'
+};
 
 export default function Band() {
   return (

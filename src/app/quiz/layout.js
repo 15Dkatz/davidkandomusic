@@ -1,5 +1,9 @@
 import PageLayout from '../components/page-layout';
 
+export const metadata = {
+  title: 'Playlist Personality Quiz - David Kando'
+};
+
 export default function Quiz({ children }) {
   return (
     <PageLayout

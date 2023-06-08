@@ -3,6 +3,10 @@ import Image from 'next/image';
 import PageLayout from '../components/page-layout';
 import { RECORDS } from '../record/data';
 
+export const metadata = {
+  title: 'Discography - David Kando'
+};
+
 function PlayRow({ title, link, iconImage }) {
   return (
     <a

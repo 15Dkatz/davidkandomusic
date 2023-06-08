@@ -1,6 +1,10 @@
 import Link from 'next/link';
 import PageLayout from '../components/page-layout';
 
+export const metadata = {
+  title: 'About David Kando'
+};
+
 export default function Page() {
   return (
     <PageLayout

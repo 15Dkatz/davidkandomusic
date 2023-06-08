@@ -1,3 +1,5 @@
+'use client';
+
 import { cache, useState, useEffect } from 'react';
 
 const getFollowers = cache(async () => {
