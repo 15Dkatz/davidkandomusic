@@ -1,7 +1,7 @@
 'use client';
 
 import { useContext, useState, useEffect } from 'react';
-import { Suspense } from 'react';
+// import { Suspense } from 'react';
 import localFont from 'next/font/local';
 
 import PageContext from '../page-context';
@@ -10,8 +10,9 @@ const rangaBold = localFont({
   src: '../../fonts/Ranga-Bold.ttf'
 });
 
-// TODO: Make the <loading> the bg-slate-100 since it's slow to load sometimes. Can even put a skeleton row.
-// TODO: Research Suspense and React 18 features. Good opportunity to use React 18.
+// Notice the {children} prop to allow the insertion of Server Components within this Client Component
+// This follows this pattern: https://nextjs.org/docs/getting-started/react-essentials#recommended-pattern-passing-server-components-to-client-components-as-props
+// With this approach PageLayout is still rendered on the client, but the content is pre-rendered on the server
 export default function PageLayout({ children, background, title }) {
   const [isPendingLong, setIsPendingLong] = useState(false);
   const bg = background ? background + " " : "bg-slate-100 ";

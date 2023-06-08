@@ -1,7 +1,7 @@
 'use client';
 
 import localFont from 'next/font/local';
-import PageLayout from '../components/pageLayout';
+import PageLayout from '../components/page-layout';
 import { HIGHLIGHTS } from './data';
 
 const rangaBold = localFont({

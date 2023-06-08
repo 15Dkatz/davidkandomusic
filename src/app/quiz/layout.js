@@ -1,6 +1,4 @@
-'use client';
-
-import PageLayout from '../components/pageLayout';
+import PageLayout from '../components/page-layout';
 
 export default function Quiz({ children }) {
   return (

@@ -1,7 +1,7 @@
 import '../globals.css'
 
 import localFont from 'next/font/local';
-import RootLayout from './rootLayout';
+import RootLayout from './root-layout';
 
 const robotoCondensed = localFont({
   src: '../fonts/RobotoCondensed-Regular.ttf'

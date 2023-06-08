@@ -1,11 +1,7 @@
 import Link from 'next/link';
-import PageLayout from '../components/pageLayout';
+import PageLayout from '../components/page-layout';
 
-// TODO: Why do the interpolated strings work in ${robotoCondensed.className} and not other examples, like inserting the background image value? Probably because it's parsed at build time through the next Class, but ${} is not supported since the value is not known at build time. But + '' + is?
-
-// TODO: Consider subtle linear gradient
 export default function Page() {
-  // TODO: delete either op_90 or op_75 depending on which is more legible against white text
   return (
     <PageLayout
       background="bg-[url('/goofy_bg_500_op_80.png')] bg-contain"

@@ -1,6 +1,6 @@
 import { Suspense } from 'react';
 
-import PageLayout from '../../components/pageLayout';
+import PageLayout from '../../components/page-layout';
 import { RECORDS, RECORDS_MAP } from '../data';
 
 const Loading = () => (
