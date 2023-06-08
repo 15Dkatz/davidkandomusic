@@ -1,14 +1,13 @@
+import Link from 'next/link';
 import localFont from 'next/font/local';
 
 const rangaBold = localFont({
   src: '../../../fonts/Ranga-Bold.ttf'
 });
 
-export default function Item({ text, href, background, navigate }) {
-  const push = () => navigate(href);
-
+export default function Item({ text, href, background }) {
   return (
-    <div onClick={push} className="cursor-pointer">
+    <Link href={href}>
       <div
         className={
           "relative flex items-end " +
@@ -27,6 +26,6 @@ export default function Item({ text, href, background, navigate }) {
           {text}
         </div>
       </div>
-    </div>
+    </Link>
   );
 };
