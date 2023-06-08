@@ -1,6 +1,5 @@
 import { cache, useState, useEffect } from 'react';
 
-
 const getFollowers = cache(async () => {
   const response = await fetch('https://spotify-api-wrapper.appspot.com/artist/david-kando');
   console.log(`response`, response);
@@ -41,7 +40,7 @@ export default function Followers() {
   }, [setGoalString])
 
   return (
-    <div>
+    <div className="ml-5">
       Follower progress: {goalString}
     </div>
   );

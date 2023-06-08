@@ -30,13 +30,13 @@ function Result({ resultRef, resultData }) {
       </div>
       <div className="font-bold">
         <div>
-          """
+          &quot;&quot;&quot;
         </div>
         <div>
           {resultData ? resultData.blurb : ''} {CONCLUSION_PART_2}
         </div>
         <div>
-          """
+          &quot;&quot;&quot;
         </div>
       </div>
       <br />
@@ -119,7 +119,7 @@ export default function QuizResult() {
         resultRef.current.scrollIntoView({ behavior: 'smooth' });
       }
     }
-  }, [params, setResultData, displayResult, resultRef.current, setDisplayTryAgain, setDisplayResult]);
+  }, [params, setResultData, displayResult, setDisplayTryAgain, setDisplayResult]);
 
   const tryAgain = () => {
     router.push('/quiz/form');

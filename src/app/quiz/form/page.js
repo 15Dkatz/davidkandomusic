@@ -48,7 +48,7 @@ export default function QuizForm() {
               className="rounded-none bg-blue-700 text-white p-2"
               onClick={toggleDisplayForm}
             >
-              Ok, let's do this.
+              Ok, let&apos;s do this.
             </button>
           </div>
         )

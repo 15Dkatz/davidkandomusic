@@ -1,9 +1,4 @@
-'use client';
-
-import { useTransition } from 'react';
-import { useRouter } from 'next/navigation';
 import localFont from 'next/font/local';
-import PageContext from './page-context';
 import ITEMS from './items';
 import Item from './components/homepage/item';
 
@@ -11,16 +6,9 @@ const rangaBold = localFont({
   src: '../fonts/Ranga-Bold.ttf'
 });
 
+// NOTE: Lack of `navigate` makes page transitions instantaneous due to the server components being made at build time
 // TODO: In the future, with more songs, have a "load more" button that allows the user to see more than 8 items
 export default function RootLayout({ children }) {
-  const router = useRouter();
-  // const searchParams = useSearchParams();
-  const [isPending, startTransition] = useTransition();
-
-  function navigate(path) {
-    startTransition(() => router.push(path));
-  }
-
   return (
     <div className="w-[350px] md:w-[1000px] m-5 md:[m-10] flex flex-col items-center justify-center">
       <div
@@ -39,20 +27,17 @@ export default function RootLayout({ children }) {
           {
             ITEMS.map(item => {
               const { id, attributes } = item;
-              const props = { navigate, ...attributes };
 
               return (
                 <div key={id} className="flex justify-center">
-                  <Item {...props} />
+                  <Item {...attributes} />
                 </div>
               )
             })
           }
         </div>
       </div>
-      <PageContext.Provider value={{ isPending, navigate }}>
-        {children}
-      </PageContext.Provider>
+      {children}
     </div>
   )
 }

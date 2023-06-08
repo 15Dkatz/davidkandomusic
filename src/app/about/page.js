@@ -1,11 +1,7 @@
 import Link from 'next/link';
-import PageLayout from '../components/pageLayout';
+import PageLayout from '../components/page-layout';
 
-// TODO: Why do the interpolated strings work in ${robotoCondensed.className} and not other examples, like inserting the background image value? Probably because it's parsed at build time through the next Class, but ${} is not supported since the value is not known at build time. But + '' + is?
-
-// TODO: Consider subtle linear gradient
 export default function Page() {
-  // TODO: delete either op_90 or op_75 depending on which is more legible against white text
   return (
     <PageLayout
       background="bg-[url('/goofy_bg_500_op_80.png')] bg-contain"
@@ -18,14 +14,14 @@ export default function Page() {
         <br />
         <div>Did you base your artist name on a pun? Hell yes. You kando anything you want, really. Also, puns are cool.</div>
         <br />
-        <div>I'm a Filipino-American, and was born and raised in San Francisco.</div>
+        <div>I&apos;m a Filipino-American, and was born and raised in San Francisco.</div>
         <br />
         <div>
-          My musical background started with trying to get gold stars in piano books as a kid. Then in high school, I trained my vocal cords by attempting to belt like Freddie Mercury. More recently, I've been in a-cappella groups and riff rock bands.
+          My musical background started with trying to get gold stars in piano books as a kid. Then in high school, I trained my vocal cords by attempting to belt like Freddie Mercury. More recently, I&apos;ve been in a-cappella groups and riff rock bands.
         </div>
         <br />
         <div>
-          At the end of the day, when you listen to my music, I want to feel like you're having a good time, like you're "just hanging around..."
+          At the end of the day, when you listen to my music, I want to feel like you&apos;re having a good time, like you&apos;re &quot;just hanging around...&quot;
         </div>
         <br />
         <div>

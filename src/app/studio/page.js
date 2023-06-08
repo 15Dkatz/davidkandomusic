@@ -1,4 +1,4 @@
-import PageLayout from '../components/pageLayout';
+import PageLayout from '../components/page-layout';
 
 export default function Studio() {
   return (
@@ -8,15 +8,15 @@ export default function Studio() {
     >
       <div className={"text-md md:text-xl p-1"}>
         <div>
-          Let's make music together.
+          Let&apos;s make music together.
         </div>
         <br />
         <div>
-          If you're in the Bay Area, and are looking to record instruments and/or vocals, reach out to <span className="underline">davidkandomusic@gmail.com</span>.
+          If you&apos;re in the Bay Area, and are looking to record instruments and/or vocals, reach out to <span className="underline">davidkandomusic@gmail.com</span>.
         </div>
         <br />
         <div>
-          The studio's collection consists of a handful of studio-grade microphones, preamps, hardware compressors, and more. A more detailed list of gear can be provided over email.
+          The studio&apos;s collection consists of a handful of studio-grade microphones, preamps, hardware compressors, and more. A more detailed list of gear can be provided over email.
         </div>
         <br />
         <div>
