@@ -6,6 +6,7 @@ export default function EmailForm() {
   const formRef = useRef();
 
   const handleSubmit = async event => {
+    console.log(`event`, event);
     event.preventDefault();
 
     const body = {
@@ -20,7 +21,6 @@ export default function EmailForm() {
       body: JSON.stringify(body)
     });
     console.log(`response`, response);
-
     const json = await response.json();
     console.log(`json`, json);
 

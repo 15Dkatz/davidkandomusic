@@ -14,14 +14,14 @@ export default function Page() {
         <br />
         <div>Did you base your artist name on a pun? Hell yes. You kando anything you want, really. Also, puns are cool.</div>
         <br />
-        <div>I'm a Filipino-American, and was born and raised in San Francisco.</div>
+        <div>I&apos;m a Filipino-American, and was born and raised in San Francisco.</div>
         <br />
         <div>
-          My musical background started with trying to get gold stars in piano books as a kid. Then in high school, I trained my vocal cords by attempting to belt like Freddie Mercury. More recently, I've been in a-cappella groups and riff rock bands.
+          My musical background started with trying to get gold stars in piano books as a kid. Then in high school, I trained my vocal cords by attempting to belt like Freddie Mercury. More recently, I&apos;ve been in a-cappella groups and riff rock bands.
         </div>
         <br />
         <div>
-          At the end of the day, when you listen to my music, I want to feel like you're having a good time, like you're "just hanging around..."
+          At the end of the day, when you listen to my music, I want to feel like you&apos;re having a good time, like you&apos;re &quot;just hanging around...&quot;
         </div>
         <br />
         <div>
