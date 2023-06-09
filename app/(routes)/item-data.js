@@ -6,7 +6,7 @@ const ITEMS = [
     id: 1,
     attributes: {
       href: '/about',
-      background: "bg-[url('/about_b&w_500.png')] bg-contain",
+      background: "bg-[url('/about_500.png')] bg-contain",
       text: "About David Kando"
     }
   },
