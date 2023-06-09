@@ -6,8 +6,6 @@ import PageStructure from '../../page-structure';
 import { RECORDS, RECORDS_MAP, SEGMENT_TITLES_MAP } from './data';
 
 function NavTitle({ id, title, segments, activeSegment }) {
-  console.log(`activeSegment`, activeSegment);
-
   if (segments.length === 0) {
     return title;
   }
@@ -18,9 +16,6 @@ function NavTitle({ id, title, segments, activeSegment }) {
       {
         segments.map(segment => {
           const isActive = activeSegment === segment;
-
-          console.log(`segment`, segment);
-          console.log(`isActive`, isActive);
 
           return (
             <span key={segment}>
@@ -43,8 +38,6 @@ function NavTitle({ id, title, segments, activeSegment }) {
 export default function Record({ params, children }) {
   const segments = useSelectedLayoutSegments();
   const activeSegment = useSelectedLayoutSegment();
-
-  console.log(`segments`, segments);
 
   const { id } = params;
   const { title, pageBackground } = RECORDS_MAP[id];
