@@ -4,11 +4,11 @@ import localFont from 'next/font/local';
 import Link from 'next/link';
 
 const rangaBold = localFont({
-  src: '../fonts/Ranga-Bold.ttf'
+  src: './fonts/Ranga-Bold.ttf'
 });
 
 // TODO: Why aren't the tailwind css classNames working?
-export default function Custom404() {
+export default function NotFound() {
   return (
     <div className={`${rangaBold.className} w-full h-[100vh] flex flex-col items-center justify-center text-4xl`}>
       <h1>404 - Page not found.</h1>

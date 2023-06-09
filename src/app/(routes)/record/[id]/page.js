@@ -17,9 +17,6 @@ export const generateMetadata = ({ params }) => {
   const { id } = params;
   const { title } = RECORDS_MAP[id];
 
-  console.log(`params`, params);
-  console.log(`params`, params);
-
   return { title: `${title} - David Kando` };
 }
 
