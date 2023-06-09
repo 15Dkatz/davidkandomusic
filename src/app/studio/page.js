@@ -1,4 +1,4 @@
-import PageLayout from '../components/page-layout';
+import PageStructure from '../page-structure';
 
 export const metadata = {
   title: 'David Kando Studios'
@@ -6,7 +6,7 @@ export const metadata = {
 
 export default function Studio() {
   return (
-    <PageLayout
+    <PageStructure
       background="bg-gradient-to-b from-slate-100 to-purple-50"
       title="David Kando Studios"
     >
@@ -27,6 +27,6 @@ export default function Studio() {
           Again, reach out to <span className="underline">davidkandomusic@gmail.com</span> to see if David Kando Studios is the right fit for you!
         </div>
       </div>
-    </PageLayout>
+    </PageStructure>
   )
 }

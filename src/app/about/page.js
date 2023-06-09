@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import PageLayout from '../components/page-layout';
+import PageStructure from '../page-structure';
 
 export const metadata = {
   title: 'About David Kando'
@@ -7,7 +7,7 @@ export const metadata = {
 
 export default function Page() {
   return (
-    <PageLayout
+    <PageStructure
       background="bg-[url('/goofy_bg_500_op_80.png')] bg-contain"
       title="About David Kando"
     >
@@ -37,6 +37,6 @@ export default function Page() {
           <Link href="/connect" className="link">here</Link>.
         </div>
       </div>
-    </PageLayout>
+    </PageStructure>
   )
 }

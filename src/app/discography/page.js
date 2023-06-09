@@ -1,6 +1,6 @@
 import Image from 'next/image';
 
-import PageLayout from '../components/page-layout';
+import PageStructure from '../page-structure';
 import { RECORDS } from '../record/data';
 
 export const metadata = {
@@ -32,7 +32,7 @@ function PlayRow({ title, link, iconImage }) {
 
 export default function Discography() {
   return (
-    <PageLayout
+    <PageStructure
       background="bg-gradient-to-b from-slate-100 to-blue-100"
       title="Discography"
     >
@@ -89,6 +89,6 @@ export default function Discography() {
           })
         }
       </div>
-    </PageLayout>
+    </PageStructure>
   )
 }

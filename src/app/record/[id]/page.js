@@ -1,6 +1,6 @@
 import { Suspense } from 'react';
 
-import PageLayout from '../../components/page-layout';
+import PageStructure from '../../page-structure';
 import { RECORDS, RECORDS_MAP } from '../data';
 
 const Loading = () => (
@@ -13,7 +13,7 @@ const Loading = () => (
 );
 
 // TODO: Test anonymous function
-export function generateMetadata({ params }) {
+export const generateMetadata = ({ params }) => {
   const { id } = params;
   const { title } = RECORDS_MAP[id];
 
@@ -29,7 +29,7 @@ export default function Record({ params }) {
   const { date, title, blurb, pageBackground, LazyPlayer } = RECORDS_MAP[id];
 
   return (
-    <PageLayout
+    <PageStructure
       background={pageBackground}
       title={`Hot off the press: ${title}`}
     >
@@ -48,7 +48,7 @@ export default function Record({ params }) {
           </div>
         </div>
       </div>
-    </PageLayout>
+    </PageStructure>
   )
 }
 

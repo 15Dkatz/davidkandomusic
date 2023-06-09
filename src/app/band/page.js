@@ -1,5 +1,5 @@
 import localFont from 'next/font/local';
-import PageLayout from '../components/page-layout';
+import PageStructure from '../page-structure';
 import { HIGHLIGHTS } from './data';
 
 const rangaBold = localFont({
@@ -12,7 +12,7 @@ export const metadata = {
 
 export default function Band() {
   return (
-    <PageLayout
+    <PageStructure
       background="bg-[url('/curcio_banner.png')] bg-contain"
       title="Enter the Curcio-verse"
     >
@@ -67,6 +67,6 @@ export default function Band() {
           }
         </div>
       </div>
-    </PageLayout>
+    </PageStructure>
   )
 }

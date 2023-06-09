@@ -1,8 +1,8 @@
 import '../globals.css'
 
 import localFont from 'next/font/local';
-import ITEMS from './items';
-import Item from './components/homepage/item';
+import ITEMS from './item-data';
+import HomeItem from './home-item';
 
 const rangaBold = localFont({
   src: '../fonts/Ranga-Bold.ttf'
@@ -43,7 +43,7 @@ export default function Root({ children }) {
 
                   return (
                     <div key={id} className="flex justify-center">
-                      <Item {...attributes} />
+                      <HomeItem {...attributes} />
                     </div>
                   )
                 })
