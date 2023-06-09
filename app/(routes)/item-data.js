@@ -1,4 +1,4 @@
-import { POISON_WORMS_ID, IN_PERPETUITY_ID } from './record/data';
+import { POISON_WORMS_ID, IN_PERPETUITY_ID } from './record/[id]/data';
 
 // Try merging this with item_type_settings. More elegant.
 const ITEMS = [

@@ -1,7 +1,8 @@
 import Image from 'next/image';
+import Link from 'next/link';
 
 import PageStructure from '../page-structure';
-import { RECORDS } from '../record/data';
+import { RECORDS } from '../record/[id]/data';
 
 export const metadata = {
   title: 'Discography - David Kando'
@@ -19,7 +20,7 @@ function PlayRow({ title, link, iconImage }) {
       href={link} target="_blank"
     >
       <div className="mr-1">Play on</div>
-      <div className="relative w-[80px] h-[24px]">
+      <div className="relative w-[80px] h-[24px]" href={`/`}>
         <Image
           src={iconImage}
           alt={title}
@@ -39,7 +40,15 @@ export default function Discography() {
       <div className="p-2">
         {
           RECORDS.map(({
-            title, date, blurb, albumImage, recordHalfImage, spotifyLink, appleMusicLink, youtubeMusicLink
+            id,
+            title,
+            date,
+            blurb,
+            albumImage,
+            recordHalfImage,
+            spotifyLink,
+            appleMusicLink,
+            youtubeMusicLink
           }, i) => {
             const addMb = i < RECORDS.length;
             const addedMb = addMb ? " mb-5 md:mb-10" : "";
@@ -47,18 +56,19 @@ export default function Discography() {
             return (
               <div key={title} className={"w-full bg-white p-5 md:p-10" + addedMb}>
                 <div className="flex flex-row justify-center">
-                  <div
+                  <Link
                     className={
                       "relative w-[180px] h-[180px] md:w-[280px] md:h-[280px] " +
                       "border-black border-[2px]"
                     }
+                    href={`/record/${id}`}
                   >
                     <Image
                       src={albumImage}
                       alt="album image"
                       fill
                     />
-                  </div>
+                  </Link>
                   <div
                     className={
                       "relative w-[90px] h-[180px] md:w-[140px] md:h-[280px]"
