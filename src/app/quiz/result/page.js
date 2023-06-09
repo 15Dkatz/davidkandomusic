@@ -122,7 +122,7 @@ export default function QuizResult() {
   }, [params, setResultData, displayResult, setDisplayTryAgain, setDisplayResult]);
 
   const tryAgain = () => {
-    router.push('/quiz/form');
+    router.push('/quiz');
   };
 
   return (
