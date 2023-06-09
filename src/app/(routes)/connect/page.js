@@ -1,4 +1,4 @@
-export default function ConnectPage({ emailForm, followers }) {
+export default function Page({ form, followers }) {
   return (
     <>
       <div>
@@ -19,7 +19,7 @@ export default function ConnectPage({ emailForm, followers }) {
       <div>
         3. Join my email list.
       </div>
-      {emailForm}
+      {form}
       <br />
       <div>
         Reach out for inquiries at <span className="underline">davidkandomusic@gmail.com</span>
