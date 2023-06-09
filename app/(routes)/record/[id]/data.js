@@ -1,11 +1,5 @@
 import { lazy } from 'react';
 
-export const POISON_WORMS = 'POISON_WORMS';
-export const IN_PERPETUITY = 'IN_PERPETUITY';
-
-export const POISON_WORMS_PARAMS = 'item=poison-worms';
-export const IN_PERPETUITY_PARAMS = 'item=in-perpetuity';
-
 export const POISON_WORMS_ID = 'poison-worms';
 export const IN_PERPETUITY_ID = 'in-perpetuity';
 
@@ -37,7 +31,7 @@ export const RECORDS_MAP = {
     appleMusicLink: 'https://music.apple.com/us/album/poison-worms/1689163166?i=1689163167',
     youtubeMusicLink: 'https://www.youtube.com/watch?v=Lqdxm7R23c4',
     lyrics: (
-      <div className="text:lg md:text-xl text-justify">
+      <div className="text:lg md:text-xl p-4">
         <div>(One, two, three)</div>
         <div>One more nesting outside</div>
         <div>One alive with sapphire feathering</div>
@@ -79,8 +73,42 @@ export const RECORDS_MAP = {
       </div>
     ),
     gear: (
-      <div>
-        TODO: Gear Used
+      <div className="text:lg md:text-xl p-4">
+        <div className="font-bold">
+          Poison Worms was recorded in David Kando Studios. See below for some highlights of the interesting gear and techniques that I used during the creation process:
+        </div>
+        <br />
+        <div>
+          <div className="font-bold underline">Instruments highlights</div>
+          <ul className="list-disc pl-10">
+            <li><span className="font-bold underline">Gibson SG Electric Guitar</span>: I set my SG to the Rhythm setting with both knobs dialed all the way up. My pedal-chain consists of only two pedals in order to preserve tone: an overdrive (Tumnus Wumpler) and an EQ (Boss GE-7).</li>
+            <li><span className="font-bold underline">Boss Katana Amp</span>: My guitar amp is a Boss Katana Artist Edition. While it&apos;s priced for a home studio, it produces a high-quality tone.</li>
+            <li><span className="font-bold underline">Nord Electro 6D</span>: I wanted a nice electric organ Hammond B3 sound for the solo in this track. I had the Nord Electro on my wish list for a while, so I decided to finally invest in one.</li>
+            <li><span className="font-bold underline">Addictive Drums</span>: Addictive Drums is a plugin by XLN Audio. While I&apos;m not a live drummer, I&apos;ve spent time learning enough and more to be dangerous. The Addictive Drums plugin allows me to create full midi drum tracks that sound like a studio drummer.</li>
+          </ul>
+        </div>
+        <br />
+        <div>
+          <div className="font-bold underline">Recording highlights</div>
+          <ul className="list-disc pl-10">
+            <li><span className="font-bold underline">Shure SM57 Microphone</span>: I tracked my vocals with this mic, even though it&apos;s more commonly used to record guitar amps. I discovered that it can capture a warmer tone than other more traditional vocal mics in my locker.</li>
+            <li><span className="font-bold underline">Universal Audio Sphere DLX</span>: This mic is a powerful one that allows me to emulate other high-end mics. The emulations include a plethora of studio-grade microphones including popular Audio Technica, Rode mics, Neumann U87s, and more. I used this to record my guitar amp.</li>
+            <li><span className="font-bold underline">Natural sounds</span>: To give a live feel, I recorded and layered a bunch of natural sounds: clapping, shaker, and more. I also sampled the crowd talk from my previous band shows, as well as a bird singing.</li>
+          </ul>
+        </div>
+        <br />
+        <div>
+          <div className="font-bold underline">Mixing highlights</div>
+          <ul className="list-disc pl-10">
+            <li><span className="font-bold underline">Dual Hard-panned guitars</span>: I double recorded the guitar tracks - one with a clean tone, and one with a boosted, driven tone. Then I hard-panned each track on opposite ends to create a wide stereo feel.</li>
+            <li><span className="font-bold underline">Hardware 1176LN</span>: For mono tracks, I have a hardware 1176LN in the studio that I use to add some warm analog compression.</li>
+            <li><span className="font-bold underline">Hardware Manley VU</span>: For stereo tracks, I have a hardware Manley VU in the studio that I use to add some warm analog compression.</li>
+            <li><span className="font-bold underline">Pro-Q by Fabfilter</span>: My go to Equalizer plugin.</li>
+            <li><span className="font-bold underline">Fresh Air</span>: A plugin that allows me to revive the mid-high range of any track. I find that it breathes more life into drums, guitar, and vocals.</li>
+          </ul>
+        </div>
+        <br />
+        <div>Stay tuned for upcoming videos that deep-dive into my interesting gear, techniques, and recording/mixing workflow!</div>
       </div>
     )
   },
@@ -99,7 +127,7 @@ export const RECORDS_MAP = {
     appleMusicLink: 'https://music.apple.com/us/album/in-perpetuity/1677926229?i=1677926230',
     youtubeMusicLink: 'https://www.youtube.com/watch?v=XhSBF2_iqL4',
     lyrics: (
-      <div className="text:lg md:text-xl text-justify">
+      <div className="text:lg md:text-xl p-4">
         <div>Kitchen fire</div>
         <div>Burning mac from the store</div>
         <div>Canine crier</div>
@@ -144,18 +172,43 @@ export const RECORDS_MAP = {
       </div>
     ),
     gear: (
-      <div>
-        TODO: Gear Used
+      <div className="text:lg md:text-xl p-4">
+        <div className="font-bold">
+          In Perpetuity was recorded in David Kando Studios. See below for some highlights of the interesting gear and techniques that I used during the creation process:
+        </div>
+        <br />
+        <div>
+          <div className="font-bold underline">Instruments highlights</div>
+          <ul className="list-disc pl-10">
+            <li><span className="font-bold underline">Gibson SG Electric Guitar</span>: I set my SG to the Rhythm setting with both knobs dialed all the way up. My pedal-chain consists of only two pedals in order to preserve tone: an overdrive (Tumnus Wumpler) and an EQ (Boss GE-7).</li>
+            <li><span className="font-bold underline">Boss Katana Amp</span>: My guitar amp is a Boss Katana Artist Edition. While it&apos;s priced for a home studio, it produces a high-quality tone.</li>
+            <li><span className="font-bold underline">Casio SP350</span>: While this is an entry-level home-studio piano, I discovered a few interesting sounds that I incorporated into the track. For example, the &quot;washing and rising&quot; feel of the synth sound comes from this Casio.</li>
+            <li><span className="font-bold underline">Addictive Drums</span>: Addictive Drums is a plugin by XLN Audio. While I&apos;m not a live drummer, I&apos;ve spent time learning enough and more to be dangerous. The Addictive Drums plugin allows me to create full midi drum tracks that sound like a studio drummer.</li>
+          </ul>
+        </div>
+        <br />
+        <div>
+          <div className="font-bold underline">Recording highlights</div>
+          <ul className="list-disc pl-10">
+            <li><span className="font-bold underline">Shure SM57 Microphone</span>: I tracked my vocals with this mic, even though it&apos;s more commonly used to record guitar amps. I discovered that it can capture a warmer tone than other more traditional vocal mics in my locker.</li>
+            <li><span className="font-bold underline">Universal Audio Sphere DLX</span>: This mic is a powerful one that allows me to emulate other high-end mics. The emulations include a plethora of studio-grade microphones including popular Audio Technica, Rode mics, Neumann U87s, and more. I used this to record my guitar amp.</li>
+          </ul>
+        </div>
+        <br />
+        <div>
+          <div className="font-bold underline">Mixing highlights</div>
+          <ul className="list-disc pl-10">
+            <li><span className="font-bold underline">Hardware 1176LN</span>: For mono tracks, I have a hardware 1176LN in the studio that I use to add some warm analog compression.</li>
+            <li><span className="font-bold underline">Pro-Q by Fabfilter</span>: My go to Equalizer plugin.</li>
+            <li><span className="font-bold underline">Fresh Air</span>: A plugin that allows me to revive the mid-high range of any track. I find that it breathes more life into drums, guitar, and vocals.</li>
+          </ul>
+        </div>
+        <br />
+        <div>Stay tuned for upcoming videos that deep-dive into my interesting gear, techniques, and recording/mixing workflow!</div>
       </div>
     )
   }
 };
-
-// TODO: May be unneeded
-export const PARAMS_RECORD_MAP = {
-  [POISON_WORMS_PARAMS]: RECORDS_MAP[POISON_WORMS],
-  [IN_PERPETUITY_PARAMS]: RECORDS_MAP[IN_PERPETUITY],
-}
 
 export const RECORDS = Object.values(RECORDS_MAP);
 

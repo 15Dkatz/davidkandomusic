@@ -2,7 +2,10 @@
 
 import { useEffect } from 'react';
 
+// TODO: Get this to appear, has never appeared
 export default function GlobalError({ error, reset }) {
+  console.log(`reset`, reset);
+
   useEffect(() => {
     console.error(`error`, error);
   }, [error]);

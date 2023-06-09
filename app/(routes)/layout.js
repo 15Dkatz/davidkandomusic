@@ -12,7 +12,6 @@ export const metadata = {
   title: 'David Kando Music'
 };
 
-// TODO: In the future, with more songs, have a "load more" button that allows the user to see more than 8 items
 export default function Root({ children }) {
   return (
     <div className="w-[350px] md:w-[1000px] m-5 md:[m-10] flex flex-col items-center justify-center">
