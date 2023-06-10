@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import PageStructure from '../page-structure';
+import PageStructure from 'app/components/page-structure';
 
 export const metadata = {
   title: 'About David Kando'

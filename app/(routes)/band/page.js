@@ -1,6 +1,6 @@
-import PageStructure from '../page-structure';
+import PageStructure from 'app/components/page-structure';
 import { HIGHLIGHTS } from './data';
-import rangaBold from '../../fonts/ranga-bold';
+import rangaBold from 'app/fonts/ranga-bold';
 
 export const metadata = {
   title: 'Curcio - David Kando'
@@ -41,17 +41,16 @@ export default function Band() {
                 <a href={tiktokLink} target="_blank">
                   <div
                     className={
-                      "relative flex items-end " +
-                      "w-[250px] h-[136.5px] md:w-[350px] md:h-[192.5px] " +
-                      background + " " +
-                      "border-[2px] border-black"
+                      `relative flex items-end
+                      w-[250px] h-[136.5px] md:w-[350px] md:h-[192.5px]
+                      ${background} border-[2px] border-black`
                     }
                   >
                     <div
                       className={
-                        `${rangaBold.className} text-blue-950 hover:text-white text-sm md:text-2xl ` +
-                        "pt-1 pb-1 mb-2 bg-slate-200/75 hover:bg-slate-700/75 w-full text-center " +
-                        "h-[22px] md:h-[40px]"
+                        `${rangaBold.className} text-blue-950 hover:text-white
+                        text-sm md:text-2xl pt-1 pb-1 mb-2 bg-slate-200/75
+                        hover:bg-slate-700/75 w-full text-center h-[22px] md:h-[40px]`
                       }
                     >
                       See the Highlights

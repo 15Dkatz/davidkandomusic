@@ -1,4 +1,4 @@
-import PageStructure from '../page-structure';
+import PageStructure from 'app/components/page-structure';
 
 export const metadata = {
   title: 'Playlist Personality Quiz - David Kando'

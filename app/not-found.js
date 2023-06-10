@@ -1,5 +1,5 @@
 import '../globals.css';
-import rangaBold from './fonts/ranga-bold';
+import rangaBold from 'app/fonts/ranga-bold';
 
 import Link from 'next/link';
 

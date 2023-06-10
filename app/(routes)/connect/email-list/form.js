@@ -48,8 +48,9 @@ export default function Form() {
       <div className="m-1 mt-2">
         <button
           className={
-            "flex justify-center items-center rounded-none bg-blue-700 text-white p-[4px] w-[120px] h-[36px] text-lg " +
-            "disabled:bg-slate-50 disabled:text-slate-500"
+            `flex justify-center items-center rounded-none bg-blue-700 text-white
+            p-[4px] w-[120px] h-[36px] text-lg
+            disabled:bg-slate-50 disabled:text-slate-500`
           }
           type="submit"
           disabled={isPending}

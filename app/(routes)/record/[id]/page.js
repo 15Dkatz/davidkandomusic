@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { RECORDS, RECORDS_MAP } from './data';
 import LazyPlayerDisplay from './lazy-player-display';
-import rangaBold from '../../../fonts/ranga-bold';
+import rangaBold from 'app/fonts/ranga-bold';
 
 export const generateMetadata = ({ params }) => {
   const { id } = params;

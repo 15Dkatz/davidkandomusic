@@ -1,15 +1,13 @@
 import Link from 'next/link';
-import rangaBold from '../fonts/ranga-bold';
+import rangaBold from 'app/fonts/ranga-bold';
 
 export default function Item({ text, href, background }) {
   return (
     <Link href={href}>
       <div
         className={
-          "relative flex items-end " +
-          "w-36 h-36 lg:w-52 lg:h-52 " +
-          background + " " +
-          "border-[2px] border-black"
+          `relative flex items-end w-36 h-36 lg:w-52 lg:h-52
+          ${background} border-[2px] border-black`
         }
       >
         <div

@@ -1,6 +1,6 @@
 import '../globals.css'
 
-import robotoCondensed from './fonts/roboto-condensed';
+import robotoCondensed from 'app/fonts/roboto-condensed';
 
 export const metadata = {
   title: 'David Kando Music'

@@ -8,7 +8,7 @@ export const metadata = {
 // "Passing data between a parent layout and its children is not possible. However, you can fetch the same data in a route more than once, and React will automatically dedupe the requests without affecting performance."
 // However, a workaround is directly instantiating the Page component, like here with ConnectPage. Is this too much of an antipattern?
 import Page from './page';
-import PageStructure from '../page-structure';
+import PageStructure from 'app/components/page-structure';
 import Form from './email-list/form';
 import Followers from './followers';
 

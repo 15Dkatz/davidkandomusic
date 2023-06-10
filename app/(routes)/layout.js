@@ -1,7 +1,7 @@
-import '../../globals.css'
-import rangaBold from '../fonts/ranga-bold';
+import 'globals.css'
+import rangaBold from 'app/fonts/ranga-bold';
 import ITEMS from './item-data';
-import HomeItem from './home-item';
+import HomeItem from 'app/components/home-item';
 
 export const metadata = {
   title: 'David Kando Music'
@@ -12,9 +12,8 @@ export default function Root({ children }) {
     <div className="w-[350px] md:w-[1000px] m-5 md:[m-10] flex flex-col items-center justify-center">
       <div
         className={
-          "w-full p-1 pb-10 pt-10 m-2 md:p-10 md:m-20 md:mb-2 " +
-          "flex flex-col justify-center items-center " +
-          "bg-slate-100"
+          `w-full p-1 pb-10 pt-10 m-2 md:p-10 md:m-20 md:mb-2
+          flex flex-col justify-center items-center bg-slate-100`
         }
       >
         <div className="flex justify-center mb-5 md:mb-10">

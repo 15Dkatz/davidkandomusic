@@ -1,4 +1,4 @@
-import rangaBold from '../fonts/ranga-bold';
+import rangaBold from 'app/fonts/ranga-bold';
 
 // Notice the {children} prop to allow the insertion of Server Components within this Client Component
 // This follows this pattern: https://nextjs.org/docs/getting-started/react-essentials#recommended-pattern-passing-server-components-to-client-components-as-props
@@ -7,9 +7,9 @@ export default function PageStructure({ children, background, title }) {
   return (
     <div
       className={
-        "w-full p-1 pb-10 pt-10 m-2 md:p-10 md:m-20 " +
-        "flex flex-col justify-center items-center " +
-        background + " bg-no-repeat bg-cover "
+        `w-full p-1 pb-10 pt-10 m-2 md:p-10 md:m-20
+        flex flex-col justify-center items-center
+        ${background} bg-no-repeat bg-cover`
       }
     >
       <div className="flex justify-center mb-5 md:mb-10">

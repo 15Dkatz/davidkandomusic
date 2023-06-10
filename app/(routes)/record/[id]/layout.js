@@ -2,7 +2,7 @@
 
 import { useSelectedLayoutSegment, useSelectedLayoutSegments } from 'next/navigation';
 import Link from 'next/link';
-import PageStructure from '../../page-structure';
+import PageStructure from 'app/components/page-structure';
 import { RECORDS, RECORDS_MAP, SEGMENT_TITLES_MAP } from './data';
 
 function NavTitle({ id, title, segments, activeSegment }) {

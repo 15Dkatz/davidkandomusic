@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
-import PageStructure from '../page-structure';
+import PageStructure from 'app/components/page-structure';
 import { RECORDS } from '../record/[id]/data';
 
 export const metadata = {
@@ -12,20 +12,14 @@ function PlayRow({ title, link, iconImage }) {
   return (
     <a
       className={
-        "flex flex-row justify-center " +
-        "p-3 text-md md:text-xl " +
-        "hover:bg-sky-100 " +
-        "border-t-2 border-slate-100"
+        `flex flex-row justify-center p-3 text-md md:text-xl
+      hover:bg-sky-100 border-t-2 border-slate-100`
       }
       href={link} target="_blank"
     >
       <div className="mr-1">Play on</div>
       <div className="relative w-[80px] h-[24px]" href={`/`}>
-        <Image
-          src={iconImage}
-          alt={title}
-          fill
-        />
+        <Image src={iconImage} alt={title} fill />
       </div>
     </a>
   )
@@ -50,41 +44,22 @@ export default function Discography() {
             appleMusicLink,
             youtubeMusicLink
           }, i) => {
-            const addMb = i < RECORDS.length;
-            const addedMb = addMb ? " mb-5 md:mb-10" : "";
+            const addedMb = i < RECORDS.length ? " mb-5 md:mb-10" : "";
 
             return (
-              <div key={title} className={"w-full bg-white p-5 md:p-10" + addedMb}>
+              <div key={title} className={`w-full bg-white p-5 md:p-10 ${addedMb}`}>
                 <div className="flex flex-row justify-center">
                   <Link
                     className={
-                      "relative w-[180px] h-[180px] md:w-[280px] md:h-[280px] " +
-                      "border-black border-[2px]"
+                      `relative w-[180px] h-[180px] md:w-[280px] md:h-[280px]
+                      border-black border-[2px]`
                     }
                     href={`/record/${id}`}
                   >
-                    <Image
-                      src={albumImage}
-                      alt="album image"
-                      fill
-                      // placeholder="blur"
-                      // // blurDataURL created with: https://png-pixel.com/
-                      // blurDataURL="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
-                    />
+                    <Image src={albumImage} alt="album image" fill />
                   </Link>
-                  <div
-                    className={
-                      "relative w-[90px] h-[180px] md:w-[140px] md:h-[280px]"
-                    }
-                  >
-                    <Image
-                      src={recordHalfImage}
-                      alt="album image"
-                      fill
-                      // placeholder="blur"
-                      // // blurDataURL created with: https://png-pixel.com/
-                      // blurDataURL="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
-                    />
+                  <div className={"relative w-[90px] h-[180px] md:w-[140px] md:h-[280px]"}>
+                    <Image src={recordHalfImage} alt="album image" fill />
                   </div>
                 </div>
                 <div className="mb-5 mt-5">

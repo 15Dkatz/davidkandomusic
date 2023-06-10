@@ -3,6 +3,7 @@
 
 'use client';
 
+// TODO: Is this even used? Can I delete the error files?
 export default function ConnectError({ error, reset }) {
   console.log(`error`, error);
 
