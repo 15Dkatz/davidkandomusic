@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, Suspense } from 'react';
+import { useState, useEffect, useRef, Suspense } from 'react';
 // useSearchParams is a next.js hook used to gather the url information in the query string.
 // useSearchParams makes you think its should be reserved for a search component, idiomatically.
 // however, query params are also applied for other use cases like form submission (the case here)
@@ -23,8 +23,14 @@ const Loading = () => (
 );
 
 function Result({ resultData }) {
+  const scrollRef = useRef();
+
+  useEffect(() => {
+    if (scrollRef.current) scrollRef.current.scrollIntoView({ behavior: 'smooth' });
+  }, [scrollRef])
+
   return (
-    <div>
+    <div ref={scrollRef}>
       <div>
         {CONCLUSION_PART_1}
       </div>
