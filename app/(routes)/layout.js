@@ -1,8 +1,8 @@
 import 'globals.css'
-import Link from 'next/link';
 import rangaBold from 'app/fonts/ranga-bold';
 import ITEMS from './item-data';
-import HomeItem from 'app/components/home-item';
+import HomeItem from './home-item';
+import LinkTitle from './link-title';
 
 export const metadata = {
   title: 'David Kando Music'
@@ -18,12 +18,9 @@ export default function Root({ children }) {
         }
       >
         <div className="flex justify-center mb-5 md:mb-10">
-          <Link
-            href="/"
-            className={`${rangaBold.className} text-2xl md:text-4xl underline underline-offset-1 decoration-4 decoration-blue-400`}
-          >
-            DAVID KANDO MUSIC
-          </Link>
+          <div className={`${rangaBold.className} text-2xl md:text-4xl underline underline-offset-1 decoration-4 decoration-blue-400`}>
+            <LinkTitle />
+          </div>
         </div>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-1 ml-1 mr-1 md:ml-10 md:mr-10">
           {
