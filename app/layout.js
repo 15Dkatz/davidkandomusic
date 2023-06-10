@@ -1,4 +1,5 @@
 import '../globals.css'
+import ClientLog from './client-log';
 
 import robotoCondensed from 'app/fonts/roboto-condensed';
 
@@ -12,6 +13,7 @@ export default function Root({ children }) {
       <body className="flex justify-center min-h-screen">
         {children}
       </body>
+      <ClientLog />
     </html>
   )
 }
