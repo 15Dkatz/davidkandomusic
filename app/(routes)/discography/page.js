@@ -67,6 +67,9 @@ export default function Discography() {
                       src={albumImage}
                       alt="album image"
                       fill
+                      // placeholder="blur"
+                      // // blurDataURL created with: https://png-pixel.com/
+                      // blurDataURL="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
                     />
                   </Link>
                   <div
@@ -78,6 +81,9 @@ export default function Discography() {
                       src={recordHalfImage}
                       alt="album image"
                       fill
+                      // placeholder="blur"
+                      // // blurDataURL created with: https://png-pixel.com/
+                      // blurDataURL="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
                     />
                   </div>
                 </div>

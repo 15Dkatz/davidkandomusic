@@ -1,11 +1,7 @@
 import Link from 'next/link';
-import localFont from 'next/font/local';
 import { RECORDS, RECORDS_MAP } from './data';
 import LazyPlayerDisplay from './lazy-player-display';
-
-const rangaBold = localFont({
-  src: '../../../fonts/Ranga-Bold.ttf'
-});
+import rangaBold from '../../../fonts/ranga-bold';
 
 export const generateMetadata = ({ params }) => {
   const { id } = params;

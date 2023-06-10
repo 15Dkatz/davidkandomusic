@@ -1,12 +1,7 @@
 import '../../globals.css'
-
-import localFont from 'next/font/local';
+import rangaBold from '../fonts/ranga-bold';
 import ITEMS from './item-data';
 import HomeItem from './home-item';
-
-const rangaBold = localFont({
-  src: '../fonts/Ranga-Bold.ttf'
-});
 
 export const metadata = {
   title: 'David Kando Music'

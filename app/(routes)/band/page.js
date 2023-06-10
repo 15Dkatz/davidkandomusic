@@ -1,10 +1,6 @@
-import localFont from 'next/font/local';
 import PageStructure from '../page-structure';
 import { HIGHLIGHTS } from './data';
-
-const rangaBold = localFont({
-  src: '../../fonts/Ranga-Bold.ttf'
-});
+import rangaBold from '../../fonts/ranga-bold';
 
 export const metadata = {
   title: 'Curcio - David Kando'

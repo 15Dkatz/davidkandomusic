@@ -1,8 +1,4 @@
-import localFont from 'next/font/local';
-
-const rangaBold = localFont({
-  src: '../fonts/Ranga-Bold.ttf'
-});
+import rangaBold from '../fonts/ranga-bold';
 
 // Notice the {children} prop to allow the insertion of Server Components within this Client Component
 // This follows this pattern: https://nextjs.org/docs/getting-started/react-essentials#recommended-pattern-passing-server-components-to-client-components-as-props
