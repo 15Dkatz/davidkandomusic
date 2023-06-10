@@ -1,5 +1,5 @@
 import 'globals.css'
-import ITEMS from './item-data';
+import ITEMS from './data';
 import HomeItem from './home-item';
 import LinkTitle from './link-title';
 

@@ -1,4 +1,5 @@
-import { POISON_WORMS_ID, IN_PERPETUITY_ID } from './record/[id]/data';
+export const POISON_WORMS_ID = 'poison-worms';
+export const IN_PERPETUITY_ID = 'in-perpetuity';
 
 // Try merging this with item_type_settings. More elegant.
 const ITEMS = [

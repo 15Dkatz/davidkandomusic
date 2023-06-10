@@ -1,7 +1,5 @@
 import { lazy } from 'react';
-
-export const POISON_WORMS_ID = 'poison-worms';
-export const IN_PERPETUITY_ID = 'in-perpetuity';
+import { POISON_WORMS_ID, IN_PERPETUITY_ID } from 'app/(routes)/data';
 
 // TODO: Preserve the following as a demo/teaching version:
 // const PoisonWormsLazyPlayer = lazy(
