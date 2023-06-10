@@ -1,7 +1,6 @@
 'use client';
 
 import { useState } from 'react';
-
 import { PREMISE, QUESTIONS } from '../data';
 
 export default function QuizForm() {
@@ -25,7 +24,13 @@ export default function QuizForm() {
                         {
                           answers.map(({ id: answerId, answer, type }) => (
                             <div key={answerId}>
-                              <input id={answerId} type="radio" name={questionId} value={type} required />
+                              <input
+                                id={answerId}
+                                type="radio"
+                                name={questionId}
+                                value={type}
+                                required
+                              />
                               <label htmlFor={answerId}>{' '}{answer}</label>
                             </div>
                           ))
