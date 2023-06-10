@@ -16,7 +16,12 @@ function PlayRow({ title, link, iconImage }) {
     >
       <div className="mr-1">Play on</div>
       <div className="relative w-[80px] h-[24px]" href={`/`}>
-        <Image src={iconImage} alt={title} fill />
+        <Image
+          src={iconImage}
+          alt={title}
+          fill
+          sizes="80px"
+        />
       </div>
     </a>
   )
@@ -108,10 +113,26 @@ export default function Discography() {
                     }
                     href={`/record/${id}`}
                   >
-                    <Image src={albumImage} alt="album image" fill />
+                    <Image
+                      src={albumImage}
+                      alt="album-image"
+                      fill
+                      // 768px is the breaking point for tailwind css `md:`
+                      // max-width in Next.js sizes refers to a max-width to apply a smaller value.
+                      // Then in larger widths, the final value is the default.
+                      // This is an opposite mindset to tailwind where the default is the smallest value, and sm:/md:/lg: establish breaking points to apply larger values.
+                      sizes="(max-width:768px) 90px, 140px"
+                      // uncomment to find warnings on Largest Contentful Paint: https://nextjs.org/docs/pages/api-reference/components/image#priority
+                      priority
+                    />
                   </Link>
                   <div className={"relative w-[90px] h-[180px] md:w-[140px] md:h-[280px]"}>
-                    <Image src={recordHalfImage} alt="album image" fill />
+                    <Image
+                      src={recordHalfImage}
+                      alt="album-image"
+                      fill
+                      sizes="(max-width:768px) 90px, 140px"
+                    />
                   </div>
                 </div>
                 <div className="mb-5 mt-5">
@@ -124,9 +145,21 @@ export default function Discography() {
                   </div>
                 </div>
                 <div className="md:m-2"></div>
-                <PlayRow title={'Spotify'} link={spotifyLink} iconImage='/spotify_icon_w500.png' />
-                <PlayRow title={'Apple Music'} link={appleMusicLink} iconImage='/apple_music_icon_w500.png' />
-                <PlayRow title={'YouTube Music'} link={youtubeMusicLink} iconImage='/youtube_music_icon_w500.png' />
+                <PlayRow
+                  title={'Spotify'}
+                  link={spotifyLink}
+                  iconImage='/spotify_icon_w500.png'
+                />
+                <PlayRow
+                  title={'Apple Music'}
+                  link={appleMusicLink}
+                  iconImage='/apple_music_icon_w500.png'
+                />
+                <PlayRow
+                  title={'YouTube Music'}
+                  link={youtubeMusicLink}
+                  iconImage='/youtube_music_icon_w500.png'
+                />
               </div>
             )
           })
