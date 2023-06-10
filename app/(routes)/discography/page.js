@@ -53,6 +53,7 @@ const titleDisplay = ({ deferredText, title }) => {
   return <span>{title}</span>;
 }
 
+// TODO: Try to optimize this for the sake of the course
 export default function Discography() {
   const [text, setText] = useState('');
   const [records, setRecords] = useState(RECORDS);

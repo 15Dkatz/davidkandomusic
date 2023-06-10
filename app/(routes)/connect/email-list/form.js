@@ -1,7 +1,7 @@
 'use client';
 
 import { useTransition, useRef } from 'react';
-import createContact from './create-contact';
+import postContact from './post-contact';
 
 const Spinner = () => (
   <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-slate-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
@@ -18,7 +18,7 @@ export default function Form() {
 
   const handleSubmit = (...args) => {
     startTransition(() => {
-      createContact(...args)
+      postContact(...args)
         .then(response => {
           const { status, message } = response;
           alert(message);

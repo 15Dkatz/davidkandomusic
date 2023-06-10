@@ -1,6 +1,6 @@
 'use server';
 
-export default async function createContact(data) {
+export default async function postContact(data) {
   // instance of FormData: https://developer.mozilla.org/en-US/docs/Web/API/FormData
   // event.preventDefault()l
   const apiKey = process.env.API_KEY;

@@ -1,5 +1,5 @@
 import Form from './email-list/form';
-import Followers from './followers';
+import FollowersProgress from './followers/progress';
 
 export default function Page() {
   return (
@@ -12,7 +12,7 @@ export default function Page() {
         1. Support me with a follow on{' '}
         <a className="font-bold link" href="https://open.spotify.com/artist/6ep6Hvwexmaa5IqcPxMxqC?si=t24Vsf6LRsKSIy5lV0wvNw" target="_blank">Spotify</a>.
       </div>
-      <Followers />
+      <FollowersProgress />
       <br />
       <div>
         2. Follow me on{' '}
