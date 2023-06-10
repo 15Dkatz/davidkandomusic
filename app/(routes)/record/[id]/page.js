@@ -1,18 +1,11 @@
 import Link from 'next/link';
 import { RECORDS, RECORDS_MAP } from './data';
-import LazyPlayerDisplay from './lazy-player-display';
+import Player from './player';
 import rangaBold from 'app/fonts/ranga-bold';
-
-export const generateMetadata = ({ params }) => {
-  const { id } = params;
-  const { title } = RECORDS_MAP[id];
-
-  return { title: `${title} - David Kando` };
-}
 
 export default function Record({ params }) {
   const { id } = params;
-  const { date, blurb, LazyPlayer } = RECORDS_MAP[id];
+  const { date, blurb, Embed } = RECORDS_MAP[id];
 
   return (
     <>
@@ -26,13 +19,11 @@ export default function Record({ params }) {
         <Link href={`record/${id}/lyrics`} className="link">Lyrics</Link>
         <Link href={`record/${id}/gear`} className="link">Gear Used</Link>
       </div>
-      <LazyPlayerDisplay lazyPlayer={<LazyPlayer />} />
+      <Player embed={<Embed />} />
     </>
   )
 }
 
-// replacement for getStaticParams and getStaticProps
-// emulates a database-fetching scenario. However, here the data is hardcoded
 export async function generateStaticParams() {
   return RECORDS.map(({ id }) => ({ id }));
 }

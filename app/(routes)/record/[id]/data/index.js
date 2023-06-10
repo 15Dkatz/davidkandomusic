@@ -1,17 +1,5 @@
-import { lazy } from 'react';
+import * as embeds from './embeds';
 import { POISON_WORMS_ID, IN_PERPETUITY_ID } from 'app/(routes)/data';
-
-// TODO: Preserve the following as a demo/teaching version:
-// const PoisonWormsLazyPlayer = lazy(
-//   () => new Promise((resolve) => {
-//     setTimeout(() => {
-//       resolve(import('./poison-worms-embed'));
-//     }, 5000);
-//   })
-// );
-
-const PoisonWormsLazyPlayer = lazy(() => import('./poison-worms-embed'));
-const InPerpetuityLazyPlayer = lazy(() => import('./in-perpetuity-embed'));
 
 export const RECORDS_MAP = {
   [POISON_WORMS_ID]: {
@@ -25,7 +13,7 @@ export const RECORDS_MAP = {
     recordImage: '/poison_worms_record_full.png',
     recordHalfImage: '/poison_worms_record_half.png',
     spotifyLink: 'https://open.spotify.com/track/7o1sArWvk2m61k6CuZKt93?si=f728d1ee64214102',
-    LazyPlayer: PoisonWormsLazyPlayer,
+    Embed: embeds.PoisonWormsEmbed,
     appleMusicLink: 'https://music.apple.com/us/album/poison-worms/1689163166?i=1689163167',
     youtubeMusicLink: 'https://www.youtube.com/watch?v=Lqdxm7R23c4',
     lyrics: (
@@ -121,7 +109,7 @@ export const RECORDS_MAP = {
     recordImage: '/in_perpetuity_record_full.png',
     recordHalfImage: '/in_perpetuity_record_half.png',
     spotifyLink: 'https://open.spotify.com/track/0Qer5Z5ut75UJevgRC8GIK?si=2444d5d5cdcc47f1',
-    LazyPlayer: InPerpetuityLazyPlayer,
+    Embed: embeds.InPerpetuityEmbed,
     appleMusicLink: 'https://music.apple.com/us/album/in-perpetuity/1677926229?i=1677926230',
     youtubeMusicLink: 'https://www.youtube.com/watch?v=XhSBF2_iqL4',
     lyrics: (
