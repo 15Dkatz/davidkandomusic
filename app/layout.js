@@ -1,5 +1,6 @@
 import '../globals.css'
 import ClientLog from './client-log';
+import { Analytics } from '@vercel/analytics/react';
 
 import robotoCondensed from 'app/fonts/roboto-condensed';
 
@@ -14,6 +15,7 @@ export default function Root({ children }) {
         {children}
       </body>
       <ClientLog />
+      <Analytics />
     </html>
   )
 }
