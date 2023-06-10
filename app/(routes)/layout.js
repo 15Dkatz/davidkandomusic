@@ -1,5 +1,4 @@
 import 'globals.css'
-import rangaBold from 'app/fonts/ranga-bold';
 import ITEMS from './item-data';
 import HomeItem from './home-item';
 import LinkTitle from './link-title';
@@ -17,11 +16,7 @@ export default function Root({ children }) {
           flex flex-col justify-center items-center bg-slate-100`
         }
       >
-        <div className="flex justify-center mb-5 md:mb-10">
-          <div className={`${rangaBold.className} text-2xl md:text-4xl underline underline-offset-1 decoration-4 decoration-blue-400`}>
-            <LinkTitle />
-          </div>
-        </div>
+        <LinkTitle />
         <div className="grid grid-cols-2 md:grid-cols-4 gap-1 ml-1 mr-1 md:ml-10 md:mr-10">
           {
             ITEMS.map(item => {
