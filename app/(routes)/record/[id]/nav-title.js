@@ -4,6 +4,8 @@ import { useSelectedLayoutSegment, useSelectedLayoutSegments } from 'next/naviga
 import Link from 'next/link';
 import { SEGMENT_TITLES_MAP } from './data';
 
+export const NAV_TITLE_ID = "nav-title";
+
 export default function NavTitle({ id, title }) {
   const segments = useSelectedLayoutSegments();
   const activeSegment = useSelectedLayoutSegment();
@@ -13,7 +15,7 @@ export default function NavTitle({ id, title }) {
   }
 
   return (
-    <div className="link underline-offset-1 decoration-4">
+    <div className="link underline-offset-1 decoration-4" id={NAV_TITLE_ID}>
       <Link href={`/record/${id}`}>{title}</Link>
       {
         segments.map(segment => {

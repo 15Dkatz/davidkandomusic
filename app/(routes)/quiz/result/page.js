@@ -25,7 +25,7 @@ const Loading = () => (
 
 function Result({ resultData }) {
   const scrollRef = useRef();
-  useScrollIntoView(scrollRef);
+  useScrollIntoView(scrollRef.current);
 
   return (
     <div ref={scrollRef}>
