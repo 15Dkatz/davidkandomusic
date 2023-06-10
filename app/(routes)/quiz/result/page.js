@@ -1,7 +1,11 @@
 'use client';
 
 import { useState, useEffect, useRef, Suspense } from 'react';
-import { useSearchParams, useRouter } from 'next/navigation';
+// useSearchParams is a next.js hook used to gather the url information in the query string.
+// useSearchParams makes you think its should be reserved for a search component, idiomatically.
+// however, query params are also applied for other use cases like form submission (the case here)
+// so it's ok to think of useSearchParams as useQueryParams
+import { useSearchParams as useQueryParams, useRouter } from 'next/navigation';
 
 import {
   RESULT_MAP,
@@ -13,11 +17,8 @@ import {
 } from '../data';
 
 const Loading = () => (
-  <div className="absolute w-[326px] md:w-[904px] h-[352px] rounded bg-slate-300 pt-[24px] pl-[24px]">
-    <div className="w-[112px] h-[112px] md:w-[152px] md:h-[152px] rounded bg-slate-200 animate-pulse mb-[40px]" />
-    <div className="md:w-[850px] md:h-[20px] md:mt-[15px] rounded bg-slate-200 animate-pulse" />
-    <div className="md:w-[850px] md:h-[20px] md:mt-[15px] rounded bg-slate-200 animate-pulse" />
-    <div className="md:w-[850px] md:h-[20px] md:mt-[15px] rounded bg-slate-200 animate-pulse" />
+  <div className="absolute w-[326px] md:w-[904px] h-[352px] rounded bg-slate-300">
+    <div className="w-[112px] h-[112px] md:w-[152px] md:h-[152px] rounded bg-slate-200 animate-pulse m-[20px]" />
   </div>
 );
 
@@ -78,9 +79,9 @@ export default function QuizResult() {
   const [displayResult, setDisplayResult] = useState(false);
   const [displayTryAgain, setDisplayTryAgain] = useState(false);
   const resultRef = useRef(null);
-  const searchParams = useSearchParams();
+  const queryParams = useQueryParams();
   const router = useRouter();
-  const params = searchParams.toString();
+  const params = queryParams.toString();
 
   useEffect(() => {
     if (params.length === 0) {
@@ -88,10 +89,6 @@ export default function QuizResult() {
     } else {
       // split params by &, and grab the values after the = sign
       const gatheredSelections = params.split('&').map(param => param.match(/=(.*)/)[1]);
-      // TODO: Use https://nextjs.org/docs/app/api-reference/functions/use-search-params
-      // try searchParams.get('1') and (2, 3, 4, 5) to get the results, rather than regex. More idiomatics
-      // TODO: Try to use `useParams` instead since I'm not supporting a search function here. `useParams` is therefore more idiomatic.
-      // https://nextjs.org/docs/app/api-reference/functions/use-params
 
       if (!gatheredSelections.every(selection => VALID_SELECTIONS.includes(selection))) {
         setDisplayTryAgain(true);

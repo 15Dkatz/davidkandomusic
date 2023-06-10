@@ -9,10 +9,10 @@ export const metadata = {
 
 export default function Root({ children }) {
   return (
-    <div className="w-[350px] md:w-[1000px] m-5 md:[m-10] flex flex-col items-center justify-center">
+    <div className="w-[350px] md:w-[1000px] flex flex-col items-center justify-start mt-5 md:mt-10">
       <div
         className={
-          `w-full p-1 pb-10 pt-10 m-2 md:p-10 md:m-20 md:mb-2
+          `w-full p-1 pb-10 pt-10 m-1 md:p-10 md:m-20 md:mb-2
           flex flex-col justify-center items-center bg-slate-100`
         }
       >

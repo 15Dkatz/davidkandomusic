@@ -54,7 +54,9 @@ export default function Record({ params, children }) {
         />
       }
     >
-      {children}
+      <div className="flex flex-col items-center">
+        {children}
+      </div>
     </PageStructure>
   )
 }

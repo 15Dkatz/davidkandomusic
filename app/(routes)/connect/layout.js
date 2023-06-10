@@ -18,12 +18,10 @@ export default function Layout() {
       background="bg-gradient-to-b from-slate-100 to-pink-100"
       title="Let's hang around"
     >
-      <div className={"text-md md:text-xl p-1"}>
-        <Page
-          form={<Form />}
-          followers={<Followers />}
-        />
-      </div>
+      <Page
+        form={<Form />}
+        followers={<Followers />}
+      />
     </PageStructure>
   )
 }

@@ -31,55 +31,53 @@ export default function Discography() {
       background="bg-gradient-to-b from-slate-100 to-blue-100"
       title="Discography"
     >
-      <div className="p-2">
-        {
-          RECORDS.map(({
-            id,
-            title,
-            date,
-            blurb,
-            albumImage,
-            recordHalfImage,
-            spotifyLink,
-            appleMusicLink,
-            youtubeMusicLink
-          }, i) => {
-            const addedMb = i < RECORDS.length ? " mb-5 md:mb-10" : "";
+      {
+        RECORDS.map(({
+          id,
+          title,
+          date,
+          blurb,
+          albumImage,
+          recordHalfImage,
+          spotifyLink,
+          appleMusicLink,
+          youtubeMusicLink
+        }, i) => {
+          const addedMb = i < RECORDS.length ? " mb-5 md:mb-10" : "";
 
-            return (
-              <div key={title} className={`w-full bg-white p-5 md:p-10 ${addedMb}`}>
-                <div className="flex flex-row justify-center">
-                  <Link
-                    className={
-                      `relative w-[180px] h-[180px] md:w-[280px] md:h-[280px]
-                      border-black border-[2px]`
-                    }
-                    href={`/record/${id}`}
-                  >
-                    <Image src={albumImage} alt="album image" fill />
-                  </Link>
-                  <div className={"relative w-[90px] h-[180px] md:w-[140px] md:h-[280px]"}>
-                    <Image src={recordHalfImage} alt="album image" fill />
-                  </div>
+          return (
+            <div key={title} className={`w-full bg-white p-5 md:p-10 ${addedMb}`}>
+              <div className="flex flex-row justify-center">
+                <Link
+                  className={
+                    `relative w-[180px] h-[180px] md:w-[280px] md:h-[280px]
+                    border-black border-[2px]`
+                  }
+                  href={`/record/${id}`}
+                >
+                  <Image src={albumImage} alt="album image" fill />
+                </Link>
+                <div className={"relative w-[90px] h-[180px] md:w-[140px] md:h-[280px]"}>
+                  <Image src={recordHalfImage} alt="album image" fill />
                 </div>
-                <div className="mb-5 mt-5">
-                  <div className="font-bold text-base md:text-xl text-left">
-                    {title}
-                  </div>
-                  <div className="text-justify md:text-lg mb-1">{blurb}</div>
-                  <div className="text-sm text-slate-600">
-                    Release date: {date}
-                  </div>
-                </div>
-                <div className="md:m-2"></div>
-                <PlayRow title={'Spotify'} link={spotifyLink} iconImage='/spotify_icon_w500.png' />
-                <PlayRow title={'Apple Music'} link={appleMusicLink} iconImage='/apple_music_icon_w500.png' />
-                <PlayRow title={'YouTube Music'} link={youtubeMusicLink} iconImage='/youtube_music_icon_w500.png' />
               </div>
-            )
-          })
-        }
-      </div>
+              <div className="mb-5 mt-5">
+                <div className="font-bold text-base md:text-xl text-left">
+                  {title}
+                </div>
+                <div className="text-justify md:text-lg mb-1">{blurb}</div>
+                <div className="text-sm text-slate-600">
+                  Release date: {date}
+                </div>
+              </div>
+              <div className="md:m-2"></div>
+              <PlayRow title={'Spotify'} link={spotifyLink} iconImage='/spotify_icon_w500.png' />
+              <PlayRow title={'Apple Music'} link={appleMusicLink} iconImage='/apple_music_icon_w500.png' />
+              <PlayRow title={'YouTube Music'} link={youtubeMusicLink} iconImage='/youtube_music_icon_w500.png' />
+            </div>
+          )
+        })
+      }
     </PageStructure>
   )
 }

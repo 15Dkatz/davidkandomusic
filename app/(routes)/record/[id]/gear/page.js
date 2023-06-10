@@ -8,7 +8,6 @@ export const generateMetadata = ({ params }) => {
   return { title: `${title} - David Kando` };
 }
 
-// TODO: Is there a helper function to generate the hrefs?
 export default function Record({ params }) {
   const { id } = params;
   const { gear, LazyPlayer } = RECORDS_MAP[id];
