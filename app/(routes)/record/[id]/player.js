@@ -19,7 +19,7 @@ export default function Player({ embed }) {
         setWarningDisplay(
           <div className="bg-white p-1 m-1 mt-5 text-sm italic">
             <div>The play button is disabled on private browsers by default.</div>
-            <div>{'Try changing your browser settings: Settings > Privacy and security > Cookies'}</div>
+            <div>{'Try changing your browser settings: Settings > Privacy and security > Cookies'}.</div>
             <div>Or, you can click on the song title, and play on Spotify directly.</div>
           </div>
         )
