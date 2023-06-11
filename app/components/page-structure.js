@@ -17,7 +17,7 @@ export default function PageStructure({ children, background, title }) {
           {title}
         </div>
       </div>
-      <div className="p-1">
+      <div className="p-1 pl-4 pr-4">
         {children}
       </div>
     </div>
