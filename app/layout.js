@@ -8,7 +8,6 @@ export const metadata = {
   title: 'David Kando Music'
 };
 
-// TODO: Address `Failed to read the 'localStorage' property from 'Window': Access is denied for this document.`
 export default function Root({ children }) {
   return (
     <html className={`${robotoCondensed.className}`}>
