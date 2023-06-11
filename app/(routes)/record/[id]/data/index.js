@@ -60,7 +60,7 @@ export const RECORDS_MAP = {
     ),
     gear: (
       <div className="text:lg md:text-xl p-4">
-        <div className="font-bold">
+        <div>
           Poison Worms was recorded in David Kando Studios. See below for some highlights of the interesting gear and techniques that I used during the creation process:
         </div>
         <br />
@@ -159,7 +159,7 @@ export const RECORDS_MAP = {
     ),
     gear: (
       <div className="text:lg md:text-xl p-4">
-        <div className="font-bold">
+        <div>
           In Perpetuity was recorded in David Kando Studios. See below for some highlights of the interesting gear and techniques that I used during the creation process:
         </div>
         <br />
