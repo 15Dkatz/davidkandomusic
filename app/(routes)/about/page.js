@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import PageStructure from 'app/components/page-structure';
 
 export const metadata = {
   title: 'About David Kando'
@@ -7,10 +6,7 @@ export const metadata = {
 
 export default function Page() {
   return (
-    <PageStructure
-      background="bg-[url('/goofy_bg_500_op_80.png')] bg-contain"
-      title="About David Kando"
-    >
+    <>
       <div>
         Can David do music? Yes, David Kando music.
       </div>
@@ -35,6 +31,6 @@ export default function Page() {
         Reach out to me and/or join my email list{' '}
         <Link href="/connect" className="link">here</Link>.
       </div>
-    </PageStructure>
+    </>
   )
 }

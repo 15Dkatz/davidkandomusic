@@ -1,6 +1,10 @@
 import Form from './email-list/form';
 import Followers from './followers';
 
+export const metadata = {
+  title: 'Connect with David Kando'
+};
+
 export default function Page() {
   return (
     <>
