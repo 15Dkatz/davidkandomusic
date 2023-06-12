@@ -1,9 +1,11 @@
 import * as embeds from './embeds';
 import { POISON_WORMS_ID, IN_PERPETUITY_ID } from 'app/(found)/data';
+import { POISON_WORMS_TITLE, IN_PERPETUITY_TITLE } from './segment-data-map';
 
 export const RECORDS_MAP = {
   [POISON_WORMS_ID]: {
     id: POISON_WORMS_ID,
+    title: POISON_WORMS_TITLE,
     date: '5/24/23',
     by: 'David Kando',
     blurb: 'A relaxed rock vibe. Listen closely for a wicked theme.',
@@ -98,6 +100,7 @@ export const RECORDS_MAP = {
   },
   [IN_PERPETUITY_ID]: {
     id: IN_PERPETUITY_ID,
+    title: IN_PERPETUITY_TITLE,
     date: '3/18/23',
     by: 'David Kando',
     blurb: 'A smooth song for cruising and romance. "The road awaits".',

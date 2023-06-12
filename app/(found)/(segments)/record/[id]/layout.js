@@ -1,13 +1,6 @@
-import { RECORDS, RECORDS_MAP } from './data';
+import { RECORDS } from './data';
 
-export const generateMetadata = ({ params }) => {
-  const { id } = params;
-  const { title } = RECORDS_MAP[id];
-
-  return { title: `${title} - David Kando` };
-}
-
-export default function Record({ params, children }) {
+export default function Record({ children }) {
   return (
     <div className="flex flex-col items-center">
       {children}

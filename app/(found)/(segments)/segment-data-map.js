@@ -3,7 +3,7 @@
 // create a new whole new common filename
 import recordIdSegmentMap from './record/[id]/segment-data-map';
 
-export default {
+const SEGMENT_DATA_MAP = {
   '/about': {
     background: "bg-[url('/goofy_bg_500_op_80.png')] bg-contain",
     title: "About David Kando"
@@ -30,3 +30,5 @@ export default {
   },
   ...recordIdSegmentMap
 }
+
+export default SEGMENT_DATA_MAP;
