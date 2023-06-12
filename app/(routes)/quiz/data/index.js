@@ -131,7 +131,7 @@ export const QUESTIONS = [
   },
   {
     id: 5,
-    question: `Again, imageine you're an up-and-coming music artist. Choose one band for a week-long mentoring session:`,
+    question: `Again, imagine you're an up-and-coming music artist. Choose one band for a week-long mentoring session:`,
     answers: [
       {
         entry: 'a',
