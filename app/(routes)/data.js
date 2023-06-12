@@ -2,7 +2,7 @@ export const POISON_WORMS_ID = 'poison-worms';
 export const IN_PERPETUITY_ID = 'in-perpetuity';
 
 // Try merging this with item_type_settings. More elegant.
-const ITEMS = [
+export const ITEMS = [
   {
     id: 1,
     attributes: {
@@ -69,5 +69,3 @@ const ITEMS = [
     }
   }
 ];
-
-export default ITEMS;
