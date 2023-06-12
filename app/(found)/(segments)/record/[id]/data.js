@@ -1,11 +1,11 @@
 import * as embeds from './embeds';
-import { POISON_WORMS_ID, IN_PERPETUITY_ID } from 'app/data';
-import { PAGE_METADATA_MAP } from '/app/(routes)/data';
+import { POISON_WORMS_ID, IN_PERPETUITY_ID } from 'app/(found)/data';
+import SEGMENT_DATA_MAP from 'app/(found)/(segments)/segment-data-map';
 
 export const RECORDS_MAP = {
   [POISON_WORMS_ID]: {
     id: POISON_WORMS_ID,
-    ...PAGE_METADATA_MAP['/record/poison-worms'],
+    ...SEGMENT_DATA_MAP['/record/poison-worms'],
     date: '5/24/23',
     by: 'David Kando',
     blurb: 'A relaxed rock vibe. Listen closely for a wicked theme.',
@@ -100,7 +100,7 @@ export const RECORDS_MAP = {
   },
   [IN_PERPETUITY_ID]: {
     id: IN_PERPETUITY_ID,
-    ...PAGE_METADATA_MAP['/record/in-perpetuity'],
+    ...SEGMENT_DATA_MAP['/record/in-perpetuity'],
     date: '3/18/23',
     by: 'David Kando',
     blurb: 'A smooth song for cruising and romance. "The road awaits".',
@@ -196,8 +196,3 @@ export const RECORDS_MAP = {
 };
 
 export const RECORDS = Object.values(RECORDS_MAP);
-
-export const SEGMENT_TITLES_MAP = {
-  'lyrics': 'Lyrics',
-  'gear': 'Gear used'
-};

@@ -77,7 +77,6 @@ function Result({ resultData }) {
   )
 }
 
-// TODO: Attempt to simplify for course
 export default function QuizResult() {
   const [resultData, setResultData] = useState(null);
   const queryParams = useQueryParams();
@@ -108,5 +107,5 @@ export default function QuizResult() {
     }
   }, [params, setResultData]);
 
-  return <Result resultData={resultData} />
+  return <Result resultData={resultData} />;
 }

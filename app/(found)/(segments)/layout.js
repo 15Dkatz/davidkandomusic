@@ -2,14 +2,13 @@
 
 import { usePathname } from 'next/navigation';
 import rangaBold from 'app/fonts/ranga-bold';
-import { PAGE_METADATA_MAP } from './data';
+import SEGMENT_DATA_MAP from './segment-data-map';
 
-export default function Root({ children }) {
+export default function Layout({ children }) {
   const pathname = usePathname();
-  console.log(`/pathname`, pathname);
-
-  const { title, background } = PAGE_METADATA_MAP[pathname];
-
+  const { title, background } = SEGMENT_DATA_MAP[pathname];
+  // console.log(`title`, title);
+  // console.log(`background`, background);
   return (
     <div
       className={
@@ -17,7 +16,7 @@ export default function Root({ children }) {
         flex flex-col justify-center items-center
         ${background} bg-no-repeat bg-cover`
       }
-    >
+      >
       <div className="flex justify-center mb-5 md:mb-10">
         <div className={`${rangaBold.className} text-2xl md:text-4xl underline decoration-4 decoration-blue-400`}>
           {title}
@@ -27,5 +26,5 @@ export default function Root({ children }) {
         {children}
       </div>
     </div>
-  );
+  )
 }
