@@ -13,7 +13,7 @@ export default function PageStructure({ children, background, title }) {
       }
     >
       <div className="flex justify-center mb-5 md:mb-10">
-        <div className={`${rangaBold.className} text-2xl md:text-4xl underline underline-offset-1 decoration-4 decoration-blue-400`}>
+        <div className={`${rangaBold.className} text-2xl md:text-4xl underline decoration-4 decoration-blue-400`}>
           {title}
         </div>
       </div>

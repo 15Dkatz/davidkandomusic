@@ -1,5 +1,5 @@
 import * as embeds from './embeds';
-import { POISON_WORMS_ID, IN_PERPETUITY_ID } from 'app/(routes)/data';
+import { POISON_WORMS_ID, IN_PERPETUITY_ID } from 'app/data';
 
 export const RECORDS_MAP = {
   [POISON_WORMS_ID]: {

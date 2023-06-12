@@ -15,7 +15,7 @@ export default function NavTitle({ id, title }) {
   }
 
   return (
-    <div className="link underline-offset-1 decoration-4" id={NAV_TITLE_ID}>
+    <div className="link decoration-4" id={NAV_TITLE_ID}>
       <Link href={`/record/${id}`}>{title}</Link>
       {
         segments.map(segment => {

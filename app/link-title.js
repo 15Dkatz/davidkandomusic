@@ -12,7 +12,7 @@ export default function LinkTitle() {
     <div
       className={
         `${rangaBold.className} text-2xl md:text-4xl mb-5 md:mb-10
-        underline underline-offset-1 decoration-4 decoration-blue-400`
+        underline decoration-4 decoration-blue-400`
       }
     >
       {pathname !== '/' ? <Link href="/" className="link">{title}</Link> : title}
