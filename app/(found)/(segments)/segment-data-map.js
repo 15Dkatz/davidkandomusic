@@ -3,6 +3,11 @@
 // create a new whole new common filename
 import recordIdSegmentMap from './record/[id]/segment-data-map';
 
+const quizDataMap = {
+  background: "bg-gradient-to-b from-slate-100 to-purple-50",
+  title: "Playlist Personality Quiz"
+};
+
 const SEGMENT_DATA_MAP = {
   '/about': {
     background: "bg-[url('/goofy_bg_500_op_80.png')] bg-contain",
@@ -20,10 +25,8 @@ const SEGMENT_DATA_MAP = {
     background: "bg-gradient-to-b from-blue-100 to-pink-100",
     title: "Discography"
   },
-  '/quiz': {
-    background: "bg-gradient-to-b from-slate-100 to-purple-50",
-    title: "Playlist Personality Quiz"
-  },
+  '/quiz': quizDataMap,
+  '/quiz/result': quizDataMap,
   '/studio': {
     background: "bg-gradient-to-b from-slate-100 to-purple-50",
     title: "David Kando Studios"
