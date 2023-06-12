@@ -4,7 +4,6 @@
 import recordIdSegmentMap from './record/[id]/segment-data-map';
 
 export default {
-  '/': { background: '', title: '' },
   '/about': {
     background: "bg-[url('/goofy_bg_500_op_80.png')] bg-contain",
     title: "About David Kando"
