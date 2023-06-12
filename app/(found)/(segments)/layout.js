@@ -1,9 +1,14 @@
-import rangaBold from 'app/fonts/ranga-bold';
+'use client';
 
-// Notice the {children} prop to allow the insertion of Server Components within this Client Component
-// This follows this pattern: https://nextjs.org/docs/getting-started/react-essentials#recommended-pattern-passing-server-components-to-client-components-as-props
-// With this approach PageStructure is still rendered on the client, but the content is pre-rendered on the server
-export default function PageStructure({ children, background, title }) {
+import { usePathname } from 'next/navigation';
+import rangaBold from 'app/fonts/ranga-bold';
+import SEGMENT_DATA_MAP from './segment-data-map';
+
+export default function Layout({ children }) {
+  const pathname = usePathname();
+  const { title, background } = SEGMENT_DATA_MAP[pathname];
+  // console.log(`title`, title);
+  // console.log(`background`, background);
   return (
     <div
       className={
@@ -11,7 +16,7 @@ export default function PageStructure({ children, background, title }) {
         flex flex-col justify-center items-center
         ${background} bg-no-repeat bg-cover`
       }
-    >
+      >
       <div className="flex justify-center mb-5 md:mb-10">
         <div className={`${rangaBold.className} text-2xl md:text-4xl underline decoration-4 decoration-blue-400`}>
           {title}

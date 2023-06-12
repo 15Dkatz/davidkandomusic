@@ -24,6 +24,18 @@ export default function Record({ params }) {
   )
 }
 
+// TODO: The deep level of nesting seems to be glitching out generateMetadata
+// Open an issue with Next.js
+// Or further look into Metadata
+export const generateMetadata = ({ params }) => {
+  const { id } = params;
+  const { title } = RECORDS_MAP[id];
+
+  console.log(`title`, title);
+
+  return { title: `${title} - David Kando` };
+}
+
 export async function generateStaticParams() {
   return RECORDS.map(({ id }) => ({ id }));
 }

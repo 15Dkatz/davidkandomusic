@@ -1,14 +1,14 @@
 import * as embeds from './embeds';
-import { POISON_WORMS_ID, IN_PERPETUITY_ID } from 'app/data';
+import { POISON_WORMS_ID, IN_PERPETUITY_ID } from 'app/(found)/data';
+import { POISON_WORMS_TITLE, IN_PERPETUITY_TITLE } from './segment-data-map';
 
 export const RECORDS_MAP = {
   [POISON_WORMS_ID]: {
     id: POISON_WORMS_ID,
-    title: 'Poison Worms',
+    title: POISON_WORMS_TITLE,
     date: '5/24/23',
     by: 'David Kando',
     blurb: 'A relaxed rock vibe. Listen closely for a wicked theme.',
-    pageBackground: `bg-[url('/poison_worms_background.png')] bg-contain`,
     albumImage: '/poison_worms_1000.png',
     recordImage: '/poison_worms_record_full.png',
     recordHalfImage: '/poison_worms_record_half.png',
@@ -100,11 +100,10 @@ export const RECORDS_MAP = {
   },
   [IN_PERPETUITY_ID]: {
     id: IN_PERPETUITY_ID,
-    title: 'In Perpetuity',
+    title: IN_PERPETUITY_TITLE,
     date: '3/18/23',
     by: 'David Kando',
     blurb: 'A smooth song for cruising and romance. "The road awaits".',
-    pageBackground: `bg-[url('/in_perpetuity_background.png')] bg-contain`,
     albumImage: '/in_perpetuity_1000.png',
     recordImage: '/in_perpetuity_record_full.png',
     recordHalfImage: '/in_perpetuity_record_half.png',
@@ -197,8 +196,3 @@ export const RECORDS_MAP = {
 };
 
 export const RECORDS = Object.values(RECORDS_MAP);
-
-export const SEGMENT_TITLES_MAP = {
-  'lyrics': 'Lyrics',
-  'gear': 'Gear used'
-};

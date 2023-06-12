@@ -1,4 +1,3 @@
-import PageStructure from 'app/components/page-structure';
 import { HIGHLIGHTS } from './data';
 import rangaBold from 'app/fonts/ranga-bold';
 
@@ -8,10 +7,7 @@ export const metadata = {
 
 export default function Band() {
   return (
-    <PageStructure
-      background="bg-[url('/curcio_banner.png')] bg-contain"
-      title="Enter the Curcio-verse"
-    >
+    <>
       <div>Hailing from the lands of San Francisco, Curcio is a band of mere mortals blessed with a divine gift: the power to rock your socks off.</div>
       <br />
       <div>
@@ -60,6 +56,6 @@ export default function Band() {
           ))
         }
       </div>
-    </PageStructure>
+    </>
   )
 }

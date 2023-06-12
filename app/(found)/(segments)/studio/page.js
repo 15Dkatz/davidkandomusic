@@ -1,15 +1,10 @@
-import PageStructure from 'app/components/page-structure';
-
 export const metadata = {
   title: 'David Kando Studios'
 };
 
 export default function Studio() {
   return (
-    <PageStructure
-      background="bg-gradient-to-b from-slate-100 to-purple-50"
-      title="David Kando Studios"
-    >
+    <>
       <div>
         Let&apos;s make music together.
       </div>
@@ -25,6 +20,6 @@ export default function Studio() {
       <div>
         Again, reach out to <span className="underline">davidkandomusic@gmail.com</span> to see if David Kando Studios is the right fit for you!
       </div>
-    </PageStructure>
+    </>
   )
 }
