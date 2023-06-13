@@ -1,4 +1,4 @@
-import { GRID_ITEM_DATAS } from '../data';
+import { GRID_DATA_ITEMS } from '../data';
 import GridItem from './grid-item';
 import LinkTitle from './link-title';
 
@@ -16,8 +16,8 @@ export default function Layout({ children }) {
         <LinkTitle />
         <div className="grid grid-cols-2 md:grid-cols-4 gap-1 ml-1 mr-1 md:ml-10 md:mr-10">
           {
-            GRID_ITEM_DATAS.map(gridItemData => {
-              const { id, attributes } = gridItemData;
+            GRID_DATA_ITEMS.map(gridDataItem => {
+              const { id, attributes } = gridDataItem;
 
               return (
                 <div key={id} className="flex justify-center">
