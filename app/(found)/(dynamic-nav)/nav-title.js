@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { NAV_TITLE_ID } from 'app/constants';
+import { NAV_TITLE_ID } from './data';
 
 export default function NavTitle({
   initialTitle,

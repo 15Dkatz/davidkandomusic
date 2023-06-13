@@ -5,7 +5,7 @@ import { notFound } from 'next/navigation';
 import { useScrollIntoView } from 'app/hooks';
 import { RECORDS, RECORDS_MAP } from '../../../data';
 import Player from '../player';
-import { NAV_TITLE_ID } from 'app/constants';
+import { NAV_TITLE_ID } from '../../../data';
 
 export default function Content({ params: { id, content } }) {
   const [titleElement, setTitleElement] = useState(null);

@@ -1,6 +1,6 @@
-import { POISON_WORMS_ID, IN_PERPETUITY_ID } from 'app/constants';
+export const POISON_WORMS_ID = 'poison-worms';
+export const IN_PERPETUITY_ID = 'in-perpetuity';
 
-// Try merging this with item_type_settings. More elegant.
 export const GRID_ITEM_DATAS = [
   {
     id: 1,
@@ -62,7 +62,6 @@ export const GRID_ITEM_DATAS = [
     id: 8,
     attributes: {
       href: "/band",
-      // TODO: Change background to an image
       background: "bg-[url('/curcio_500.png')] bg-contain",
       text: "CURCIO BAND"
     }

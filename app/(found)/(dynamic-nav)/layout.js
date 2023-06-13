@@ -2,7 +2,7 @@
 
 import { useSelectedLayoutSegments, usePathname } from 'next/navigation';
 import PageStructure from 'components/page-structure';
-import NavTitle from 'components/nav-title';
+import NavTitle from './nav-title';
 import { findIdByPathname, RECORDS_MAP, SEGMENT_TITLES_MAP } from './data';
 
 export default function Layout({ children }) {
