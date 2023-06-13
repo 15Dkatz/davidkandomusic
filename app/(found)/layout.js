@@ -1,5 +1,3 @@
-'use client';
-
 import { GRID_ITEM_DATAS } from '../data';
 import GridItem from './grid-item';
 import LinkTitle from './link-title';
