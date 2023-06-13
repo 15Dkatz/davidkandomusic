@@ -1,6 +1,5 @@
 import { HIGHLIGHTS } from './data';
 import PageStructure from 'components/page-structure';
-import rangaBold from 'app/fonts/ranga-bold';
 
 export const metadata = { title: 'Curcio Band' };
 
@@ -45,7 +44,7 @@ export default function Band() {
                 >
                   <div
                     className={
-                      `${rangaBold.className} text-blue-950 hover:text-white
+                      `font-ranga text-blue-950 hover:text-white
                       text-sm md:text-2xl pt-1 pb-1 mb-2 bg-slate-200/75
                       hover:bg-slate-700/75 w-full text-center h-[22px] md:h-[40px]`
                     }

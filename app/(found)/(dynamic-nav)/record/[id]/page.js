@@ -1,7 +1,6 @@
 import Link from 'next/link';
 import { RECORDS, RECORDS_MAP } from '../../data';
 import Player from './player';
-import rangaBold from 'app/fonts/ranga-bold';
 
 export default function Page({ params }) {
   const { id } = params;
@@ -15,7 +14,7 @@ export default function Page({ params }) {
           Release date: {date}
         </div>
       </div>
-      <div className={`${rangaBold.className} flex justify-between w-36 text-2xl mb-5`}>
+      <div className={`font-ranga flex justify-between w-36 text-2xl mb-5`}>
         <Link href={`record/${id}/lyrics`} className="link">Lyrics</Link>
         <Link href={`record/${id}/gear`} className="link">Gear Used</Link>
       </div>

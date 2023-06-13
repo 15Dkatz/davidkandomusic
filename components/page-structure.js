@@ -1,5 +1,3 @@
-import rangaBold from 'app/fonts/ranga-bold';
-
 export default function PageStructure({ children, background, title }) {
   return (
       <div
@@ -10,7 +8,7 @@ export default function PageStructure({ children, background, title }) {
       }
       >
       <div className="flex justify-center mb-5 md:mb-10">
-        <div className={`${rangaBold.className} text-2xl md:text-4xl underline decoration-4 decoration-blue-400`}>
+        <div className={'font-ranga text-2xl md:text-4xl underline decoration-4 decoration-blue-400'}>
           {title}
         </div>
       </div>
