@@ -1,9 +1,11 @@
 import NavTitle from './nav-title';
 
-import { POISON_WORMS_ID, IN_PERPETUITY_ID } from 'app/(found)/data';
-
-export const POISON_WORMS_TITLE = 'Poison Worms';
-export const IN_PERPETUITY_TITLE = 'In Perpetuity';
+import {
+  POISON_WORMS_ID,
+  IN_PERPETUITY_ID,
+  POISON_WORMS_TITLE,
+  IN_PERPETUITY_TITLE
+} from 'app/constants';
 
 export const SEGMENT_TITLES_MAP = {
   [POISON_WORMS_ID]: POISON_WORMS_TITLE,

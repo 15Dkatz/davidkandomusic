@@ -1,6 +1,10 @@
 import * as embeds from './embeds';
-import { POISON_WORMS_ID, IN_PERPETUITY_ID } from 'app/(found)/data';
-import { POISON_WORMS_TITLE, IN_PERPETUITY_TITLE } from './segment-data-map';
+import {
+  POISON_WORMS_ID,
+  IN_PERPETUITY_ID,
+  POISON_WORMS_TITLE,
+  IN_PERPETUITY_TITLE
+} from 'app/constants';
 
 export const RECORDS_MAP = {
   [POISON_WORMS_ID]: {

@@ -1,7 +1,7 @@
 'use client';
 
-import { ITEMS } from './data';
-import HomeItem from './home-item';
+import { GRID_ITEM_DATAS } from './data';
+import GridItem from './grid-item';
 import LinkTitle from './link-title';
 
 // An alternative is to have a shared component like PageStructure and avoid this Layout+SEGMENT_DATA_MAP
@@ -18,12 +18,12 @@ export default function Layout({ children }) {
         <LinkTitle />
         <div className="grid grid-cols-2 md:grid-cols-4 gap-1 ml-1 mr-1 md:ml-10 md:mr-10">
           {
-            ITEMS.map(item => {
-              const { id, attributes } = item;
+            GRID_ITEM_DATAS.map(gridItemData => {
+              const { id, attributes } = gridItemData;
 
               return (
                 <div key={id} className="flex justify-center">
-                  <HomeItem {...attributes} />
+                  <GridItem {...attributes} />
                 </div>
               )
             })

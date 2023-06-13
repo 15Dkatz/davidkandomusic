@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import rangaBold from 'app/fonts/ranga-bold';
 
-export default function Item({ text, href, background }) {
+export default function GridItem({ text, href, background }) {
   return (
     <Link href={href}>
       <div

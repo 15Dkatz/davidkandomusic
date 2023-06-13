@@ -1,8 +1,7 @@
-export const POISON_WORMS_ID = 'poison-worms';
-export const IN_PERPETUITY_ID = 'in-perpetuity';
+import { POISON_WORMS_ID, IN_PERPETUITY_ID } from 'app/constants';
 
 // Try merging this with item_type_settings. More elegant.
-export const ITEMS = [
+export const GRID_ITEM_DATAS = [
   {
     id: 1,
     attributes: {
