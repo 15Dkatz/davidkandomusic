@@ -1,9 +1,9 @@
 import Link from 'next/link';
-import { RECORDS, RECORDS_MAP } from './data';
+import { RECORDS, RECORDS_MAP } from '../../data';
 import Player from './player';
 import rangaBold from 'app/fonts/ranga-bold';
 
-export default function Record({ params }) {
+export default function Page({ params }) {
   const { id } = params;
   const { date, blurb, Embed } = RECORDS_MAP[id];
 

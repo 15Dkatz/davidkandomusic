@@ -1,16 +1,8 @@
-'use client';
-
-import { usePathname } from 'next/navigation';
 import rangaBold from 'app/fonts/ranga-bold';
-import SEGMENT_DATA_MAP from './segment-data-map';
 
-export default function Layout({ children }) {
-  const pathname = usePathname();
-  const { title, background } = SEGMENT_DATA_MAP[pathname];
-  // console.log(`title`, title);
-  // console.log(`background`, background);
+export default function PageStructure({ children, background, title }) {
   return (
-    <div
+      <div
       className={
         `w-full p-1 pb-10 pt-10 m-2 md:p-10 md:m-20 text-md md:text-xl
         flex flex-col justify-center items-center

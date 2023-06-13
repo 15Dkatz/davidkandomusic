@@ -1,4 +1,4 @@
-import * as embeds from './embeds';
+import * as embeds from './record/[id]/embeds';
 import {
   POISON_WORMS_ID,
   IN_PERPETUITY_ID,
@@ -6,10 +6,22 @@ import {
   IN_PERPETUITY_TITLE
 } from 'app/constants';
 
+export const SEGMENT_TITLES_MAP = {
+  [POISON_WORMS_ID]: POISON_WORMS_TITLE,
+  [IN_PERPETUITY_ID]: IN_PERPETUITY_TITLE,
+  'lyrics': 'Lyrics',
+  'gear': 'Gear used'
+};
+
+export const findIdByPathname = (pathname) => (
+  [POISON_WORMS_ID, IN_PERPETUITY_ID].find(id => pathname.includes(id))
+);
+
 export const RECORDS_MAP = {
   [POISON_WORMS_ID]: {
     id: POISON_WORMS_ID,
     title: POISON_WORMS_TITLE,
+    background: `bg-[url('/poison_worms_background.png')] bg-contain`,
     date: '5/24/23',
     by: 'David Kando',
     blurb: 'A relaxed rock vibe. Listen closely for a wicked theme.',
@@ -105,6 +117,7 @@ export const RECORDS_MAP = {
   [IN_PERPETUITY_ID]: {
     id: IN_PERPETUITY_ID,
     title: IN_PERPETUITY_TITLE,
+    background: `bg-[url('/in_perpetuity_background.png')] bg-contain`,
     date: '3/18/23',
     by: 'David Kando',
     blurb: 'A smooth song for cruising and romance. "The road awaits".',

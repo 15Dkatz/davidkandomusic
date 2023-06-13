@@ -1,16 +1,17 @@
 'use client';
 
 import { useRef, useEffect, useState } from 'react';
+import { notFound } from 'next/navigation';
 import { useScrollIntoView } from 'app/hooks';
-import { RECORDS, RECORDS_MAP } from '../data';
+import { RECORDS, RECORDS_MAP } from '../../../data';
 import Player from '../player';
-import { NAV_TITLE_ID } from '../nav-title';
+import { NAV_TITLE_ID } from 'app/constants';
 
-export default function Record({ params: { id, content } }) {
+export default function Content({ params: { id, content } }) {
   const [titleElement, setTitleElement] = useState(null);
   const startingRef = useRef();
-  const { Embed } = RECORDS_MAP[id];
   const contentJsx = RECORDS_MAP[id][content];
+
   useScrollIntoView(titleElement);
 
   useEffect(() => {
@@ -18,6 +19,11 @@ export default function Record({ params: { id, content } }) {
 
     if (foundTitleElement) setTitleElement(foundTitleElement);
   }, [startingRef]);
+
+  // 404 on invalid content pathnames
+  if (!contentJsx) return notFound();
+
+  const { Embed } = RECORDS_MAP[id];
 
   return (
     <>

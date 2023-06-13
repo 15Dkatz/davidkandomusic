@@ -1,23 +1,17 @@
-'use client';
-
-import { useSelectedLayoutSegments } from 'next/navigation';
 import Link from 'next/link';
-import { SEGMENT_TITLES_MAP } from './segment-data-map';
+import { NAV_TITLE_ID } from 'app/constants';
 
-export const NAV_TITLE_ID = "nav-title";
-
-export default function NavTitle({ title, skipInitial }) {
-  const segments = useSelectedLayoutSegments();
-  // console.log(`segments`, segments);
-
-  if (segments.length === 0) {
-    return title;
-  }
+export default function NavTitle({
+  initialTitle,
+  skipInitial,
+  segmentTitlesMap,
+  segments
+}) {
+  if (segments.length === 0) return initialTitle;
 
   const segmentsToRender = skipInitial && segments.length > 0
     ? segments.slice(1, segments.length)
     : segments;
-  // console.log(`segmentsToRender`, segmentsToRender);
 
   return (
     <div className="link decoration-4" id={NAV_TITLE_ID}>
@@ -33,7 +27,7 @@ export default function NavTitle({ title, skipInitial }) {
                 href={href}
                 style={{ color: isLastSegment ? 'black' : '' }}
               >
-                {SEGMENT_TITLES_MAP[segment]}
+                {segmentTitlesMap[segment]}
               </Link>
               {isLastSegment ? <></> : <span>{' > '}</span>}
             </span>

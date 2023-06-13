@@ -1,6 +1,6 @@
-import { RECORDS } from './data';
+import { RECORDS } from '../../data';
 
-export default function Record({ children }) {
+export default function Layout({ children }) {
   return (
     <div className="flex flex-col items-center">
       {children}
@@ -8,9 +8,11 @@ export default function Record({ children }) {
   )
 }
 
-// IMPORTANT: send non-generated pages in record/?
+
+// IMPORTANT: send non-generated pages (record/<?>) to 404, such as record/foo
 export const dynamicParams = false;
 
 export async function generateStaticParams() {
   return RECORDS.map(({ id }) => ({ id }));
 }
+
