@@ -5,15 +5,14 @@ export default function GridItem({ text, href, background }) {
     <Link href={href}>
       <div
         className={
-          `relative flex items-end w-36 h-36 md:w-52 md:h-52
-          ${background} border-[2px] border-black`
+          `${background} w-36 h-36 lg:w-52 lg:h-52
+          flex items-end border-[2px] border-black`
         }
       >
         <div
           className={
-            `font-ranga text-blue-950 hover:text-white text-sm md:text-2xl
-            pt-1 pb-1 mb-2 bg-slate-200/75 hover:bg-slate-700/75 w-full text-center
-            h-[22px] md:h-[40px]`
+            `w-full text-center font-ranga text-sm lg:text-2xl h-[18px] lg:h-[30px]
+            mb-2 bg-slate-200/75 hover:text-white hover:bg-slate-700/75`
           }
         >
           {text}

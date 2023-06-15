@@ -33,7 +33,7 @@ export const RECORDS_MAP = {
     appleMusicLink: 'https://music.apple.com/us/album/poison-worms/1689163166?i=1689163167',
     youtubeMusicLink: 'https://www.youtube.com/watch?v=Lqdxm7R23c4',
     lyrics: (
-      <div className="text:lg md:text-xl p-4">
+      <div className="text:lg lg:text-xl p-4">
         <div>(One, two, three)</div>
         <div>One more nesting outside</div>
         <div>One alive with sapphire feathering</div>
@@ -75,7 +75,7 @@ export const RECORDS_MAP = {
       </div>
     ),
     gear: (
-      <div className="text:lg md:text-xl p-4">
+      <div className="text:lg lg:text-xl p-4">
         <div>
           Poison Worms was recorded in David Kando Studios. See below for some highlights of the interesting gear and techniques that I used during the creation process:
         </div>
@@ -129,7 +129,7 @@ export const RECORDS_MAP = {
     appleMusicLink: 'https://music.apple.com/us/album/in-perpetuity/1677926229?i=1677926230',
     youtubeMusicLink: 'https://www.youtube.com/watch?v=XhSBF2_iqL4',
     lyrics: (
-      <div className="text:lg md:text-xl p-4">
+      <div className="text:lg lg:text-xl p-4">
         <div>Kitchen fire</div>
         <div>Burning mac from the store</div>
         <div>Canine crier</div>
@@ -174,7 +174,7 @@ export const RECORDS_MAP = {
       </div>
     ),
     gear: (
-      <div className="text:lg md:text-xl p-4">
+      <div className="text:lg lg:text-xl p-4">
         <div>
           In Perpetuity was recorded in David Kando Studios. See below for some highlights of the interesting gear and techniques that I used during the creation process:
         </div>

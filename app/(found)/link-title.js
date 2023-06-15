@@ -10,8 +10,8 @@ export default function LinkTitle() {
   return (
     <div
       className={
-        `font-ranga text-2xl md:text-4xl mb-5 md:mb-10
-        underline decoration-4 decoration-blue-400`
+        `font-ranga text-2xl lg:text-4xl mb-5
+        underline decoration-3 decoration-blue-400`
       }
     >
       {pathname !== '/' ? <Link href="/" className="link">{title}</Link> : title}

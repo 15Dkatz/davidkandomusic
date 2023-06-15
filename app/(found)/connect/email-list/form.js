@@ -38,11 +38,11 @@ export default function Form() {
   return (
     <form ref={formRef} action={handleSubmit} className="p-1 pl-4">
       <div className="m-1">
-        <label htmlFor="name" className="w-[40px] md:w-[50px] inline-block">Name{' '}</label>
+        <label htmlFor="name" className="w-[40px] lg:w-[50px] inline-block">Name{' '}</label>
         <input className="rounded-none" type="text" id="name" name="name" required />
       </div>
       <div className="m-1">
-        <label htmlFor="email" className="w-[40px] md:w-[50px] inline-block">Email{' '}</label>
+        <label htmlFor="email" className="w-[40px] lg:w-[50px] inline-block">Email{' '}</label>
         <input className="rounded-none" type="email" id="email" name="email" required />
       </div>
       <div className="m-1 mt-2">

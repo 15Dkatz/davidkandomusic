@@ -22,12 +22,12 @@ export default function Band() {
       </div>
       <br />
       <div>Performance highlights:</div>
-      <div className="grid grid-cols-1 md:grid-cols-2">
+      <div className="grid grid-cols-1 lg:grid-cols-2">
         {
           HIGHLIGHTS.map(({ id, title, date, background, tiktokLink }) => (
             <div key={id} className="flex flex-col items-center bg-white/80 m-2 p-2 pb-10">
               <div className="m-5">
-                <div className="font-bold text-base md:text-lg">
+                <div className="font-bold text-base lg:text-lg">
                   {title}
                 </div>
                 <div className="text-sm text-slate-600">
@@ -38,15 +38,15 @@ export default function Band() {
                 <div
                   className={
                     `relative flex items-end
-                    w-[250px] h-[136.5px] md:w-[350px] md:h-[192.5px]
+                    w-[250px] h-[136.5px] lg:w-[350px] lg:h-[192.5px]
                     ${background} border-[2px] border-black`
                   }
                 >
                   <div
                     className={
-                      `font-ranga text-blue-950 hover:text-white
-                      text-sm md:text-2xl pt-1 pb-1 mb-2 bg-slate-200/75
-                      hover:bg-slate-700/75 w-full text-center h-[22px] md:h-[40px]`
+                      `w-full text-center font-ranga text-sm lg:text-2xl
+                      mb-2 bg-slate-200/75 hover:text-white hover:bg-slate-700/75
+                      h-[18px] lg:h-[30px]`
                     }
                   >
                     See the Highlights

@@ -2,28 +2,21 @@ import { GRID_DATA_ITEMS } from '../data';
 import GridItem from './grid-item';
 import LinkTitle from './link-title';
 
-// An alternative is to have a shared component like PageStructure and avoid this Layout+SEGMENT_DATA_MAP
-// But I believe it's better in this case to lean into the Next.js layout/page infrastructure
 export default function Layout({ children }) {
   return (
-    <div className="w-[350px] md:w-[1000px] flex flex-col items-center justify-start mt-5 md:mt-10">
+    <div className="w-[350px] lg:w-[1000px] flex flex-col items-center mt-2">
       <div
         className={
-          `w-full p-1 pb-10 pt-10 m-1 md:p-10 md:m-20 md:mb-2
-          flex flex-col justify-center items-center bg-slate-100`
+          `w-full bg-slate-100 flex flex-col items-center pb-10 pt-10 m-2 lg:mt-10`
         }
       >
         <LinkTitle />
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-1 ml-1 mr-1 md:ml-10 md:mr-10">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-1">
           {
             GRID_DATA_ITEMS.map(gridDataItem => {
               const { id, attributes } = gridDataItem;
 
-              return (
-                <div key={id} className="flex justify-center">
-                  <GridItem {...attributes} />
-                </div>
-              )
+              return <GridItem {...attributes} key={id} />;
             })
           }
         </div>

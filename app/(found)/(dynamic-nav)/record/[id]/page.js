@@ -9,7 +9,7 @@ export default function Page({ params }) {
   return (
     <>
       <div className="ml-5 mr-5 mb-5">
-        <div className="text-justify md:text-xl mb-1">{blurb}</div>
+        <div className="text-justify lg:text-xl mb-1">{blurb}</div>
         <div className="text-sm text-slate-600">
           Release date: {date}
         </div>

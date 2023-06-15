@@ -9,7 +9,7 @@ function PlayRow({ title, link, iconImage }) {
   return (
     <a
       className={
-        `flex flex-row justify-center p-3 text-md md:text-xl
+        `flex flex-row justify-center p-3 text-md lg:text-xl
       hover:bg-sky-100 border-t-2 border-slate-100`
       }
       href={link} target="_blank"
@@ -76,7 +76,7 @@ export default function Discography() {
 
   return (
     <>
-      <div className="w-[330px] md:w-[500px] bg-white p-5 md:p-10 text-center">
+      <div className="w-[330px] lg:w-[500px] bg-white p-5 lg:p-10 text-center">
         <label>
           <div className="mb-2">Search for a record</div>
           <input
@@ -104,11 +104,11 @@ export default function Discography() {
             const addedMb = i < RECORDS.length ? 'mb-8' : '';
 
             return (
-              <div key={title} className={`w-[330px] md:w-[500px] bg-white p-5 md:p-10 ${addedMb}`}>
+              <div key={title} className={`w-[330px] lg:w-[500px] bg-white p-5 lg:p-10 ${addedMb}`}>
                 <div className="flex flex-row justify-center">
                   <Link
                     className={
-                      `relative w-[180px] h-[180px] md:w-[280px] md:h-[280px]
+                      `relative w-[180px] h-[180px] lg:w-[280px] lg:h-[280px]
                       border-black border-[2px]`
                     }
                     href={`/record/${id}`}
@@ -117,16 +117,16 @@ export default function Discography() {
                       src={albumImage}
                       alt="album-image"
                       fill
-                      // 768px is the breaking point for tailwind css `md:`
+                      // 768px is the breaking point for tailwind css `lg:`
                       // max-width in Next.js sizes refers to a max-width to apply a smaller value.
                       // Then in larger widths, the final value is the default.
-                      // This is an opposite mindset to tailwind where the default is the smallest value, and sm:/md:/lg: establish breaking points to apply larger values.
+                      // This is an opposite mindset to tailwind where the default is the smallest value, and sm:/lg:/lg: establish breaking points to apply larger values.
                       sizes="(max-width:768px) 90px, 140px"
                       // uncomment to find warnings on Largest Contentful Paint: https://nextjs.org/docs/pages/api-reference/components/image#priority
                       priority
                     />
                   </Link>
-                  <div className={"relative w-[90px] h-[180px] md:w-[140px] md:h-[280px]"}>
+                  <div className={"relative w-[90px] h-[180px] lg:w-[140px] lg:h-[280px]"}>
                     <Image
                       src={recordHalfImage}
                       alt="album-image"
@@ -136,15 +136,15 @@ export default function Discography() {
                   </div>
                 </div>
                 <div className="mb-5 mt-5">
-                  <div className="font-bold text-base md:text-xl text-left">
+                  <div className="font-bold text-base lg:text-xl text-left">
                     {titleDisplay({ deferredText, title })}
                   </div>
-                  <div className="text-justify md:text-lg mb-1">{blurb}</div>
+                  <div className="text-justify lg:text-lg mb-1">{blurb}</div>
                   <div className="text-sm text-slate-600">
                     Release date: {date}
                   </div>
                 </div>
-                <div className="md:m-2"></div>
+                <div className="lg:m-2"></div>
                 <PlayRow
                   title={'Spotify'}
                   link={spotifyLink}
@@ -164,7 +164,7 @@ export default function Discography() {
             )
           })
         ) : (
-          <div className="w-[330px] h-[500px] md:w-[500px] md:h-[650px] bg-white p-5 md:p-10">
+          <div className="w-[330px] h-[500px] lg:w-[500px] lg:h-[650px] bg-white p-5 lg:p-10">
             <div className="text-center">No match.</div>
           </div>
         )

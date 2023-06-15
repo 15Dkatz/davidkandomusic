@@ -4,16 +4,19 @@ import { Analytics } from '@vercel/analytics/react';
 import { Ranga, Roboto_Condensed } from 'next/font/google';
 
 const ranga = Ranga({
-  weight: '700',
   subsets: ['latin'],
+  weight: '700',
   variable: '--font-ranga-bold'
 });
 
 const robotoCondensed = Roboto_Condensed({
-  weight: '400',
   subsets: ['latin'],
+  weight: '400',
   variable: '--font-roboto-condensed'
 });
+
+console.log(`ranga.variable`, ranga.variable);
+console.log(`robotoCondensed.variable`, robotoCondensed.variable);
 
 export const metadata = {
   title: 'David Kando Music'
@@ -21,7 +24,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html className={`${ranga.variable} ${robotoCondensed.variable}`}>
+    <html lang="en" className={`${ranga.variable} ${robotoCondensed.variable}`}>
       <body className="flex justify-center min-h-screen font-roboto">
         {children}
       </body>

@@ -18,8 +18,8 @@ import {
 } from '../data';
 
 const Loading = () => (
-  <div className="absolute w-[326px] md:w-[904px] h-[352px] rounded bg-slate-300">
-    <div className="w-[112px] h-[112px] md:w-[152px] md:h-[152px] rounded bg-slate-200 animate-pulse m-[20px]" />
+  <div className="absolute w-[326px] lg:w-[904px] h-[352px] rounded bg-slate-300">
+    <div className="w-[112px] h-[112px] lg:w-[152px] lg:h-[152px] rounded bg-slate-200 animate-pulse m-[20px]" />
   </div>
 );
 
@@ -47,8 +47,8 @@ function Result({ resultData }) {
       {
         resultData ? (
           <>
-            <div className="relative w-[326px] md:w-[904px] h-[352px]">
-              <div className="absolute w-[326px] md:w-[904px] h-[352px]">
+            <div className="relative w-[326px] lg:w-[904px] h-[352px]">
+              <div className="absolute w-[326px] lg:w-[904px] h-[352px]">
                 <Suspense fallback={<Loading />}>
                   <resultData.Embed />
                 </Suspense>
