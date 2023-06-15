@@ -1,4 +1,4 @@
-import '../globals.css'
+import './globals.css'
 import ClientLog from './client-log';
 import { Analytics } from '@vercel/analytics/react';
 import { Ranga, Roboto_Condensed } from 'next/font/google';
@@ -15,8 +15,8 @@ const robotoCondensed = Roboto_Condensed({
   variable: '--font-roboto-condensed'
 });
 
-console.log(`ranga.variable`, ranga.variable);
-console.log(`robotoCondensed.variable`, robotoCondensed.variable);
+// console.log(`ranga.variable`, ranga.variable);
+// console.log(`robotoCondensed.variable`, robotoCondensed.variable);
 
 export const metadata = {
   title: 'David Kando Music'

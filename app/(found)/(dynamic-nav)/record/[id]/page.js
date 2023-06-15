@@ -30,7 +30,7 @@ export const generateMetadata = ({ params }) => {
   const { id } = params;
   const { title } = RECORDS_MAP[id];
 
-  console.log(`title`, title);
+  // console.log(`title`, title);
 
   return { title: `${title} - David Kando` };
 }

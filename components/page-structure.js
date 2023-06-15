@@ -2,7 +2,7 @@ export default function PageStructure({ children, background, title }) {
   return (
       <div
       className={
-        `w-full p-1 pb-10 pt-10 m-2 lg:p-10 lg:m-20 text-md lg:text-xl
+        `w-full p-1 pb-10 pt-10 lg:p-10 text-md lg:text-xl
         flex flex-col justify-center items-center
         ${background} bg-no-repeat bg-cover`
       }

@@ -19,7 +19,7 @@ export default function NavTitle({
         segmentsToRender.map((segment, i) => {
           const href = segments.slice(0, skipInitial ? i+2 : i+1).join('/');
           const isLastSegment = i === segmentsToRender.length - 1;
-          console.log(`href`, href);
+          // console.log(`href`, href);
 
           return (
             <span key={segment}>

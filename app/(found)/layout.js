@@ -4,12 +4,8 @@ import LinkTitle from './link-title';
 
 export default function Layout({ children }) {
   return (
-    <div className="w-[350px] lg:w-[1000px] flex flex-col items-center mt-2">
-      <div
-        className={
-          `w-full bg-slate-100 flex flex-col items-center pb-10 pt-10 m-2`
-        }
-      >
+    <div className="w-[350px] lg:w-[1000px] flex flex-col items-center pt-4 pb-4">
+      <div className="w-full bg-slate-100 flex flex-col items-center pb-10 pt-10">
         <LinkTitle />
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-1">
           {
@@ -21,6 +17,7 @@ export default function Layout({ children }) {
           }
         </div>
       </div>
+      <br />
       {children}
     </div>
   );
