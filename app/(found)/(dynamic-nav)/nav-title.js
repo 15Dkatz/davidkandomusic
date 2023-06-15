@@ -25,7 +25,7 @@ export default function NavTitle({
             <span key={segment}>
               <Link
                 href={href}
-                style={{ color: isLastSegment ? 'black' : '' }}
+                className={`${isLastSegment ? "text-black" : ""}`}
               >
                 {segmentTitlesMap[segment]}
               </Link>

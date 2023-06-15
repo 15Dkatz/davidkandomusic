@@ -29,7 +29,7 @@ export default function Content({ params: { id, content } }) {
     <>
       <span ref={startingRef} />
       <Player embed={<Embed />} />
-      <br />
+      <div className="mt-4"></div>
       {contentJsx}
     </>
   )

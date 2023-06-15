@@ -36,20 +36,19 @@ export default function Form() {
   };
 
   return (
-    <form ref={formRef} action={handleSubmit} className="p-1 pl-4">
-      <div className="m-1">
+    <form ref={formRef} action={handleSubmit} className="grid gap-1 indent">
+      <div>
         <label htmlFor="name" className="w-[40px] lg:w-[50px] inline-block">Name{' '}</label>
-        <input className="rounded-none" type="text" id="name" name="name" required />
+        <input type="text" id="name" name="name" required />
       </div>
-      <div className="m-1">
+      <div>
         <label htmlFor="email" className="w-[40px] lg:w-[50px] inline-block">Email{' '}</label>
-        <input className="rounded-none" type="email" id="email" name="email" required />
+        <input type="email" id="email" name="email" required />
       </div>
-      <div className="m-1 mt-2">
+      <div>
         <button
           className={
-            `flex justify-center items-center rounded-none bg-blue-700 text-white
-            p-[4px] w-[120px] h-[36px] text-lg
+            `bg-blue-700 text-center text-white w-[120px] h-[36px] text-lg
             disabled:bg-slate-50 disabled:text-slate-500`
           }
           type="submit"
@@ -58,8 +57,9 @@ export default function Form() {
           {
             isPending ? (
               <>
-                <span className="ml-[5px]"><Spinner /></span>
-                {' Sending...'}
+                <span className="flex justify-center items-center h-[36px]">
+                  <Spinner />{' Sending...'}
+                </span>
               </>
             ) : (
               'Submit'

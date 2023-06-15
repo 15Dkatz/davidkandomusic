@@ -11,8 +11,7 @@ export default function GridItem({ text, href, background }) {
       >
         <div
           className={
-            `w-full text-center font-ranga text-sm lg:text-2xl h-[18px] lg:h-[30px]
-            mb-2 bg-slate-200/75 hover:text-white hover:bg-slate-700/75`
+            `w-full text-center font-ranga text-sm lg:text-2xl banner`
           }
         >
           {text}

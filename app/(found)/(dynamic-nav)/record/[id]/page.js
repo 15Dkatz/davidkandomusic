@@ -8,13 +8,11 @@ export default function Page({ params }) {
 
   return (
     <>
-      <div className="ml-5 mr-5 mb-5">
-        <div className="text-justify lg:text-xl mb-1">{blurb}</div>
-        <div className="text-sm text-slate-600">
-          Release date: {date}
-        </div>
+      <div className="text-justify">{blurb}</div>
+      <div className="text-sm text-slate-600">
+        Release date: {date}
       </div>
-      <div className={`font-ranga flex justify-between w-36 text-2xl mb-5`}>
+      <div className="font-ranga flex justify-between w-36 text-2xl m-2">
         <Link href={`record/${id}/lyrics`} className="link">Lyrics</Link>
         <Link href={`record/${id}/gear`} className="link">Gear Used</Link>
       </div>
@@ -23,13 +21,11 @@ export default function Page({ params }) {
   )
 }
 
-// TODO: The deep level of nesting seems to be glitching out generateMetadata
-// Open an issue with Next.js
-// Or further look into Metadata
+// TODO: Open an issue with Next.js. Tab titles do not update properly while changing tabs
+// NOTE: Issue exists: https://github.com/vercel/next.js/issues/48548
 export const generateMetadata = ({ params }) => {
   const { id } = params;
   const { title } = RECORDS_MAP[id];
-
   // console.log(`title`, title);
 
   return { title: `${title} - David Kando` };

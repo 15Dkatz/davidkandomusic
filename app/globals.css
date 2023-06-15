@@ -6,8 +6,16 @@
   .title {
     @apply text-2xl lg:text-4xl underline decoration-4 decoration-blue-400
   }
+  .indent {
+    @apply ml-[15px] lg:ml-[20px] mt-[5px]
+  }
   .link {
-    text-decoration: underline;
-    color: rgb(30 64 175);
+    @apply underline text-blue-800
+  }
+  .discography-panel {
+    @apply w-[330px] lg:w-[500px] bg-white p-5 lg:p-10
+  }
+  .banner {
+    @apply mb-2 bg-slate-200/75 hover:text-white hover:bg-slate-700/75 h-[18px] lg:h-[30px]
   }
 }

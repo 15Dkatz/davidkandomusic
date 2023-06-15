@@ -44,12 +44,10 @@ export default function Band() {
                 >
                   <div
                     className={
-                      `w-full text-center font-ranga text-sm lg:text-2xl
-                      mb-2 bg-slate-200/75 hover:text-white hover:bg-slate-700/75
-                      h-[18px] lg:h-[30px]`
+                      `w-full text-center font-ranga text-sm lg:text-2xl banner`
                     }
                   >
-                    See the Highlights
+                    See the highlights
                   </div>
                 </div>
               </a>

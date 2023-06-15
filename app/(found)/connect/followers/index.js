@@ -20,7 +20,7 @@ export default function Followers() {
   }, [setGoalString])
 
   return (
-    <div className="ml-5">
+    <div className="indent">
       Follower progress: {goalString}
     </div>
   );
