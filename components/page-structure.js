@@ -7,7 +7,7 @@ export default function PageStructure({ children, background, title }) {
         ${background} bg-no-repeat bg-cover`
       }
       >
-      <div className="font-ranga text-center text-2xl lg:text-4xl underline decoration-3 decoration-blue-400">
+      <div className="font-ranga text-center title">
         {title}
       </div>
       <br />

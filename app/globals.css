@@ -3,7 +3,9 @@
 @tailwind utilities;
 
 @layer components {
-  /* This won't be included in your compiled CSS unless you actually use it */
+  .title {
+    @apply text-2xl lg:text-4xl underline decoration-4 decoration-blue-400
+  }
   .link {
     text-decoration: underline;
     color: rgb(30 64 175);
