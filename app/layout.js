@@ -18,9 +18,7 @@ const robotoCondensed = Roboto_Condensed({
 // console.log(`ranga.variable`, ranga.variable);
 // console.log(`robotoCondensed.variable`, robotoCondensed.variable);
 
-export const metadata = {
-  title: 'David Kando Music'
-};
+export const metadata = { title: 'David Kando Music' };
 
 export default function RootLayout({ children }) {
   return (
