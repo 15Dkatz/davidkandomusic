@@ -20,7 +20,7 @@ export default function Content({ params: { id, content } }) {
     if (foundTitleElement) setTitleElement(foundTitleElement);
   }, [startingRef]);
 
-  // 404 on invalid content pathnames
+  // 404 on invalid content pathnames, such as /record/poison-worms/foo, where foo does not exist
   if (!contentJsx) return notFound();
 
   const { Embed } = RECORDS_MAP[id];

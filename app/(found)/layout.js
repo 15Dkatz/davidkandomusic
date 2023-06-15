@@ -7,7 +7,7 @@ export default function Layout({ children }) {
     <div className="w-[350px] lg:w-[1000px] flex flex-col items-center mt-2">
       <div
         className={
-          `w-full bg-slate-100 flex flex-col items-center pb-10 pt-10 m-2 lg:mt-10`
+          `w-full bg-slate-100 flex flex-col items-center pb-10 pt-10 m-2`
         }
       >
         <LinkTitle />

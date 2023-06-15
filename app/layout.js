@@ -25,7 +25,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${ranga.variable} ${robotoCondensed.variable}`}>
-      <body className="flex justify-center min-h-screen font-roboto">
+      <body className="flex justify-center items-center min-h-screen font-roboto">
         {children}
       </body>
       <ClientLog />
