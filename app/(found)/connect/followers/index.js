@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import getFollowers from './get-followers';
 
-// Always to the nearest 10 power: 100, 1000, 10k, 100k, etc.
+// NOTE: return the nearest power-of-10 based on current's number of digits: 100, 1000, 10k, 100k, etc.
 const followerGoal = ({ current }) => Math.pow(10, (current+'').length);
 
 export default function Followers() {
@@ -14,13 +14,11 @@ export default function Followers() {
       .then(followers => {
         setGoalString(`${followers}/${followerGoal({ current: followers })}`);
       })
-      .catch(error => {
-        console.error(`error`, error);
-      });
+      .catch(error => console.error(error));
   }, [setGoalString])
 
   return (
-    <div className="indent">
+    <div className="ml-[15px] lg:ml-[20px] mt-[5px]">
       Follower progress: {goalString}
     </div>
   );

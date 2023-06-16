@@ -6,11 +6,11 @@
   .title {
     @apply font-ranga text-2xl lg:text-4xl underline decoration-4 decoration-blue-400
   }
-  .indent {
-    @apply ml-[15px] lg:ml-[20px] mt-[5px]
-  }
   .link {
     @apply underline text-blue-800
+  }
+  .indent {
+    @apply ml-[15px] lg:ml-[20px] mt-[5px]
   }
   .discography-panel {
     @apply w-[330px] lg:w-[500px] bg-white p-5 lg:p-10

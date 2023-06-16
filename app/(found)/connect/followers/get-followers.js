@@ -1,9 +1,13 @@
 'use server';
 // NOTE: Notice that the logs on the server show `cache: HIT`
 export default async function getFollowers() {
-  const response = await fetch('https://spotify-api-wrapper.appspot.com/artist/david-kando');
+  const response = await fetch(
+    'https://spotify-api-wrapper.appspot.com/artist/david-kando',
+    // don't let the server cache for more than a minute and miss any recent follower counts
+    { next: { revalidate: 60 } }
+  );
+  // leave if (!response.ok) out for course brevity
   // console.log(`response`, response);
-
   if (!response.ok) {
     throw new Error('Error fetching followers. Response.ok is false.');
   }
