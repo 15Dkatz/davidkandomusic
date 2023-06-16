@@ -2,7 +2,7 @@ import PageStructure from 'components/page-structure';
 
 export const metadata = { title: 'David Kando Studios' };
 
-export default function Studio() {
+export default function Page() {
   return (
     <PageStructure
       background="bg-gradient-to-b from-slate-100 to-purple-50"

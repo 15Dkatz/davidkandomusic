@@ -36,37 +36,29 @@ export default function Form() {
   };
 
   return (
-    <form ref={formRef} action={handleSubmit} className="grid gap-1 indent">
-      <div>
-        <label htmlFor="name" className="w-[40px] lg:w-[50px] inline-block">Name{' '}</label>
-        <input type="text" id="name" name="name" required />
-      </div>
-      <div>
-        <label htmlFor="email" className="w-[40px] lg:w-[50px] inline-block">Email{' '}</label>
-        <input type="email" id="email" name="email" required />
-      </div>
-      <div>
-        <button
-          className={
-            `bg-blue-700 text-center text-white w-[120px] h-[36px] text-lg
-            disabled:bg-slate-50 disabled:text-slate-500`
-          }
-          type="submit"
-          disabled={isPending}
-        >
-          {
-            isPending ? (
-              <>
-                <span className="flex justify-center items-center h-[36px]">
-                  <Spinner />{' Sending...'}
-                </span>
-              </>
-            ) : (
-              'Submit'
-            )
-          }
-        </button>
-      </div>
+    <form ref={formRef} action={handleSubmit} className="grid gap-[2px] w-[220px] indent">
+      <label htmlFor="name">Name</label>
+      <input type="text" id="name" name="name" required />
+      <label htmlFor="email">Email</label>
+      <input type="email" id="email" name="email" required />
+      <button
+        className={
+          `bg-blue-700 text-center text-white w-[120px] h-[36px] mt-[4px]
+          disabled:bg-slate-50 disabled:text-slate-500`
+        }
+        type="submit"
+        disabled={isPending}
+      >
+        {
+          isPending ? (
+            <span className="flex justify-center items-center h-[36px] pl-[4px]">
+              <Spinner />{' Sending'}
+            </span>
+          ) : (
+            'Submit'
+          )
+        }
+      </button>
     </form>
   );
 }

@@ -3,7 +3,7 @@ import PageStructure from 'components/page-structure';
 
 export const metadata = { title: 'Curcio Band' };
 
-export default function Band() {
+export default function Page() {
   return (
     <PageStructure
       background="bg-[url('/curcio_banner.png')] bg-contain"

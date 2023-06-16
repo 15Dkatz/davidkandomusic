@@ -75,7 +75,7 @@ function Result({ resultData }) {
   )
 }
 
-export default function QuizResult() {
+export default function Page() {
   const [resultData, setResultData] = useState(null);
   const queryParams = useQueryParams();
   const params = queryParams.toString();

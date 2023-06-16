@@ -1,8 +1,8 @@
-import { PREMISE, QUESTIONS } from './data';
+import { PREMISE, QUESTIONS } from '../data';
 
 export const metadata = { title: 'Playlist Personality Quiz - David Kando' };
 
-export default function QuizForm() {
+export default function Page() {
   return (
     <div>
       {PREMISE}
