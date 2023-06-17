@@ -1,15 +1,9 @@
-import PageStructure from 'components/page-structure';
 import Form from './email-list/form';
 import Followers from './followers';
 
-export const metadata = { title: 'Connect with David Kando' };
-
 export default function Page() {
   return (
-    <PageStructure
-      background="bg-gradient-to-b from-slate-100 to-pink-100"
-      title="Let's hang around"
-    >
+    <>
       <div>
         Find my latest projects, upcoming live events, and releases!
       </div>
@@ -33,6 +27,6 @@ export default function Page() {
       <div>
         Reach out for inquiries at <span className="underline">davidkandomusic@gmail.com</span>
       </div>
-    </PageStructure>
+    </>
   )
 }

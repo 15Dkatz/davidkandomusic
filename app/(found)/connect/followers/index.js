@@ -17,6 +17,7 @@ export default function Followers() {
       .catch(error => console.error(error));
   }, [setGoalString])
 
+  // the simplicity of the loading state avoids the necessity for Suspense
   return (
     <div className="ml-[15px] lg:ml-[20px] mt-[5px]">
       Follower progress: {goalString}

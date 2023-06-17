@@ -1,7 +1,7 @@
 'use client';
 
 import { useSelectedLayoutSegments, usePathname } from 'next/navigation';
-import PageStructure from 'components/page-structure';
+import LayoutStructure from 'components/layout-structure';
 import NavTitle from './nav-title';
 import { findIdByPathname, RECORDS_MAP, SEGMENT_TITLES_MAP } from './data';
 
@@ -18,7 +18,7 @@ export default function Layout({ children }) {
   const { title, background } = RECORDS_MAP[id];
 
   return (
-    <PageStructure
+    <LayoutStructure
       title={
         <NavTitle
           skipInitial
@@ -30,6 +30,6 @@ export default function Layout({ children }) {
       background={background}
     >
       {children}
-    </PageStructure>
+    </LayoutStructure>
   )
 }

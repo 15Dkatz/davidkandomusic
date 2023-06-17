@@ -1,64 +1,75 @@
 'use client';
 
-import { useTransition, useRef } from 'react';
+import { useTransition, useRef, useState } from 'react';
 import postContact from './post-contact';
-
-const Spinner = () => (
-  <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-slate-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-    <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-    <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-  </svg>
-);
+import Spinner from 'components/spinner';
 
 export default function Form() {
   const formRef = useRef();
   const [isPending, startTransition] = useTransition();
-
+  const [message, setMessage] = useState('');
+  const [displayMessage, setDisplayMessage] = useState(false);
   console.log(`isPending`, isPending);
 
-  const handleSubmit = (...args) => {
+  const handleSubmit = (data) => {
+    console.log(`data`, data);
+    const name = data.get('name');
+    const email = data.get('email');
+
+    // startTransition, in the callback function, will only mark synchronous state `set` calls as transitions
+    // setMessage and setDisplayMessage are marked as transitions that can be interrupted.
+    // For example, navigate to another page during the transition.
+    // A setTimeout does not work, but postContact works because the awaits in the async postContact make
+    // the normally asynchronous fetch execution effectively synchronous.
+    // TODO: Come up with a fake example that works
     startTransition(() => {
-      postContact(...args)
+      postContact({ name, email })
         .then(response => {
           const { status, message } = response;
-          alert(message);
+          setMessage(message);
+          setDisplayMessage(true);
 
           if (status === 200) {
             // only clear on success. Fails should save the user's progress.
             formRef.current.reset();
           }
-        })
-        .catch(error => {
-          console.error(error);
-          alert('Subscription service unavailable. Try again or email davidkandomusic@gmail.com to subscribe manually.');
         });
     });
   };
 
   return (
-    <form ref={formRef} action={handleSubmit} className="grid gap-[2px] w-[220px] indent">
-      <label htmlFor="name">Name</label>
-      <input type="text" id="name" name="name" required />
-      <label htmlFor="email">Email</label>
-      <input type="email" id="email" name="email" required />
-      <button
-        className={
-          `bg-blue-700 text-center text-white w-[120px] h-[36px] mt-[4px]
-          disabled:bg-slate-50 disabled:text-slate-500`
-        }
-        type="submit"
-        disabled={isPending}
-      >
-        {
-          isPending ? (
-            <span className="flex justify-center items-center h-[36px] pl-[4px]">
-              <Spinner />{' Sending'}
-            </span>
-          ) : (
-            'Submit'
-          )
-        }
-      </button>
-    </form>
+    <div className="indent">
+      <form ref={formRef} action={handleSubmit} className="grid gap-[2px] w-[220px]">
+        <label htmlFor="name">Name</label>
+        <input type="text" id="name" name="name" required />
+        <label htmlFor="email">Email</label>
+        <input type="email" id="email" name="email" required />
+        <button
+          className={
+            `bg-blue-700 text-center text-white w-[120px] h-[36px] mt-[4px]
+            disabled:bg-slate-50 disabled:text-slate-500`
+          }
+          type="submit"
+          disabled={isPending}
+        >
+          {
+            isPending ? (
+              <span className="flex justify-center items-center h-[36px] pl-[4px]">
+                <Spinner />{' Sending'}
+              </span>
+            ) : (
+              'Submit'
+            )
+          }
+        </button>
+      </form>
+      {
+        displayMessage ? (
+          <div className="mt-2">
+            {message}{' '}
+          </div>
+        ) : <></>
+      }
+    </div>
   );
 }

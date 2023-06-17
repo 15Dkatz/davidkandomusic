@@ -1,4 +1,4 @@
-export default function PageStructure({ children, background, title }) {
+export default function LayoutStructure({ children, background, title }) {
   return (
     <div
       className={
@@ -7,13 +7,9 @@ export default function PageStructure({ children, background, title }) {
         ${background} bg-no-repeat bg-cover`
       }
       >
-      <div className="title">
-        {title}
-      </div>
+      <div className="title">{title}</div>
       <br />
-      <div>
-        {children}
-      </div>
+      <div>{children}</div>
     </div>
   )
 }

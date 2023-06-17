@@ -1,14 +1,8 @@
 import { HIGHLIGHTS } from './data';
-import PageStructure from 'components/page-structure';
-
-export const metadata = { title: 'Curcio Band' };
 
 export default function Page() {
   return (
-    <PageStructure
-      background="bg-[url('/curcio_banner.png')] bg-contain"
-      title="Enter the Curcio-verse"
-    >
+    <>
       <div>Hailing from the lands of San Francisco, Curcio is a band of mere mortals blessed with a divine gift: the power to rock your socks off.</div>
       <br />
       <div>
@@ -55,6 +49,6 @@ export default function Page() {
           ))
         }
       </div>
-    </PageStructure>
+    </>
   )
 }
