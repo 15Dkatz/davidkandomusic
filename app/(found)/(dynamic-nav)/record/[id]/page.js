@@ -11,14 +11,13 @@ export const dynamicParams = false;
 
 // TODO: Open an issue with Next.js. Tab titles do not update properly while changing tabs
 // NOTE: Issue exists: https://github.com/vercel/next.js/issues/48548
-export const generateMetadata = ({ params }) => {
+export async function generateMetadata({ params }) {
   const { id } = params;
   const { title } = RECORDS_MAP[id];
   // console.log(`title`, title);
 
   return { title: `${title} - David Kando` };
 }
-
 
 export default function Page({ params }) {
   const { id } = params;
