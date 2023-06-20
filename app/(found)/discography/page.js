@@ -3,7 +3,7 @@
 import { useDeferredValue, useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { RECORDS } from '../(dynamic-nav)/data';
+import { RECORDS } from '../(dynamic-nav)/record/[id]/data';
 
 function PlayRow({ title, link, iconImage }) {
   return (

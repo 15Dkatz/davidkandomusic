@@ -1,10 +1,9 @@
-import * as embeds from './record/[id]/embeds';
+import * as embeds from './embeds';
 import { POISON_WORMS_ID, IN_PERPETUITY_ID } from 'app/data';
-
-export const NAV_TITLE_ID = "nav-title";
 
 export const POISON_WORMS_TITLE = 'Poison Worms';
 export const IN_PERPETUITY_TITLE = 'In Perpetuity';
+export const NAV_TITLE_ID = "nav-title";
 
 export const SEGMENT_TITLES_MAP = {
   [POISON_WORMS_ID]: POISON_WORMS_TITLE,

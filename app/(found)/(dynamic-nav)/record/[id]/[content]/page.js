@@ -3,9 +3,17 @@
 import { useRef, useEffect, useState } from 'react';
 import { notFound } from 'next/navigation';
 import { useScrollIntoView } from 'app/hooks';
-import { RECORDS, RECORDS_MAP } from '../../../data';
+import { RECORDS, RECORDS_MAP } from '../data';
 import Player from '../player';
-import { NAV_TITLE_ID } from '../../../data';
+import { NAV_TITLE_ID } from '../data';
+
+
+// emulates a database-fetching scenario. However, here the data is hardcoded
+export async function generateStaticParams() {
+  return RECORDS.map(record => ({ id: record.id, content: record.content }));
+  // return RECORDS.map(({ id, content }) => ({ id, content }));
+  // return RECORDS;
+}
 
 export default function Content({ params: { id, content } }) {
   const [titleElement, setTitleElement] = useState(null);
@@ -33,9 +41,4 @@ export default function Content({ params: { id, content } }) {
       {contentJsx}
     </>
   )
-}
-
-// emulates a database-fetching scenario. However, here the data is hardcoded
-export async function generateStaticParams() {
-  return RECORDS.map(({ id, content }) => ({ id, content }));
 }

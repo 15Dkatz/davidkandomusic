@@ -1,6 +1,24 @@
 import Link from 'next/link';
-import { RECORDS, RECORDS_MAP } from '../../data';
+import { RECORDS, RECORDS_MAP } from './data';
 import Player from './player';
+
+export async function generateStaticParams() {
+  return RECORDS.map(record => ({ id: record.id }));
+}
+
+// IMPORTANT: send non-generated pages (record/<?>) to 404, such as record/foo
+export const dynamicParams = false;
+
+// TODO: Open an issue with Next.js. Tab titles do not update properly while changing tabs
+// NOTE: Issue exists: https://github.com/vercel/next.js/issues/48548
+export const generateMetadata = ({ params }) => {
+  const { id } = params;
+  const { title } = RECORDS_MAP[id];
+  // console.log(`title`, title);
+
+  return { title: `${title} - David Kando` };
+}
+
 
 export default function Page({ params }) {
   const { id } = params;
@@ -19,18 +37,4 @@ export default function Page({ params }) {
       <Player embed={<Embed />} />
     </>
   )
-}
-
-// TODO: Open an issue with Next.js. Tab titles do not update properly while changing tabs
-// NOTE: Issue exists: https://github.com/vercel/next.js/issues/48548
-export const generateMetadata = ({ params }) => {
-  const { id } = params;
-  const { title } = RECORDS_MAP[id];
-  // console.log(`title`, title);
-
-  return { title: `${title} - David Kando` };
-}
-
-export async function generateStaticParams() {
-  return RECORDS.map(({ id }) => ({ id }));
 }
