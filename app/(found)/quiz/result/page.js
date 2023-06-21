@@ -1,7 +1,6 @@
 'use client';
 
 import { useState, useEffect, useRef, Suspense } from 'react';
-import { useScrollIntoView } from 'app/hooks';
 import Spinner from 'components/spinner';
 // useSearchParams is a next.js hook used to gather the url information in the query string.
 // useSearchParams makes you think its should be reserved for a search component, idiomatically.
@@ -27,11 +26,14 @@ function Loading() {
 }
 
 function Result({ resultData }) {
-  const scrollRef = useRef();
-  useScrollIntoView(scrollRef.current);
+  const resultRef = useRef();
+
+  useEffect(() => {
+    if (resultRef.current) resultRef.current.scrollIntoView({ behavior: 'smooth' });
+  }, [resultRef]);
 
   return (
-    <div ref={scrollRef}>
+    <div ref={resultRef}>
       <div>
         {CONCLUSION_PART_1}
       </div>

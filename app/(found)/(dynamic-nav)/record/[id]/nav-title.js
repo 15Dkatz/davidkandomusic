@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import { NAV_TITLE_ID } from './data';
 
 export default function NavTitle({
   initialTitle,
@@ -14,7 +13,7 @@ export default function NavTitle({
     : segments;
 
   return (
-    <div className="link decoration-4" id={NAV_TITLE_ID}>
+    <div className="link decoration-4">
       {
         segmentsToRender.map((segment, i) => {
           const href = segments.slice(0, skipInitial ? i+2 : i+1).join('/');
