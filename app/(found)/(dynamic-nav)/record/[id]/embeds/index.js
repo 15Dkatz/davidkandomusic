@@ -1,7 +1,7 @@
 import { lazy } from 'react';
 
 // TODO: Preserve the following as proof of the Suspense loading
-// const PoisonWormsPlayer = lazy(
+// export const PoisonWormsEmbed = lazy(
 //   () => new Promise((resolve) => {
 //     setTimeout(() => {
 //       resolve(import('./poison-worms-embed'));

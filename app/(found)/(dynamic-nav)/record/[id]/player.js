@@ -1,13 +1,16 @@
 'use client';
 
 import { Suspense, useState, useEffect } from 'react';
+import Spinner from 'components/spinner';
 import { detectIncognito } from 'detectincognitojs';
 
-const Loading = () => (
-  <div className="w-[300px] h-[352px] rounded bg-slate-100 p-[60px]">
-    <div className="w-[176px] h-[176px] rounded bg-slate-200 animate-pulse" />
-  </div>
-);
+function Loading() {
+  return (
+    <div className="w-[300px] h-[352px] bg-slate-100 rounded flex justify-center items-center">
+      <Spinner />
+    </div>
+  )
+}
 
 export default function Player({ embed }) {
   const [warningDisplay, setWarningDisplay] = useState(null);
