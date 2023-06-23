@@ -212,5 +212,4 @@ export const RECORDS_MAP = {
 };
 
 export const RECORDS = Object.values(RECORDS_MAP);
-
 export const CONTENT_PATHS = ['lyrics', 'gear'];

@@ -30,8 +30,8 @@ export default function Page({ params }) {
         Release date: {date}
       </div>
       <div className="font-ranga flex justify-between w-[144px] text-2xl m-2">
-        <Link href={`record/${id}/lyrics`} className="link">Lyrics</Link>
-        <Link href={`record/${id}/gear`} className="link">Gear Used</Link>
+        <Link href={`/record/${id}/lyrics`} className="link">Lyrics</Link>
+        <Link href={`/record/${id}/gear`} className="link">Gear Used</Link>
       </div>
       <Player embed={<Embed />} />
     </>

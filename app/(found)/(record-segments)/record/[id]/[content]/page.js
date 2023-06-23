@@ -1,4 +1,4 @@
-import { RECORDS, RECORDS_MAP, CONTENT_PATHS } from '../data';
+import { RECORDS, CONTENT_PATHS, RECORDS_MAP } from '../data';
 import Player from '../player';
 
 // IMPORTANT: send non-generated pages (record/<?>) to 404, such as record/foo
@@ -13,6 +13,10 @@ export async function generateStaticParams() {
     })
   });
 
+  console.log(`recordSegmentMaps`, recordSegmentMaps);
+
+  return recordSegmentMaps;
+
   // const recordSegmentMaps = RECORDS.reduce(
   //   (accumulatedArray, record) => {
   //     return [
@@ -22,9 +26,6 @@ export async function generateStaticParams() {
   //   },
   //   []
   // );
-  console.log(`recordSegmentMaps`, recordSegmentMaps);
-
-  return recordSegmentMaps;
 }
 
 export default function Page({ params: { id, content } }) {

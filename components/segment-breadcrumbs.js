@@ -1,6 +1,6 @@
 import Link from 'next/link';
 
-export default function NavTitle({
+export default function SegmentBreadcrumbs({
   initialTitle,
   skipInitial,
   segmentTitlesMap,
@@ -17,8 +17,8 @@ export default function NavTitle({
       {
         segmentsToRender.map((segment, i) => {
           const href = segments.slice(0, skipInitial ? i+2 : i+1).join('/');
-          const isLastSegment = i === segmentsToRender.length - 1;
           // console.log(`href`, href);
+          const isLastSegment = i === segmentsToRender.length - 1;
 
           return (
             <span key={segment}>
