@@ -3,7 +3,7 @@
 import { useSelectedLayoutSegments, usePathname } from 'next/navigation';
 import LayoutStructure from 'components/layout-structure';
 import SegmentBreadcrumbs from 'components/segment-breadcrumbs';
-import { RECORDS_MAP, findIdByPathname, SEGMENT_TITLES_MAP } from './record/[id]/data';
+import { RECORDS_MAP, findIdByPathname, SEGMENT_TITLES_MAP } from './[id]/data';
 
 export default function Layout({ children }) {
   // `useSelectedLayoutSegments` returns segments starting from the layer below it's called.
@@ -13,17 +13,17 @@ export default function Layout({ children }) {
   const segments = useSelectedLayoutSegments();
   console.log(`segments`, segments);
   const pathname = usePathname();
+  console.log(`pathname`, pathname);
   const id = findIdByPathname(pathname);
-  const { title, background } = RECORDS_MAP[id];
+  const { background } = RECORDS_MAP[id];
 
   return (
     <LayoutStructure
       title={
         <SegmentBreadcrumbs
-          initialTitle={title}
-          skipInitial
           segments={segments}
           segmentTitlesMap={SEGMENT_TITLES_MAP}
+          startingSegment="/record"
         />
       }
       background={background}
