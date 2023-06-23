@@ -11,7 +11,7 @@ export const ROMANTIC = 'ROMANTIC';
 export const THINKER = 'THINKER';
 export const VALID_SELECTIONS = [CRUISER, ROCKER, ROMANTIC, THINKER];
 
-export const PREMISE = `Suddenly the sky cracks with a flash. A winged figure descends upon you. The figure introduces himself, "Greetings mortal, I'm the Angel of Music. I have five questions for you. Complete them, and I'll give you a reward."`;
+export const PREMISE = <div>Suddenly the sky cracks with a flash. A winged figure descends upon you. The figure introduces himself, &quot;Greetings mortal, I&apos;m the Angel of Music. I have five questions for you. Complete them, and I&apos;ll give you a reward.&quot;</div>;
 
 export const QUESTIONS = [
   {
@@ -195,7 +195,7 @@ export const RESULT_MAP = {
     blurb: (
       <div>
         <div>&quot;&quot;&quot;</div>
-        <div>Your musical personality is warm and buttery. When you listen to your music, it's like drinking the foam on a warm latte. Or it can be like a passionate embrace amidst an evening's candlelight.</div>
+        <div>Your musical personality is warm and buttery. When you listen to your music, it&apos;s like drinking the foam on a warm latte. Or it can be like a passionate embrace amidst an evening&apos;s candlelight.</div>
         <div>&quot;&quot;&quot;</div>
       </div>
     ),
