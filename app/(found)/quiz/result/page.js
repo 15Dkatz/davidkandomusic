@@ -6,7 +6,7 @@ import Spinner from 'components/spinner';
 // useSearchParams makes you think its should be reserved for a search component, idiomatically.
 // however, query params are also applied for other use cases like form submission (the case here)
 // so it's ok to think of useSearchParams as useQueryParams
-import { useSearchParams as useQueryParams, notFound } from 'next/navigation';
+import { useSearchParams, notFound } from 'next/navigation';
 
 import {
   RESULT_MAP,
@@ -34,20 +34,8 @@ function Result({ resultData }) {
 
   return (
     <div ref={resultRef}>
-      <div>
-        {CONCLUSION_PART_1}
-      </div>
-      <div className="font-bold">
-        <div>
-          &quot;&quot;&quot;
-        </div>
-        <div>
-          {resultData ? resultData.blurb : ''} {CONCLUSION_PART_2}
-        </div>
-        <div>
-          &quot;&quot;&quot;
-        </div>
-      </div>
+      {CONCLUSION_PART_1}
+      {resultData ? resultData.blurb : ''} {CONCLUSION_PART_2}
       <br />
       {
         resultData ? (
@@ -73,17 +61,15 @@ function Result({ resultData }) {
           <></>
         )
       }
-      <div>
-        {CONCLUSION_PART_3}
-      </div>
+      {CONCLUSION_PART_3}
     </div>
   )
 }
 
 export default function Page() {
   const [resultData, setResultData] = useState(null);
-  const queryParams = useQueryParams();
-  const params = queryParams.toString();
+  const searchParams = useSearchParams();
+  const params = searchParams.toString();
 
   useEffect(() => {
     // split params by &, and grab the values after the = sign
@@ -95,18 +81,12 @@ export default function Page() {
       const selectionMap = {};
 
       gatheredSelections.forEach(selection => {
-        if (!selectionMap[selection]) {
-          selectionMap[selection] = 1;
-        } else {
-          selectionMap[selection] = selectionMap[selection]+1;
-        }
+        selectionMap[selection] = !selectionMap[selection] ? 1 : selectionMap[selection]+1;
       });
 
       const resultData = RESULT_MAP[getQuizResult({ selectionMap })];
 
-      if (resultData) {
-        setResultData(RESULT_MAP[getQuizResult({ selectionMap })]);
-      }
+      if (resultData) setResultData(RESULT_MAP[getQuizResult({ selectionMap })]);
     }
   }, [params, setResultData]);
 

@@ -166,32 +166,56 @@ export const QUESTIONS = [
   }
 ];
 
-export const CONCLUSION_PART_1 = `The Angel of Music smiles and says:`
+export const CONCLUSION_PART_1 = <div>The Angel of Music smiles and says:</div>;
 
 export const RESULT_MAP = {
   [CRUISER]: {
-    blurb: 'Your musical personality is like a smooth cruise down the coastal highway. Your songs capture the sweet feeling of an uninhibited spirit.',
+    blurb: (
+      <div>
+        <div>&quot;&quot;&quot;</div>
+        <div>Your musical personality is like a smooth cruise down the coastal highway. Your songs capture the sweet feeling of an uninhibited spirit.</div>
+        <div>&quot;&quot;&quot;</div>
+      </div>
+    ),
     Embed: CruiserEmbed,
     playlistLink: 'https://open.spotify.com/playlist/29ngmUyX5axVriFSTyQy7R?si=bd389a57586b4a92'
   },
   [ROCKER]: {
-    blurb: 'Your musical personality is relentless and invigorating, like the energy from hair-rising guitar amps. The sound of your songs crash and screech with a beautiful brand of chaotic musicality.',
+    blurb: (
+      <div>
+        <div>&quot;&quot;&quot;</div>
+        <div>Your musical personality is relentless and invigorating, like the energy from hair-rising guitar amps. The sound of your songs crash and screech with a beautiful brand of chaotic musicality.</div>
+        <div>&quot;&quot;&quot;</div>
+      </div>
+    ),
     Embed: RockerEmbed,
     playlistLink: 'https://open.spotify.com/playlist/1njREE782p2UmiVsuKQBu3?si=f87ff77aec36484c'
   },
   [ROMANTIC]: {
-    blurb: `Your musical personality is warm and buttery. When you listen to your music, it's like drinking the foam on a warm latte. Or it can be like a passionate embrace amidst an evening's candlelight.`,
+    blurb: (
+      <div>
+        <div>&quot;&quot;&quot;</div>
+        <div>Your musical personality is warm and buttery. When you listen to your music, it's like drinking the foam on a warm latte. Or it can be like a passionate embrace amidst an evening's candlelight.</div>
+        <div>&quot;&quot;&quot;</div>
+      </div>
+    ),
     Embed: RomanticEmbed,
     playlistLink: 'https://open.spotify.com/playlist/3TMHZHFF7hlQbFYCWqbHrt?si=04de917f8c6d4c2a'
   },
   [THINKER]: {
-    blurb: 'Your musical personality consists of wit and discovery. Your songs traverse the world of ideas. Your curious mind craves the sound of thought-provoking compositions and challenge of meaningful lyrics.',
+    blurb: (
+      <div>
+        <div>&quot;&quot;&quot;</div>
+        <div>Your musical personality consists of wit and discovery. Your songs traverse the world of ideas. Your curious mind craves the sound of thought-provoking compositions and challenge of meaningful lyrics.</div>
+        <div>&quot;&quot;&quot;</div>
+      </div>
+    ),
     Embed: ThinkerEmbed,
     playlistLink: 'https://open.spotify.com/playlist/01vuz1uxoDgn1FpJ5bvYtS?si=eb184710c18d4b7a'
   }
 };
 
-export const CONCLUSION_PART_2 = "Here is a playlist that matches your personality.";
+export const CONCLUSION_PART_2 = <div>Here is a playlist that matches your personality.</div>;
 
 export const CONCLUSION_PART_3 = (
   <div>
