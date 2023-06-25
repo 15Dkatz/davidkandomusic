@@ -2,7 +2,6 @@ import LayoutStructure from 'components/layout-structure';
 
 export const metadata = { title: 'Playlist Personality Quiz - David Kando' };
 
-
 export default function Layout({ children }) {
   return (
     <LayoutStructure

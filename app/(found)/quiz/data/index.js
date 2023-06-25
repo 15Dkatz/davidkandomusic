@@ -4,12 +4,19 @@ export const CruiserEmbed = lazy(() => import('./cruiser-embed'));
 export const RockerEmbed = lazy(() => import('./rocker-embed'));
 export const RomanticEmbed = lazy(() => import('./romantic-embed'));
 export const ThinkerEmbed = lazy(() => import('./thinker-embed'));
+// Use this artificially delayed ThinkerEmbed to show the Suspense loading UI
+// export const ThinkerEmbed = lazy(
+//   () => new Promise((resolve) => {
+//     setTimeout(() => {
+//       resolve(import('./thinker-embed'));
+//     }, 5000);
+//   })
+// );
 
 export const CRUISER = 'CRUISER';
 export const ROCKER = 'ROCKER';
 export const ROMANTIC = 'ROMANTIC';
 export const THINKER = 'THINKER';
-export const VALID_SELECTIONS = [CRUISER, ROCKER, ROMANTIC, THINKER];
 
 export const PREMISE = <div>Suddenly the sky cracks with a flash. A winged figure descends upon you. The figure introduces himself, &quot;Greetings mortal, I&apos;m the Angel of Music. I have five questions for you. Complete them, and I&apos;ll give you a reward.&quot;</div>;
 
@@ -224,29 +231,27 @@ export const CONCLUSION_PART_3 = (
   </div>
 );
 
-
-// If there is a tie (2-2-1), then choose a random one from the selections with 2 tallies.
-// selections should be a map like so:
+// Returns a valid selection, based on a given selectionMap of selection keys, and their total selection number, such as:
 // {
-//   [CRUISER]: numVotes,
-//   [ROCKER]: numVotes,
-//   [ROMANTIC]: numVotes,
-//   [THINKER]: numVotes
+//   [CRUISER]: 0,
+//   [ROCKER]: 3,
+//   [ROMANTIC]: 1,
+//   [THINKER]: 1
 // }
-// returns the type, such as CRUISER or ROCKER
+// returns ROCKER
+//
+// Always choose the first item to handle any ties, such as 2-2-1 tie.
 export const getQuizResult = ({ selectionMap }) => {
   // 1: find the max
   const max = Math.max(...Object.values(selectionMap));
 
-  // 2: filter the list down to selections that match the max (go directly to the keys, since those are the types)
-  const filteredKeys = Object.keys(
-    Object.fromEntries(
-      Object.entries(selectionMap).filter(([_, numVotes]) => numVotes === max)
-    )
+  // 2: filter the list down to selections that match the max
+  const filteredSelections = Object.keys(selectionMap).filter(
+    key => selectionMap[key] === max
   );
 
-  // 3: pick a random item from the list
-  return filteredKeys[Math.floor(Math.random() * filteredKeys.length)];
+  // 3: pick the first item from the list.
+  return filteredSelections[0];
 }
 
 // Uncomment for tests

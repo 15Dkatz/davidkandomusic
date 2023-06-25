@@ -6,7 +6,7 @@ import { detectIncognito } from 'detectincognitojs';
 
 function Loading() {
   return (
-    <div className="w-[300px] h-[352px] bg-slate-100 rounded flex justify-center items-center">
+    <div className="w-[300px] h-[352px] bg-slate-300 rounded flex justify-center items-center">
       <Spinner />
     </div>
   )
