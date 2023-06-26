@@ -27,9 +27,6 @@ function PlayRow({ title, link, iconImage }) {
   )
 }
 
-// use useDeferredValue here, and have a search bar.
-// Highlight the matching text in the record title.
-
 const titleDisplay = ({ deferredText, title }) => {
   if (
     deferredText.length > 0
@@ -47,23 +44,21 @@ const titleDisplay = ({ deferredText, title }) => {
     // console.log(`title3`, title3);
 
     return (
-      <>
+      <div className="font-bold text-left lg:text-xl">
         <span>{title1}</span>
         <span className="font-bold text-blue-800">{title2}</span>
         <span>{title3}</span>
-      </>
+      </div>
     )
   }
 
-  return <span>{title}</span>;
+  return title;
 }
 
-// TODO: Try to optimize this for the sake of the course
 export default function Discography() {
   const [text, setText] = useState('');
   const [records, setRecords] = useState(RECORDS);
   const deferredText = useDeferredValue(text);
-
   // console.log(`deferredText`, deferredText);
 
   useEffect(() => {
@@ -71,22 +66,20 @@ export default function Discography() {
       record => record.title.toLowerCase().includes(deferredText.toLowerCase())
     );
 
-    setRecords(deferredText.length > 0 ? filteredRecords : RECORDS);
+    setRecords(filteredRecords);
   }, [deferredText]);
 
   return (
     // min-h-screen on the wrapper prevents the filtering from collapsing this bottom section abruptly/harshly
-    <div className="min-h-screen">
-      <div className="discography-panel text-center">
-        <label>
-          <div className="mb-2">Search for a record</div>
-          <input
-            type="text"
-            className="rounded-none w-full border-slate-400 border-[2px]"
-            value={text}
-            onChange={event => setText(event.target.value)}
-          />
-        </label>
+    <div className="min-h-screen text-center">
+      <div className="discography-panel">
+        <div className="mb-2">Search for a record</div>
+        <input
+          type="text"
+          className="rounded-none w-full border-slate-400 border-[2px]"
+          value={text}
+          onChange={event => setText(event.target.value)}
+        />
       </div>
       <br />
       {
@@ -101,12 +94,10 @@ export default function Discography() {
             spotifyLink,
             appleMusicLink,
             youtubeMusicLink
-          }, i) => {
-            const addBr = i < RECORDS.length ? 'mb-8' : '';
-
+          }) => {
             return (
-              <>
-                <div key={title} className="discography-panel">
+              <div key={id}>
+                <div key={title} className="discography-panel text-left">
                   <div className="flex flex-row justify-center">
                     <Link
                       className={
@@ -138,9 +129,7 @@ export default function Discography() {
                     </div>
                   </div>
                   <div className="mb-5 mt-5">
-                    <div className="font-bold text-left lg:text-xl">
-                      {titleDisplay({ deferredText, title })}
-                    </div>
+                    {titleDisplay({ deferredText, title })}
                     <div className="text-justify lg:text-lg mb-1">{blurb}</div>
                     <div className="text-sm text-slate-600">
                       Release date: {date}
@@ -149,27 +138,25 @@ export default function Discography() {
                   <PlayRow
                     title={'Spotify'}
                     link={spotifyLink}
-                    iconImage='/spotify_icon_w500.png'
+                    iconImage='/spotify_icon_500.png'
                   />
                   <PlayRow
                     title={'Apple Music'}
                     link={appleMusicLink}
-                    iconImage='/apple_music_icon_w500.png'
+                    iconImage='/apple_music_icon_500.png'
                   />
                   <PlayRow
                     title={'YouTube Music'}
                     link={youtubeMusicLink}
-                    iconImage='/youtube_music_icon_w500.png'
+                    iconImage='/youtube_music_icon_500.png'
                   />
                 </div>
-                {addBr ? <br /> : <></>}
-              </>
+                <br />
+              </div>
             )
           })
         ) : (
-          <div className="discography-panel">
-            <div className="text-center">No match.</div>
-          </div>
+          <div className="discography-panel">No match.</div>
         )
       }
     </div>
