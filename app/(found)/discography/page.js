@@ -5,24 +5,17 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { RECORDS } from 'app/(found)/record/[id]/data';
 
-function PlayRow({ title, link, iconImage }) {
+function PlayRow({ title, href, iconImage }) {
   return (
     <a
-      className={
-        `flex flex-row justify-center p-3 text-md lg:text-xl
-      hover:bg-sky-100 border-t-2 border-slate-100`
-      }
-      href={link} target="_blank"
+      href={href}
+      target="_blank"
+      className="flex flex-row justify-center p-3 hover:bg-sky-100 border-t-[2px] border-slate-200"
     >
-      <div className="mr-1">Play on</div>
-      <div className="relative w-[80px] h-[24px]" href={`/`}>
-        <Image
-          src={iconImage}
-          alt={title}
-          fill
-          sizes="80px"
-        />
-      </div>
+      <span className="mr-1">Play on</span>
+      <span className="relative w-[80px] h-[24px]">
+        <Image src={iconImage} alt={title} fill sizes="80px" />
+      </span>
     </a>
   )
 }
@@ -44,7 +37,7 @@ const titleDisplay = ({ deferredText, title }) => {
     // console.log(`title3`, title3);
 
     return (
-      <div className="font-bold text-left lg:text-xl">
+      <div>
         <span>{title1}</span>
         {/* title2 is always highlighted */}
         <span className="font-bold text-blue-800">{title2}</span>
@@ -56,7 +49,7 @@ const titleDisplay = ({ deferredText, title }) => {
   return title;
 }
 
-export default function Discography() {
+export default function Page() {
   const [text, setText] = useState('');
   const [records, setRecords] = useState(RECORDS);
   const deferredText = useDeferredValue(text);
@@ -77,7 +70,7 @@ export default function Discography() {
         <div className="mb-2">Search for a record</div>
         <input
           type="text"
-          className="rounded-none w-full border-slate-400 border-[2px]"
+          className="w-full border-slate-200 border-[2px]"
           value={text}
           onChange={event => setText(event.target.value)}
         />
@@ -98,58 +91,50 @@ export default function Discography() {
           }) => {
             return (
               <div key={id}>
-                <div key={title} className="discography-panel text-left">
-                  <div className="flex flex-row justify-center">
-                    <Link
-                      className={
-                        `relative w-[180px] h-[180px] lg:w-[280px] lg:h-[280px]
-                        border-black border-[2px]`
-                      }
-                      href={`/record/${id}`}
-                    >
+                <div className="discography-panel text-left">
+                  <Link href={`/record/${id}`} className="flex flex-row justify-center">
+                    <div className="relative w-[180px] h-[180px] lg:w-[256px] lg:h-[256px]">
                       <Image
                         src={albumImage}
-                        alt="album-image"
+                        alt="album image"
                         fill
-                        // 768px is the breaking point for tailwind css `lg:`
+                        // 1024px is the breaking point for tailwind css `lg:`
                         // max-width in Next.js sizes refers to a max-width to apply a smaller value.
                         // Then in larger widths, the final value is the default.
                         // This is an opposite mindset to tailwind where the default is the smallest value, and sm:/lg:/lg: establish breaking points to apply larger values.
-                        sizes="(max-width:768px) 90px, 140px"
+                        sizes="(max-width:1024px) 180px, 256px"
                         // comment out priority to find warnings on Largest Contentful Paint: https://nextjs.org/docs/pages/api-reference/components/image#priority
                         priority
                       />
-                    </Link>
-                    <div className={"relative w-[90px] h-[180px] lg:w-[140px] lg:h-[280px]"}>
+                    </div>
+                    <div className="relative w-[90px] h-[180px] lg:w-[128px] lg:h-[256px]">
                       <Image
                         src={recordHalfImage}
-                        alt="album-image"
+                        alt="record half image"
                         fill
-                        sizes="(max-width:768px) 90px, 140px"
+                        sizes="(max-width:1024px) 90px, 128px"
                       />
                     </div>
-                  </div>
-                  <div className="mb-5 mt-5">
-                    {titleDisplay({ deferredText, title })}
-                    <div className="text-justify lg:text-lg mb-1">{blurb}</div>
-                    <div className="text-sm text-slate-600">
-                      Release date: {date}
-                    </div>
-                  </div>
+                  </Link>
+                  <br />
+                  {titleDisplay({ deferredText, title })}
+                  <div className="text-justify text-md lg:text-lg">{blurb}</div>
+                  <div className="text-sm text-slate-600">Release date: {date}</div>
+                  <br />
                   <PlayRow
-                    title={'Spotify'}
-                    link={spotifyLink}
-                    iconImage='/spotify_icon_500.png'
+                    title="Spotify"
+                    href={spotifyLink}
+                    iconImage="/spotify_icon_500.png"
                   />
                   <PlayRow
-                    title={'Apple Music'}
-                    link={appleMusicLink}
-                    iconImage='/apple_music_icon_500.png'
+                    title="Apple Music"
+                    href={appleMusicLink}
+                    iconImage="/apple_music_icon_500.png"
                   />
                   <PlayRow
-                    title={'YouTube Music'}
-                    link={youtubeMusicLink}
-                    iconImage='/youtube_music_icon_500.png'
+                    title="YouTube Music"
+                    href={youtubeMusicLink}
+                    iconImage="/youtube_music_icon_500.png"
                   />
                 </div>
                 <br />
