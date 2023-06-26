@@ -35,7 +35,7 @@ const titleDisplay = ({ deferredText, title }) => {
     const splitTitle = title.toLowerCase().split(deferredText.toLowerCase());
     // console.log(`splitTitle`, splitTitle);
 
-    // Don't return the splits directly, need to preserve capitalization
+    // Don't return the splits directly, create slices of the original title to maintain original capitalization
     const title1 = title.slice(0, splitTitle[0].length);
     const title2 = title.slice(splitTitle[0].length, splitTitle[0].length+deferredText.length);
     const title3 = title.slice(splitTitle[0].length+deferredText.length, title.length);
@@ -46,6 +46,7 @@ const titleDisplay = ({ deferredText, title }) => {
     return (
       <div className="font-bold text-left lg:text-xl">
         <span>{title1}</span>
+        {/* title2 is always highlighted */}
         <span className="font-bold text-blue-800">{title2}</span>
         <span>{title3}</span>
       </div>
@@ -115,7 +116,7 @@ export default function Discography() {
                         // Then in larger widths, the final value is the default.
                         // This is an opposite mindset to tailwind where the default is the smallest value, and sm:/lg:/lg: establish breaking points to apply larger values.
                         sizes="(max-width:768px) 90px, 140px"
-                        // uncomment to find warnings on Largest Contentful Paint: https://nextjs.org/docs/pages/api-reference/components/image#priority
+                        // comment out priority to find warnings on Largest Contentful Paint: https://nextjs.org/docs/pages/api-reference/components/image#priority
                         priority
                       />
                     </Link>
