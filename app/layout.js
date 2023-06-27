@@ -15,15 +15,12 @@ const robotoCondensed = Roboto_Condensed({
   variable: '--font-roboto-condensed'
 });
 
-// console.log(`ranga.variable`, ranga.variable);
-// console.log(`robotoCondensed.variable`, robotoCondensed.variable);
-
 export const metadata = { title: 'David Kando Music' };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${ranga.variable} ${robotoCondensed.variable}`}>
-      <body className="flex justify-center items-center min-h-screen font-roboto">
+      <body className="font-roboto flex justify-center items-center min-h-screen">
         {children}
       </body>
       <ClientLog />

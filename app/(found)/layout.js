@@ -1,5 +1,5 @@
 import { GRID_DATA_ITEMS } from '../data';
-import GridItem from './grid-item';
+import Link from 'next/link';
 import LinkTitle from './link-title';
 
 export default function Layout({ children }) {
@@ -12,7 +12,24 @@ export default function Layout({ children }) {
             GRID_DATA_ITEMS.map(gridDataItem => {
               const { id, attributes } = gridDataItem;
 
-              return <GridItem {...attributes} key={id} />;
+              return (
+                <Link key={id} href={attributes.href}>
+                  <div
+                    className={
+                      `${attributes.background} w-36 h-36 lg:w-52 lg:h-52
+                      flex items-end border-[2px] border-black`
+                    }
+                  >
+                    <div
+                      className={
+                        `w-full text-center font-ranga text-sm lg:text-2xl banner`
+                      }
+                    >
+                      {attributes.text}
+                    </div>
+                  </div>
+                </Link>
+              )
             })
           }
         </div>
