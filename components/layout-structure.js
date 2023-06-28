@@ -6,7 +6,7 @@ export default function LayoutStructure({ children, background, title }) {
         p-5 pt-10 lg:p-10 text-md lg:text-xl
         ${background} bg-no-repeat bg-cover`
       }
-      >
+    >
       <div className="title">{title}</div>
       <br />
       <div>{children}</div>
