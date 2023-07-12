@@ -1,34 +1,24 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# [davidkandomusic.com](https://www.davidkandomusic.com)
+![david_kando_music](david_kando_music.png)
 
-## Getting Started
+This site is made with Next.js and React 18.
+Explore the site to listen to my music, under the artist name, David Kando. There's also easter eggs!
 
-First, run the development server:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+### Udemy Course: Next.js and React 18 | Build a Production Site
+**[https://www.udemy.com/course/nextjs-and-react-bootcamp](https://www.udemy.com/course/nextjs-and-react-bootcamp/?referralCode=686A52209BC6FC20C7B7)**
+![Course Logo](next_react_course_logo.png)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Learn how I built davidkandomusic.com using Next.js and React 18. In this course, you will learn:
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+* The Next.js React Framework and React 18
+* Client vs. Server Components and Client-Side vs. Server-Side Rendering
+* New React 18 hooks: useTransition and useDeferredValue
+* React Suspense
+* The Next.js Architecture: Layouts, Pages, and Routes
+* Next.js Dynamic Segments and Route Groups
+* Next.js hooks like usePathname and useSelectedLayoutSegments
+* Next.js Deployment with Vercel
+* Tailwind CSS
+* And more
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
