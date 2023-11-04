@@ -14,14 +14,13 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }) {
   const { id } = params;
   const { title } = RECORDS_MAP[id];
-  // console.log(`title`, title);
 
   return { title: `${title} - David Kando` };
 }
 
 export default function Page({ params }) {
   const { id } = params;
-  const { date, blurb, Embed } = RECORDS_MAP[id];
+  const { date, blurb, Embed, gear } = RECORDS_MAP[id];
 
   return (
     <>
@@ -29,9 +28,13 @@ export default function Page({ params }) {
       <div className="text-sm text-slate-600">
         Release date: {date}
       </div>
-      <div className="font-ranga flex justify-between w-[144px] text-2xl m-2">
+      <div className="font-ranga flex justify-center w-[144px] text-2xl">
         <Link href={`/record/${id}/lyrics`} className="link">Lyrics</Link>
-        <Link href={`/record/${id}/gear`} className="link">Gear Used</Link>
+        {
+          gear ? (
+            <Link href={`/record/${id}/gear`} className="link ml-2">Gear Used</Link>
+          ) : <></>
+        }
       </div>
       <Player embed={<Embed />} />
     </>
